@@ -1,5 +1,8 @@
 package Models.Cards;
 
-public class Card {
+abstract class Card {
+    private int MP;
+
+
 
 }
