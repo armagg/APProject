@@ -1,4 +1,5 @@
 package Models.Cards;
 
-public class Cards {
+public class Card {
+
 }
