@@ -1,6 +1,6 @@
 package Models.Cards;
 
-abstract class Card {
+public abstract class Card {
     private int MP;
 
 
