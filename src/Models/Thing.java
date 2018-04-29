@@ -4,6 +4,7 @@ public class Thing {
 
     private int cost;
     private int MP;
+    private String name;
 
     public int getCost() {
         return cost;
@@ -19,5 +20,13 @@ public class Thing {
 
     public void setMP(int MP) {
         this.MP = MP;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
