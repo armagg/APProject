@@ -1,14 +1,8 @@
 package Models.Cards;
 
-public class Card {
-    private int MP;
+import Models.Thing;
+
+public class Card extends Thing {
 
 
-    public int getMP() {
-        return MP;
-    }
-
-    public void setMP(int MP) {
-        this.MP = MP;
-    }
 }
