@@ -1,7 +1,7 @@
 package Models.Fields;
 
 
-class Deck {
+public class Deck implements Cards {
 
 
 }
