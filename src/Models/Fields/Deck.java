@@ -7,6 +7,8 @@ import java.util.Random;
 
 public class Deck implements Cards {
 
+    private int maxLength = 30;
+
     public Card getRandomCard() {
         Random rand = new Random();
         rand.setSeed(System.nanoTime());

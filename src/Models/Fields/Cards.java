@@ -9,6 +9,7 @@ interface Cards {
 
     ArrayList<Card> cards = new ArrayList<>(5);
 
+
      default ArrayList<Card> getCards(){
          return cards;
      }
@@ -25,6 +26,10 @@ interface Cards {
          }
          return false;
      }
+
+     /*int cardCounterGetter();
+     int maxLengthGetter();
+*/
 
 
 }
