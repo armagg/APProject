@@ -4,10 +4,11 @@ import Models.Fields.Deck;
 import Models.Store.Store;
 
 public class DataBase {
-    Store store;
-    int Gil;
-    Deck deck;
+    private Store store;
+    private int Gil;
+    private Deck deck;
     private boolean isUsed = false;
+
 
     public Store getStore() {
         return store;

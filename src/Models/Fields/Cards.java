@@ -14,8 +14,9 @@ interface Cards {
          return cards;
      }
 
-     default void addCard(Card card){
+    default boolean addCard(Card card) {
          cards.add(card);
+        return true;
      }
 
      default boolean deleteCard(Card card){

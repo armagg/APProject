@@ -1,10 +1,10 @@
 package Models;
 
-public class Thing {
+public abstract class Thing {
 
     private int cost;
     private int MP;
-    private String name;
+    protected String name;
 
     public int getCost() {
         return cost;
@@ -29,4 +29,10 @@ public class Thing {
     public void setName(String name) {
         this.name = name;
     }
+
+    public boolean equals(Thing thing) {
+        return thing.getName().equals(name);
+    }
+
+
 }

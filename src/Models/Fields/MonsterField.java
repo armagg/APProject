@@ -1,6 +1,6 @@
 package Models.Fields;
 
 public class MonsterField implements Cards{
-    private int maxLength = 5;
+    private final int maxLength = 5;
 
 }
