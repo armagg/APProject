@@ -44,7 +44,6 @@ public class Hero {
         return items;
     }
 
-
     public int getHP() {
         return HP;
     }
