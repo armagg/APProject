@@ -3,14 +3,15 @@ package Control.Functions;
 import Models.Battle;
 import Models.Cards.Card;
 import Models.Cards.Race;
-import Models.Fields.Field;
+import Models.Fields.Place;
 import Models.Turn;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Collectors {
 
-    public ArrayList<Card> chooseAllOfOwncard(Battle battle) {
+    public ArrayList<Card> ChooseAllOfOwncard(Battle battle) {
         ArrayList<Card> cards = new ArrayList<>(20);
         if (battle.getTurn() == Turn.HUMAN) {
             cards.addAll(battle.getPlayerField().getMonsterField().getCards());
@@ -40,5 +41,16 @@ public class Collectors {
         }
 
         return cards;
+    }
+
+    private static ArrayList<Integer> randomCreater(Place place,)
+
+    public ArrayList<Card> randomCards(Battle battle, int number, Place place) {
+        Random random = new Random();
+        ArrayList<Integer> numbers = new ArrayList<>(number);
+
+        for (int i = 0; i < number; i++) {
+            numbers.set(i, )
+        }
     }
 }
