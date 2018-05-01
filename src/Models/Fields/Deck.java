@@ -3,16 +3,34 @@ package Models.Fields;
 
 import Models.Cards.Card;
 
-import java.util.Random;
-
 public class Deck implements Cards {
 
-    public Card getRandomCard() {
-        Random rand = new Random();
-        rand.setSeed(System.nanoTime());
-        int index = rand.nextInt(cards.size());
-        deleteCard(cards.get(index));
-        return cards.get(index);
+    private final int maxLength = 30;
+    private final int minLength = 25;
+
+    @Override
+    public boolean addCard(Card card) {
+        if (cards.size() < maxLength) {
+            cards.add(card);
+            return true;
+        }
+
+        return false;
+    }
+
+    @Override
+    public boolean deleteCard(Card card) {
+        if (cards.size() > minLength) {
+            cards.remove(card);
+            return true;
+
+        }
+        return false;
+    }
+
+
+    public int getNumberOfCards() {
+        return cards.size();
     }
 
 

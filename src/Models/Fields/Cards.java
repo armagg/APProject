@@ -9,12 +9,14 @@ interface Cards {
 
     ArrayList<Card> cards = new ArrayList<>(5);
 
+
      default ArrayList<Card> getCards(){
          return cards;
      }
 
-     default void addCard(Card card){
+    default boolean addCard(Card card) {
          cards.add(card);
+        return true;
      }
 
      default boolean deleteCard(Card card){
@@ -25,6 +27,10 @@ interface Cards {
          }
          return false;
      }
+
+     /*int cardCounterGetter();
+     int maxLengthGetter();
+*/
 
 
 }

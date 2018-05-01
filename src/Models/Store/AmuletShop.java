@@ -1,4 +1,4 @@
 package Models.Store;
 
-public class AmuletShop {
+public class AmuletShop extends Shop {
 }

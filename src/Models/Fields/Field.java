@@ -7,4 +7,5 @@ public class Field {
     private PlayField playField;
     private Gamer gamer;
 
+
 }

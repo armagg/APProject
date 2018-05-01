@@ -23,5 +23,4 @@ public class Shop {
         return thing.getCost();
     }
 
-
 }
