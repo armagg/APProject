@@ -1,21 +1,46 @@
 package Models;
 
-import Models.Fields.Deck;
 import Models.Fields.Field;
-import Models.Fields.GraveYard;
-import Models.Fields.Hand;
+
+import java.util.Random;
+
 public class Battle {
 
     private Field playerField;
     private Field computerField;
-    private Player player =
+
+
+    private Player player;
     private int MP = 0;
 
-    public void nextround() {
+    public Battle(Field playerField, Field computerField) {
+        this.playerField = playerField;
+        this.computerField = computerField;
+        Random random = new Random();
+        int temp = random.nextInt(2);
+        if (temp == 1)
+            player = Player.COMPUTER;
+        else
+            player = Player.HUMAN;
+
+    }
+
+    public void nextRound() {
         MP++;
+
+    }
+
+    public void nextTurn() {
+        if (Player.HUMAN == player)
+            player = Player.COMPUTER;
+        else
+            player = Player.HUMAN;
     }
 
 
+    public Player getPlayer() {
+        return player;
+    }
 
     public Field getPlayerField() {
         return playerField;
