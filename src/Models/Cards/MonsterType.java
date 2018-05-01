@@ -1,5 +1,5 @@
 package Models.Cards;
 
 public enum MonsterType {
-    NORMAL,
+    NORMAL, SPELLCASTER,HERO,GENERAL
 }
