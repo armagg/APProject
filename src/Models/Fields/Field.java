@@ -4,7 +4,8 @@ public class Field {
     private Deck deck;
     private GraveYard graveYard;
     private Hand hand;
-    private PlayField playField;
+    private MonsterField monsterField;
+    private SpellField spellField;
     private Gamer gamer;
 
     public Deck getDeck() {
@@ -31,12 +32,20 @@ public class Field {
         this.hand = hand;
     }
 
-    public PlayField getPlayField() {
-        return playField;
+    public MonsterField getMonsterField() {
+        return monsterField;
     }
 
-    public void setPlayField(PlayField playField) {
-        this.playField = playField;
+    public SpellField getSpellField() {
+        return spellField;
+    }
+
+    public void setSpellField(SpellField spellField) {
+        this.spellField = spellField;
+    }
+
+    public void setMonsterField(MonsterField monsterField) {
+        this.monsterField = monsterField;
     }
 
     public Gamer getGamer() {

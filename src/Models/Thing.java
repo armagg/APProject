@@ -2,8 +2,8 @@ package Models;
 
 public abstract class Thing {
 
-    private int cost;
-    private int MP;
+    protected int cost;
+    protected int MP;
     protected String name;
 
     public int getCost() {

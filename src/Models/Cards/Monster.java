@@ -18,7 +18,7 @@ public class Monster extends Card{
         this.HP = HP;
     }
 
-    public void reduceHp(int amount) {
+    public void reduceHP(int amount) {
         HP -= amount;
     }
 
