@@ -1,11 +1,10 @@
 package Control.Functions;
 
+import Models.Battle;
 import Models.Cards.Card;
+import Models.Turn;
 
 import java.util.ArrayList;
-
-import Models.Battle;
-import Models.Turn;
 
 public class Collectors {
 
@@ -15,9 +14,11 @@ public class Collectors {
             cards.addAll(battle.getPlayerField().getMonsterField().getCards());
             cards.addAll(battle.getPlayerField().getHand().getCards());
 
-
+        } else {
+            cards.addAll(battle.getRivalField().getHand().getCards());
+            cards.addAll(battle.getRivalField().getMonsterField().getCards());
         }
-
+        return cards;
 
     }
 }
