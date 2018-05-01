@@ -17,9 +17,9 @@ public class Battle {
     private Turn player;
     private int MP = 0;
 
-    public Battle(Field playerField, Field computerField) {
+    public Battle(Field playerField, Field rivalField) {
         this.playerField = playerField;
-        this.RivalField = computerField;
+        this.RivalField = rivalField;
         Random random = new Random();
         int temp = random.nextInt(2);
         if (temp == 1)
@@ -54,11 +54,11 @@ public class Battle {
         this.playerField = playerField;
     }
 
-    public Field getComputerField() {
+    public Field getRivalField() {
         return RivalField;
     }
 
-    public void setComputerField(Field computerField) {
+    public void setRivalField(Field computerField) {
         this.RivalField = computerField;
     }
 
