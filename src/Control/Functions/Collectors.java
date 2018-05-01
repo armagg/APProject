@@ -25,17 +25,16 @@ public class Collectors {
 
     }
 
-    public ArrayList<Card> ToSpecialRace(Battle battle, Race race){
+    public ArrayList<Card> ToSpecialRace(Battle battle, Race race) {
         ArrayList<Card> cards = new ArrayList<>();
-        if(battle.getTurn() == Turn.HUMAN){
-            for (Card card:battle.getPlayerField().getMonsterField().getCards()) {
-                if(card.getRace() == race)
+        if (battle.getTurn() == Turn.HUMAN) {
+            for (Card card : battle.getPlayerField().getMonsterField().getCards()) {
+                if (card.getRace() == race)
                     cards.add(card);
             }
-        }
-        else{
-            for (Card card:battle.getRivalField().getMonsterField().getCards()) {
-                if(card.getRace() == race)
+        } else {
+            for (Card card : battle.getRivalField().getMonsterField().getCards()) {
+                if (card.getRace() == race)
                     cards.add(card);
             }
         }
@@ -43,14 +42,52 @@ public class Collectors {
         return cards;
     }
 
-    private static ArrayList<Integer> randomCreater(Place place,)
-
-    public ArrayList<Card> randomCards(Battle battle, int number, Place place) {
+    private static ArrayList<Integer> randomCreater(int max, int number) {
         Random random = new Random();
         ArrayList<Integer> numbers = new ArrayList<>(number);
-
         for (int i = 0; i < number; i++) {
-            numbers.set(i, )
+            numbers.add(random.nextInt(max));
+
         }
+        return numbers;
+    }
+
+    public ArrayList<Card> randomCards(Battle battle, int number, Place place) {
+        ArrayList<Integer> numbers = new ArrayList<>(10);
+
+        if (battle.getTurn() == Turn.HUMAN) {
+            if (place == Place.DECK) {
+                numbers = randomCreater(battle.getPlayerField().getDeck().getNumberOfCards(), number);
+            }
+
+            if (place == Place.GRAVEYARD)
+                numbers = randomCreater(battle.getPlayerField().getGraveYard().GetNumberOfCards(), number);
+            if (place == Place.HAND)
+                numbers = randomCreater(battle.getPlayerField().getHand().GetNumberOfCards(), number);
+            if (place == Place.MONSTERFIELD)
+                numbers = randomCreater(battle.getPlayerField().getMonsterField().GetNumberOfCards(), number);
+            if (place == Place.SPELLFIELD)
+                numbers = randomCreater(battle.getPlayerField().getSpellField().GetNumberOfCards(), number);
+        } else {
+            if (place == Place.DECK) {
+                numbers = randomCreater(battle.getRivalField().getDeck().getNumberOfCards(), number);
+            }
+
+            if (place == Place.GRAVEYARD)
+                numbers = randomCreater(battle.getRivalField().getGraveYard().GetNumberOfCards(), number);
+            if (place == Place.HAND)
+                numbers = randomCreater(battle.getRivalField().getHand().GetNumberOfCards(), number);
+            if (place == Place.MONSTERFIELD)
+                numbers = randomCreater(battle.getRivalField().getMonsterField().GetNumberOfCards(), number);
+            if (place == Place.SPELLFIELD)
+                numbers = randomCreater(battle.getRivalField().getSpellField().GetNumberOfCards(), number);
+        }
+
+        ArrayList<Card> output = new ArrayList<>(number);
+        for (int i : numbers) {
+            //TODO
+        }
+
+        return output;
     }
 }

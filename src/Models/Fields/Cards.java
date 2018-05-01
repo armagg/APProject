@@ -9,7 +9,9 @@ interface Cards {
 
     ArrayList<Card> cards = new ArrayList<>(5);
 
-
+    default int GetNumberOfCards() {
+        return cards.size();
+    }
      default ArrayList<Card> getCards(){
          return cards;
      }
