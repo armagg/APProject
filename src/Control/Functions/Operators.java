@@ -4,6 +4,7 @@ import Models.Cards.Card;
 import Models.Cards.FunctionTargetKind;
 import Models.Cards.Monster;
 import Models.Fields.Field;
+import Models.Fields.Place;
 import Models.Heroes.Hero;
 import java.util.ArrayList;
 
@@ -30,7 +31,23 @@ public class Operators {
     }
 
 
-    public void SendToGraveYard(Field field,ArrayList<Card> cards){
-
+    public void SendToGraveYard(Field field, ArrayList<Card> cards, Place place){
+        switch (place){
+            case HAND:
+                for (Card card:cards) {
+                    field.getHand().deleteCard(card);
+                }
+            case MONSTERFIELD:
+                for (Card card:cards) {
+                    field.getMonsterField().deleteCard(card);
+                }
+            case SPELLFIELD:
+                for (Card card:cards) {
+                    field.getSpellField().deleteCard(card);
+                }
+        }
+        for (Card card : cards) {
+            field.getGraveYard().addCard(card);
+        }
     }
 }
