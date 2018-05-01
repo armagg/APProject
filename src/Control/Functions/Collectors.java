@@ -1,22 +1,23 @@
 package Control.Functions;
 
 import Models.Cards.Card;
-import Models.Cards.Monster;
-import Models.Cards.Race;
-import Models.Fields.Field;
 
 import java.util.ArrayList;
 
+import Models.Battle;
+import Models.Turn;
+
 public class Collectors {
 
-public ArrayList<Card> ToSpecialRace(Field field, Race race){
-    ArrayList<Card> cards = new ArrayList<>();
-    for (Card card:field.getMonsterField().getCards()) {
-        if(card.getRace() == race){
-            cards.add(card);
-        }
-    }
+    public ArrayList<Card> chooseAllOfOwncard(Battle battle) {
+        ArrayList<Card> cards = new ArrayList<>(20);
+        if (battle.getTurn() == Turn.HUMAN) {
+            cards.addAll(battle.getPlayerField().getMonsterField().getCards());
+            cards.addAll(battle.getPlayerField().getHand().getCards());
 
-    return cards;
-}
+
+        }
+
+
+    }
 }

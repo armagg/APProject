@@ -1,11 +1,16 @@
 package Models.Cards;
 
+import Models.Fields.Place;
 import Models.Thing;
 
 public class Card extends Thing {
-    private Race race;
+    private Place place;
 
-    public Race getRace() {
-        return race;
+    public Place getPlace() {
+        return place;
+    }
+
+    public void setPlace(Place place) {
+        this.place = place;
     }
 }

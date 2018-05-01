@@ -1,13 +1,17 @@
 package Models;
 
 import Models.Fields.Field;
+import Models.Heroes.Hero;
 
 import java.util.Random;
 
 public class Battle {
 
     private Field playerField;
-    private Field computerField;
+    private Field RivalField;
+    private Hero playerHero;
+    private Hero RivalHero;
+
 
 
     private Turn player;
@@ -15,11 +19,11 @@ public class Battle {
 
     public Battle(Field playerField, Field computerField) {
         this.playerField = playerField;
-        this.computerField = computerField;
+        this.RivalField = computerField;
         Random random = new Random();
         int temp = random.nextInt(2);
         if (temp == 1)
-            player = Turn.COMPUTER;
+            player = Turn.RIVAL;
         else
             player = Turn.HUMAN;
 
@@ -32,12 +36,13 @@ public class Battle {
 
     public void nextTurn() {
         if (Turn.HUMAN == player)
-            player = Turn.COMPUTER;
+            player = Turn.RIVAL;
         else
             player = Turn.HUMAN;
     }
 
-    public Turn getPlayer() {
+
+    public Turn getTurn() {
         return player;
     }
 
@@ -50,14 +55,32 @@ public class Battle {
     }
 
     public Field getComputerField() {
-        return computerField;
+        return RivalField;
     }
 
     public void setComputerField(Field computerField) {
-        this.computerField = computerField;
+        this.RivalField = computerField;
     }
 
     public int getMP() {
         return MP;
     }
+
+
+    public void setPlayerHero(Hero playerHero) {
+        this.playerHero = playerHero;
+    }
+
+    public Hero getRivalHero() {
+        return RivalHero;
+    }
+
+    public void setRivalHero(Hero rivalhero) {
+        RivalHero = rivalhero;
+    }
+
+    public Hero getPlayerHero() {
+        return playerHero;
+    }
+
 }
