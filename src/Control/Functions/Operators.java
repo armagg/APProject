@@ -31,23 +31,62 @@ public class Operators {
     }
 
 
-    public void SendToGraveYard(Field field, ArrayList<Card> cards, Place place){
-        switch (place){
+    public void replaceCards(Field field, ArrayList<Card> cards, Place originPlace,Place destinationPlace){
+        switch (originPlace){
+            case DECK:
+                for (Card card:cards) {
+                    field.getDeck().deleteCard(card);
+                }break;
+
             case HAND:
                 for (Card card:cards) {
                     field.getHand().deleteCard(card);
-                }
+                }break;
+
             case MONSTERFIELD:
                 for (Card card:cards) {
                     field.getMonsterField().deleteCard(card);
-                }
+                }break;
+
             case SPELLFIELD:
                 for (Card card:cards) {
                     field.getSpellField().deleteCard(card);
-                }
+                }break;
+
+            case GRAVEYARD:
+                for (Card card:cards) {
+                    field.getSpellField().deleteCard(card);
+                }break;
+
         }
-        for (Card card : cards) {
-            field.getGraveYard().addCard(card);
+
+        switch (destinationPlace){
+            case DECK:
+                for (Card card:cards) {
+                    field.getDeck().addCard(card);
+                }break;
+
+            case HAND:
+                for (Card card:cards) {
+                    field.getHand().addCard(card);
+                }break;
+
+            case MONSTERFIELD:
+                for (Card card:cards) {
+                    field.getMonsterField().addCard(card);
+                }break;
+
+            case SPELLFIELD:
+                for (Card card:cards) {
+                    field.getSpellField().addCard(card);
+                }break;
+
+            case GRAVEYARD:
+                for (Card card:cards) {
+                    field.getSpellField().addCard(card);
+                }break;
+
         }
+
     }
 }
