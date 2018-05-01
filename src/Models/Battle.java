@@ -37,7 +37,6 @@ public class Battle {
             player = Turn.HUMAN;
     }
 
-
     public Turn getPlayer() {
         return player;
     }
