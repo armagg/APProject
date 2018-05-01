@@ -3,7 +3,9 @@ package Models.Cards;
 public class Monster extends Card{
     private int HP;
     private int AP;
-    RaceOfArcadia race;
+    RaceOfArcadia raceOfArcadia;
+    Race race;
+    RaceOfDemonata raceOfDemonata;
     private boolean isRimble;
     private boolean isAwake;
     private boolean isDefender;
@@ -28,6 +30,18 @@ public class Monster extends Card{
         if (AP >= 0)
             this.AP += AP;
 
+    }
+
+    public RaceOfArcadia getRaceOfArcadia() {
+        return raceOfArcadia;
+    }
+
+    public Race getRace() {
+        return race;
+    }
+
+    public RaceOfDemonata getRaceOfDemonata() {
+        return raceOfDemonata;
     }
 
     public void reduceAP(int amount) {
