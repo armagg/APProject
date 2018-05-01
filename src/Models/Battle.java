@@ -10,7 +10,7 @@ public class Battle {
     private Field computerField;
 
 
-    private Player player;
+    private Turn player;
     private int MP = 0;
 
     public Battle(Field playerField, Field computerField) {
@@ -19,9 +19,9 @@ public class Battle {
         Random random = new Random();
         int temp = random.nextInt(2);
         if (temp == 1)
-            player = Player.COMPUTER;
+            player = Turn.COMPUTER;
         else
-            player = Player.HUMAN;
+            player = Turn.HUMAN;
 
     }
 
@@ -31,14 +31,14 @@ public class Battle {
     }
 
     public void nextTurn() {
-        if (Player.HUMAN == player)
-            player = Player.COMPUTER;
+        if (Turn.HUMAN == player)
+            player = Turn.COMPUTER;
         else
-            player = Player.HUMAN;
+            player = Turn.HUMAN;
     }
 
 
-    public Player getPlayer() {
+    public Turn getPlayer() {
         return player;
     }
 

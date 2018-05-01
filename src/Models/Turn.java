@@ -1,5 +1,5 @@
 package Models;
 
-public enum Player {
+public enum Turn {
     HUMAN, COMPUTER
 }
