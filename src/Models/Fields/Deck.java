@@ -3,6 +3,8 @@ package Models.Fields;
 
 import Models.Cards.Card;
 
+import java.util.Random;
+
 public class Deck extends SuperField {
 
     private final int maxLength = 30;
@@ -28,10 +30,16 @@ public class Deck extends SuperField {
         return false;
     }
 
-
     public int getNumberOfCards() {
         return cards.size();
     }
 
-
+    public Card getRandomCard() {
+        Random rand = new Random();
+        rand.setSeed(System.nanoTime());
+        int index = rand.nextInt(cards.size());
+        Card tempCard = cards.get(index);
+        //ards.remove(tempCard);
+        return tempCard;
+    }
 }

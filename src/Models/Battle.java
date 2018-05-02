@@ -1,5 +1,6 @@
 package Models;
 
+import Models.Cards.Card;
 import Models.Fields.Field;
 import Models.Heroes.Hero;
 
@@ -22,15 +23,22 @@ public class Battle {
         this.RivalField = rivalField;
         Random random = new Random();
         int temp = random.nextInt(2);
-        if (temp == 1)
+        if (temp == 1) {
             player = Turn.RIVAL;
-        else
+            Card tempCard = playerField.getDeck().getRandomCard();
+            playerField.getHand().addCard(tempCard);
+
+        } else {
             player = Turn.HUMAN;
+            Card tempCard = RivalField.getDeck().getRandomCard();
+            RivalField.getHand().addCard(tempCard);
+        }
 
     }
 
     public void nextRound() {
         MP++;
+        nextTurn();
 
     }
 
@@ -41,6 +49,15 @@ public class Battle {
             player = Turn.HUMAN;
     }
 
+    public void initiateCardsDistribution(){
+        for (int i = 0; i < 3; i++) {
+            Card tempCard = playerField.getDeck().getRandomCard();
+            playerField.getHand().addCard(tempCard);
+
+            tempCard = RivalField.getDeck().getRandomCard();
+            RivalField.getHand().addCard(tempCard);
+        }
+    }
 
     public Turn getTurn() {
         return player;
@@ -82,5 +99,7 @@ public class Battle {
     public Hero getPlayerHero() {
         return playerHero;
     }
+
+
 
 }
