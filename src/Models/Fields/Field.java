@@ -56,5 +56,20 @@ public class Field {
         this.gamer = gamer;
     }
 
+    public SuperField returnField(Place place){
+        switch (place){
+            case DECK:
+                return this.getDeck();
+            case HAND:
+                return this.getHand();
+            case GRAVEYARD:
+                return this.getGraveYard();
+            case SPELLFIELD:
+                return this.getSpellField();
+            default:
+                return this.getMonsterField();
+        }
+    }
+
 
 }

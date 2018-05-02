@@ -4,6 +4,7 @@ import Models.Battle;
 import Models.Cards.Card;
 import Models.Cards.Race;
 import Models.Fields.Place;
+import Models.Heroes.Hero;
 import Models.Turn;
 
 import java.util.ArrayList;
@@ -89,5 +90,19 @@ public class Collectors {
         }
 
         return output;
+    }
+
+    public ArrayList<Card> OwnSpellCollector(Battle battle,Turn turn,Place originPlace){
+        if(turn == Turn.HUMAN)
+            return battle.getPlayerField().returnField(originPlace).getCards();
+        else
+            return battle.getRivalField().returnField(originPlace).getCards();
+    }
+
+    public ArrayList<Card> RivalSpellCollector(Battle battle,Turn turn,Place originPlace){
+        if(turn == Turn.RIVAL)
+            return battle.getPlayerField().returnField(originPlace).getCards();
+        else
+            return battle.getRivalField().returnField(originPlace).getCards();
     }
 }
