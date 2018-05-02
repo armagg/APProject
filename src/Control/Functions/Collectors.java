@@ -12,7 +12,7 @@ import java.util.Random;
 
 public class Collectors {
 
-    public ArrayList<Card> ChooseAllOfOwncard(Battle battle) {
+    static public ArrayList<Card> ChooseAllOfOwncard(Battle battle) {
         ArrayList<Card> cards = new ArrayList<>(20);
         if (battle.getTurn() == Turn.HUMAN) {
             cards.addAll(battle.getPlayerField().getMonsterField().getCards());
@@ -26,7 +26,7 @@ public class Collectors {
 
     }
 
-    public ArrayList<Card> ToSpecialRace(Battle battle, Race race) {
+    static public ArrayList<Card> ToSpecialRace(Battle battle, Race race) {
         ArrayList<Card> cards = new ArrayList<>();
         if (battle.getTurn() == Turn.HUMAN) {
             for (Card card : battle.getPlayerField().getMonsterField().getCards()) {
@@ -53,7 +53,7 @@ public class Collectors {
         return numbers;
     }
 
-    static ArrayList<Card> selectCards(ArrayList<Integer> numbers, SuperField field) {
+    private static ArrayList<Card> selectCards(ArrayList<Integer> numbers, SuperField field) {
         ArrayList<Card> output = new ArrayList<>();
         for (int i : numbers) {
             output.add(field.getCards().get(i));
@@ -61,7 +61,7 @@ public class Collectors {
         return output;
     }
 
-    public ArrayList<Card> randomCards(Battle battle, int number, Place place) {
+    static public ArrayList<Card> randomCards(Battle battle, int number, Place place) {
         ArrayList<Integer> numbers = new ArrayList<>(10);
         ArrayList<Card> output = new ArrayList<>(number);
         if (battle.getTurn() == Turn.HUMAN) {
@@ -114,14 +114,14 @@ public class Collectors {
         return output;
     }
 
-    public ArrayList<Card> OwnSpellCollector(Battle battle,Turn turn,Place originPlace){
+    static public ArrayList<Card> OwnSpellCollector(Battle battle, Turn turn, Place originPlace) {
         if(turn == Turn.HUMAN)
             return battle.getPlayerField().returnField(originPlace).getCards();
         else
             return battle.getRivalField().returnField(originPlace).getCards();
     }
 
-    public ArrayList<Card> RivalSpellCollector(Battle battle,Turn turn,Place originPlace){
+    static public ArrayList<Card> RivalSpellCollector(Battle battle, Turn turn, Place originPlace) {
         if(turn == Turn.RIVAL)
             return battle.getPlayerField().returnField(originPlace).getCards();
         else

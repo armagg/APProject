@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 
 public class Operators {
-    public void CardsPowerChanger(ArrayList<Monster> cards, int amount, FunctionTargetKind functionTargetEffect,AddOrReduce addOrReduce){
+    static public void CardsPowerChanger(ArrayList<Monster> cards, int amount, FunctionTargetKind functionTargetEffect, AddOrReduce addOrReduce) {
         switch (functionTargetEffect){
             case AP:
                 for (Monster card : cards) {
@@ -26,12 +26,12 @@ public class Operators {
     }
 
 
-    public void HeroPowerChanger(Hero hero,int amount,AddOrReduce addOrReduce){
+    static public void HeroPowerChanger(Hero hero, int amount, AddOrReduce addOrReduce) {
         hero.addHP(amount*(addOrReduce.ordinal()*2-1));/*converting {0,1} to {-1,1}*/
     }
 
 
-    public void replaceCards(Field field, ArrayList<Card> cards, Place originPlace,Place destinationPlace){
+    static public void replaceCards(Field field, ArrayList<Card> cards, Place originPlace, Place destinationPlace) {
         switch (originPlace){
             case DECK:
                 for (Card card:cards) {
