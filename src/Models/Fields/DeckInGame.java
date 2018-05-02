@@ -4,7 +4,7 @@ import Models.Cards.Card;
 
 import java.util.Random;
 
-public class DeckInGame implements Cards {
+public class DeckInGame extends SuperField{
 
     public Card getRandomCard() {
         Random rand = new Random();

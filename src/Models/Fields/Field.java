@@ -55,4 +55,6 @@ public class Field {
     public void setGamer(Gamer gamer) {
         this.gamer = gamer;
     }
+
+
 }

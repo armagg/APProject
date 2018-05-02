@@ -1,5 +1,5 @@
 package Models.Fields;
 
-public class GraveYard implements Cards {
+public class GraveYard extends SuperField {
 
 }

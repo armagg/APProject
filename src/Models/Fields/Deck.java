@@ -3,7 +3,7 @@ package Models.Fields;
 
 import Models.Cards.Card;
 
-public class Deck implements Cards {
+public class Deck extends SuperField {
 
     private final int maxLength = 30;
     private final int minLength = 25;

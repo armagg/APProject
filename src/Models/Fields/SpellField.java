@@ -2,7 +2,7 @@ package Models.Fields;
 
 import Models.Cards.Card;
 
-public class SpellField implements Cards{
+public class SpellField extends SuperField{
     private final int maxLength = 3;
 
 

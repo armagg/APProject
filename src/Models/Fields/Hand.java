@@ -2,7 +2,7 @@ package Models.Fields;
 
 import Models.Cards.Card;
 
-public class Hand implements Cards {
+public class Hand extends SuperField {
 
     private final int maxLength = 5;
 
