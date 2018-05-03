@@ -65,7 +65,9 @@ public class Collectors {
         ArrayList<Integer> numbers = new ArrayList<>(10);
         ArrayList<Card> output = new ArrayList<>(number);
         if (battle.getTurn() == Turn.HUMAN) {
-            if (place == Place.DECK) {
+            numbers = randomCreator(battle.getPlayerField().returnField(place).getCards().size(), number);
+            output = selectCards(numbers, battle.getPlayerField().returnField(place));
+         /*   if (place == Place.DECK) {
                 numbers = randomCreator(battle.getPlayerField().getDeck().getNumberOfCards(), number);
                 output = selectCards(numbers, battle.getPlayerField().returnField(Place.DECK));
             }
@@ -85,9 +87,12 @@ public class Collectors {
             if (place == Place.SPELLFIELD) {
                 numbers = randomCreator(battle.getPlayerField().getSpellField().GetNumberOfCards(), number);
                 output = selectCards(numbers, battle.getPlayerField().returnField(Place.SPELLFIELD));
-            }
+            }*/
         } else {
-            if (place == Place.DECK) {
+            numbers = randomCreator(battle.getRivalField().returnField(place).getCards().size(), number);
+            output = selectCards(numbers, battle.getPlayerField().returnField(place));
+
+            /*if (place == Place.DECK) {
                 numbers = randomCreator(battle.getRivalField().getDeck().getNumberOfCards(), number);
                 output = selectCards(numbers, battle.getRivalField().returnField(Place.DECK));
             }
@@ -107,7 +112,7 @@ public class Collectors {
             if (place == Place.SPELLFIELD) {
                 numbers = randomCreator(battle.getRivalField().getSpellField().GetNumberOfCards(), number);
                 output = selectCards(numbers, battle.getRivalField().returnField(Place.SPELLFIELD));
-            }
+            }*/
         }
 
 
