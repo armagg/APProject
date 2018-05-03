@@ -1,0 +1,19 @@
+"Lesser Whelp" 500 300 1 none DragonBreed
+"Dragonling" 700 700 3 none DragonBreed
+"Armored Dragon" 2000 400 5 Defender DragonBreed
+"Yellow Drake" 800 1000 5 Nimble DragonBreed
+"Elven Ranger" 300 400 1 none Elven
+"Elven Hunter" 800 600 3 none Elven
+"Elven Guardsman" 1500 500 5 Defender Elven
+"Elven Assassin" 800 1200 5 Nimble Elven
+"Murloc Crawler" 200 500 1 none Atlantian
+ "Murloc Warrior" 600 600 2 none Atlantian
+ "Giant Crab" 1500 300 4 Defender Atlantian
+ "Shark Man" 900 1200 5 Nimble Atlantian
+ "Goblin Smuggler" 600 400 2 non Goblin
+ "Ogre Warrior" 800 500 3 none Ogre
+ "Ogre Frontliner" 1800 600 5 Defender Ogre
+ "Imp" 300 500 2 none Demonic
+ "Shade" 500 800 3 none Demonic
+ "Living Armor" 1500 400 5 Defender Demonic
+ "Hellhound" 800 1000 5 Nimble
