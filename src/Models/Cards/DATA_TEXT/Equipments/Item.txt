@@ -1,0 +1,8 @@
+"Small HP Potion" 1000 "Increase Player’s HP by 500 "
+"Medium HP Potion" 2000 "Increase Player’s HP by 1000 "
+"Large HP Potion" 4000 "Increase Player’s HP by 2000 "
+"Small AP Potion" 1000 "Increase Player’s MP by 2"
+"Medium AP Potion" 2000 "Increase Player’s MP by 4"
+"Large AP Potion" 4000 "Increase Player’s MP by 8"
+"Lesser Restorative" 2000 "Increase Player’s HP by 500 and MP by 2"
+"Greater Restorative" 4000 "Increase Player’s HP by 1000 and MP by 4"
