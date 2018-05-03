@@ -1,8 +1,8 @@
 package Control.Functions;
 
 import Models.Battle;
-import Models.Cards.Card;
-import Models.Cards.Race;
+import Models.Cards.Classes.Card;
+import Models.Cards.Classes.Race;
 import Models.Fields.Place;
 import Models.Fields.SuperField;
 import Models.Turn;

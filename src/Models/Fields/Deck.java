@@ -1,7 +1,7 @@
 package Models.Fields;
 
 
-import Models.Cards.Card;
+import Models.Cards.Classes.Card;
 
 import java.util.Random;
 

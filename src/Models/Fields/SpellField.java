@@ -1,6 +1,6 @@
 package Models.Fields;
 
-import Models.Cards.Card;
+import Models.Cards.Classes.Card;
 
 public class SpellField extends SuperField{
     private final int maxLength = 3;

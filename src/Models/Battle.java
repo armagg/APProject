@@ -1,6 +1,6 @@
 package Models;
 
-import Models.Cards.Card;
+import Models.Cards.Classes.Card;
 import Models.Fields.Field;
 import Models.Heroes.Hero;
 

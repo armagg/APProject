@@ -1,8 +1,8 @@
 package Control.Functions;
 
-import Models.Cards.Card;
-import Models.Cards.FunctionTargetKind;
-import Models.Cards.Monster;
+import Models.Cards.Classes.Card;
+import Models.Cards.Classes.FunctionTargetKind;
+import Models.Cards.Classes.Monster;
 import Models.Fields.Field;
 import Models.Fields.Place;
 import Models.Heroes.Hero;

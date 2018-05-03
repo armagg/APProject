@@ -1,4 +1,4 @@
-package Models.Cards;
+package Models.Cards.Classes;
 
 public class Monster extends Card{
     private int HP;

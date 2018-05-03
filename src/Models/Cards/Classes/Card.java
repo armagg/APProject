@@ -1,4 +1,4 @@
-package Models.Cards;
+package Models.Cards.Classes;
 
 import Models.Thing;
 import Models.Fields.Place;
