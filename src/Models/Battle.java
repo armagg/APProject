@@ -1,9 +1,11 @@
 package Models;
 
 import Models.Cards.Classes.Card;
+import Models.Cards.Classes.Monster;
 import Models.Fields.Field;
 import Models.Heroes.Hero;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Battle {
@@ -59,6 +61,12 @@ public class Battle {
         }
     }
 
+    public Field returnFieldFromTurn(Turn turn) {
+        if (turn == Turn.HUMAN)
+            return playerField;
+        return RivalField;
+    }
+
     public Turn getTurn() {
         return player;
     }
@@ -73,6 +81,13 @@ public class Battle {
 
     public Field getRivalField() {
         return RivalField;
+    }
+
+    public ArrayList<Monster> returnCardsInGame() {
+        ArrayList<Monster> cards = new ArrayList<>(10);
+        cards.addAll(playerField.getMonsterField().getCards());
+        cards.addAll(RivalField.getMonsterField().getCards());
+        return cards;
     }
 
     public void setRivalField(Field computerField) {
