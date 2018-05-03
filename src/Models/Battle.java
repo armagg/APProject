@@ -83,7 +83,6 @@ public class Battle {
         return MP;
     }
 
-
     public void setPlayerHero(Hero playerHero) {
         this.playerHero = playerHero;
     }
@@ -99,7 +98,5 @@ public class Battle {
     public Hero getPlayerHero() {
         return playerHero;
     }
-
-
 
 }

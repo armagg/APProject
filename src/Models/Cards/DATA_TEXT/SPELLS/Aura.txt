@@ -1,0 +1,3 @@
+"Lunar Blessing" 6 "Increase AP and HP of friendly Elven monster cards by 300 "
+"War Drum" 6 "Increase all friendly monster cards’ AP by 300"
+"Take All You Can" 7 "Increase all friendly normal monster cards’ HP and AP by 400"
