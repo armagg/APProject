@@ -6,6 +6,7 @@ public abstract class Thing {
     protected int MP;
     protected String name;
 
+
     public int getCost() {
         return cost;
     }

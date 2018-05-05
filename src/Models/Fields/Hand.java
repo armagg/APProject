@@ -8,8 +8,8 @@ public class Hand extends SuperField {
 
     @Override
     public boolean addCard(Card card) {
-        if (cards.size() < maxLength) {
-            cards.add(card);
+        if (GetNumberOfCards() < maxLength) {
+            addCard(card);
             return true;
         }
         return false;

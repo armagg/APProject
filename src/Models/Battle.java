@@ -4,9 +4,10 @@ import Models.Cards.Classes.Card;
 import Models.Fields.Field;
 import Models.Heroes.Hero;
 
+import java.util.ArrayList;
 import java.util.Random;
 
-public class Battle {
+public class  Battle {
 
     private Field playerField;
     private Field RivalField;
@@ -57,6 +58,13 @@ public class Battle {
             tempCard = RivalField.getDeck().getRandomCard();
             RivalField.getHand().addCard(tempCard);
         }
+    }
+
+    public ArrayList<Card> returnCardsInGame() {
+        ArrayList<Card> cards = new ArrayList<>(10);
+        cards.addAll(playerField.getMonsterField().getCards());
+        cards.addAll(RivalField.getMonsterField().getCards());
+        return cards;
     }
 
     public Turn getTurn() {
