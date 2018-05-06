@@ -1,43 +1,40 @@
 package Models;
 
 import Models.Cards.Classes.Card;
+import Models.Cards.Classes.Monster;
 import Models.Fields.Field;
 import Models.Heroes.Hero;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class Battle {
 
     private Field playerField;
-    private Field rivalField;
+    private Field RivalField;
     private Hero playerHero;
-    private Hero rivalHero;
+    private Hero RivalHero;
 
 
-    private Turn turn;
+
+    private Turn player;
     private int MP = 0;
 
     public Battle(Field playerField, Field rivalField) {
         this.playerField = playerField;
-        this.rivalField = rivalField;
+        this.RivalField = rivalField;
         Random random = new Random();
         int temp = random.nextInt(2);
         if (temp == 1) {
-            turn = Turn.RIVAL;
+            player = Turn.RIVAL;
             Card tempCard = playerField.getDeck().getRandomCard();
             playerField.getHand().addCard(tempCard);
 
         } else {
-            turn = Turn.HUMAN;
-            Card tempCard = this.rivalField.getDeck().getRandomCard();
-            this.rivalField.getHand().addCard(tempCard);
+            player = Turn.HUMAN;
+            Card tempCard = RivalField.getDeck().getRandomCard();
+            RivalField.getHand().addCard(tempCard);
         }
-
-    }
-
-    public Battle() {
 
     }
 
@@ -48,24 +45,30 @@ public class Battle {
     }
 
     public void nextTurn() {
-        if (Turn.HUMAN == turn)
-            turn = Turn.RIVAL;
+        if (Turn.HUMAN == player)
+            player = Turn.RIVAL;
         else
-            turn = Turn.HUMAN;
+            player = Turn.HUMAN;
     }
 
     public void initiateCardsDistribution(){
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 3; i++) {
             Card tempCard = playerField.getDeck().getRandomCard();
             playerField.getHand().addCard(tempCard);
 
-            tempCard = rivalField.getDeck().getRandomCard();
-            rivalField.getHand().addCard(tempCard);
+            tempCard = RivalField.getDeck().getRandomCard();
+            RivalField.getHand().addCard(tempCard);
         }
     }
 
+    public Field returnFieldFromTurn(Turn turn) {
+        if (turn == Turn.HUMAN)
+            return playerField;
+        return RivalField;
+    }
+
     public Turn getTurn() {
-        return turn;
+        return player;
     }
 
     public Field getPlayerField() {
@@ -77,11 +80,18 @@ public class Battle {
     }
 
     public Field getRivalField() {
-        return rivalField;
+        return RivalField;
+    }
+
+    public ArrayList<Monster> returnCardsInGame() {
+        ArrayList<Monster> cards = new ArrayList<>(10);
+        cards.addAll(playerField.getMonsterField().getCards());
+        cards.addAll(RivalField.getMonsterField().getCards());
+        return cards;
     }
 
     public void setRivalField(Field computerField) {
-        this.rivalField = computerField;
+        this.RivalField = computerField;
     }
 
     public int getMP() {
@@ -93,50 +103,15 @@ public class Battle {
     }
 
     public Hero getRivalHero() {
-        return rivalHero;
+        return RivalHero;
     }
 
     public void setRivalHero(Hero rivalhero) {
-        rivalHero = rivalhero;
+        RivalHero = rivalhero;
     }
 
     public Hero getPlayerHero() {
         return playerHero;
     }
 
-    public Field returnFieldFromTurn(Turn turn) {
-        if (turn == Turn.HUMAN) {
-            return playerField;
-        }
-        return rivalField;
-    }
-
-    public List<Card> returnCardsInGame() {
-        ArrayList<Card> cards = new ArrayList<>(20);
-        cards.addAll(playerField.getAllCards());
-        cards.addAll(rivalField.getAllCards());
-
-        return cards;
-    }
-
-    public Field getOtherField(){
-        if(this.getTurn() == Turn.HUMAN)
-            return rivalField;
-        return playerField;
-    }
-
-    public Field getCurrentField(){
-        if(this.getTurn() == Turn.HUMAN)
-            return playerField;
-        return rivalField;
-    }
-
-    public void randomInitialTurn(){
-        Random random = new Random();
-        if(random.nextBoolean()){
-            this.turn = Turn.HUMAN;
-        }
-        else
-            this.turn = Turn.RIVAL;
-    }
 }
