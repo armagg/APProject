@@ -4,6 +4,7 @@ import Models.Cards.Classes.Card;
 import Models.Fields.Field;
 import Models.Heroes.Hero;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Battle {
@@ -99,4 +100,18 @@ public class Battle {
         return playerHero;
     }
 
+    public Field returnFieldFromTurn(Turn turn) {
+        if (turn == Turn.HUMAN) {
+            return playerField;
+        }
+        return RivalField;
+    }
+
+    public ArrayList<Card> returnCardsInGame() {
+        ArrayList<Card> cards = new ArrayList<>(20);
+        cards.addAll(playerField.getAllCards());
+        cards.addAll(RivalField.getAllCards());
+
+        return cards;
+    }
 }

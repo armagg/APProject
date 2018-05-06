@@ -1,5 +1,9 @@
 package Models.Fields;
 
+import Models.Cards.Classes.Card;
+
+import java.util.ArrayList;
+
 public class Field {
     private Deck deck;
     private GraveYard graveYard;
@@ -7,6 +11,16 @@ public class Field {
     private MonsterField monsterField;
     private SpellField spellField;
     private Gamer gamer;
+
+
+    public ArrayList<Card> getAllCards() {
+        ArrayList<Card> cards = new ArrayList<>(15);
+        cards.addAll(hand.getCards());
+        cards.addAll(monsterField.getCards());
+        cards.addAll(spellField.getCards());
+
+        return cards;
+    }
 
     public Deck getDeck() {
         return deck;
