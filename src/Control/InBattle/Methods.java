@@ -3,11 +3,8 @@ package Control.InBattle;
 import Models.Battle;
 import Models.Cards.Classes.Card;
 import Models.Cards.Classes.Monster;
-
-
-import Models.Battle;
-import Models.Cards.Classes.Card;
 import Models.Turn;
+
 public class Methods {
     static void toHand(Battle battle) {
         Turn turn = battle.getTurn();
@@ -32,6 +29,12 @@ public class Methods {
                 }
             }
         }
+    }
+
+    public static boolean attackMonsters(Battle battle, Monster Attacker, Monster goal) {
+
+
+        return false;
     }
 
 

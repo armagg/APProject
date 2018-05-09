@@ -8,20 +8,20 @@ public class SuperField {
 
     ArrayList<Card> cards = new ArrayList<>(5);
 
-    int GetNumberOfCards() {
+    public int GetNumberOfCards() {
         return cards.size();
     }
 
-    ArrayList<Card> getCards() {
+    public ArrayList<Card> getCards() {
         return cards;
     }
 
-    boolean addCard(Card card) {
+    public boolean addCard(Card card) {
         cards.add(card);
         return true;
     }
 
-    boolean deleteCard(Card card) {
+    public boolean deleteCard(Card card) {
         if (cards.contains(card)) {
             cards.remove(card);
             return true;
