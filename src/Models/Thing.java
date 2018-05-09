@@ -6,6 +6,13 @@ public abstract class Thing {
     protected int MP;
     protected String name;
 
+    private String detail;
+
+    @Override
+    public String toString() {
+        return name;
+    }
+
     public int getCost() {
         return cost;
     }

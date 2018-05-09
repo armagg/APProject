@@ -4,10 +4,10 @@ import Models.Thing;
 
 import java.util.ArrayList;
 
-public class Shop {
+public abstract class Shop {
     private ArrayList<Thing> things = new ArrayList<>(5);
 
-    public ArrayList<Thing> getObjects() {
+    ArrayList<Thing> getObjects() {
         return things;
     }
 
@@ -23,4 +23,20 @@ public class Shop {
         return thing.getCost();
     }
 
+    @Override
+    public String toString() {
+        String string = "";
+        try {
+            int i = 1;
+            for (Thing thing : things) {
+                string = string.concat(Integer.toString(i) + " : " + thing.toString() + "\n");
+                i++;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        return string;
+    }
 }
