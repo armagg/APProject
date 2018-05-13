@@ -6,6 +6,7 @@ import Models.Cards.Classes.Monster;
 import Models.Turn;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Methods {
     static void toHand(Battle battle) {
@@ -52,17 +53,24 @@ public class Methods {
                     break;
                 }
             }
-            if (haveDefender) {
-                defender.reduceHP(attacker.getAP());
-                attacker.reduceHP(defender.getAP());
-                return true;
-            } else {
-                goal.reduceHP(attacker.getAP());
-                attacker.reduceHP(goal.getAP());
-                return true;
+            try {
+
+
+                if (haveDefender) {
+                    defender.reduceHP(attacker.getAP());
+                    attacker.reduceHP(defender.getAP());
+                    return true;
+                } else {
+                    goal.reduceHP(attacker.getAP());
+                    attacker.reduceHP(goal.getAP());
+                    return true;
+                }
+
+            } catch (Exception e) {
+                System.out.println(Arrays.toString(e.getStackTrace()));
             }
 
-        } else
+        }
             return false;
     }
 
