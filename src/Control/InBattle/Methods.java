@@ -5,6 +5,8 @@ import Models.Cards.Classes.Card;
 import Models.Cards.Classes.Monster;
 import Models.Turn;
 
+import java.util.ArrayList;
+
 public class Methods {
     static void toHand(Battle battle) {
         Turn turn = battle.getTurn();
@@ -31,10 +33,37 @@ public class Methods {
         }
     }
 
-    public static boolean attackMonsters(Battle battle, Monster Attacker, Monster goal) {
+    public static boolean attackMonsters(Battle battle, Monster attacker, Monster goal) {
+        ArrayList<Card> cardArrayList = new ArrayList<>(5);
+        boolean haveDefender = false;
+        Monster defender = null;
+        if (attacker.isAwake() && attacker.isDefender()) {
+            if (battle.getTurn() == Turn.HUMAN) {
+                cardArrayList = battle.getPlayerField().getMonsterField().getCards();
+            } else {
+                cardArrayList = battle.getRivalField().getMonsterField().getCards();
+            }
 
+            for (Card card : cardArrayList) {
+                Monster monsterCard = (Monster) card;
+                if (monsterCard.isDefender()) {
+                    haveDefender = true;
+                    defender = monsterCard;
+                    break;
+                }
+            }
+            if (haveDefender) {
+                defender.reduceHP(attacker.getAP());
+                attacker.reduceHP(defender.getAP());
+                return true;
+            } else {
+                goal.reduceHP(attacker.getAP());
+                attacker.reduceHP(goal.getAP());
+                return true;
+            }
 
-        return false;
+        } else
+            return false;
     }
 
 
