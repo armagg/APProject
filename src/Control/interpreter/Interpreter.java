@@ -1,6 +1,6 @@
 package Control.interpreter;
 
-public class Interpretter {
+public class Interpreter {
 
 
 }
