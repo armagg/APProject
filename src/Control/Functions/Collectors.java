@@ -65,7 +65,7 @@ public class Collectors {
         ArrayList<Integer> numbers = new ArrayList<>(10);
         ArrayList<Card> output = new ArrayList<>(number);
         if (battle.getTurn() == Turn.HUMAN) {
-            numbers = randomCreator(battle.getPlayerField().returnField(place).GetNumberOfCards(), number);
+            numbers = randomCreator(battle.getPlayerField().returnField(place).getNumberOfCards(), number);
             output = selectCards(numbers, battle.getPlayerField().returnField(place));
          /*   if (place == Place.DECK) {
                 numbers = randomCreator(battle.getPlayerField().getDeck().getNumberOfCards(), number);
@@ -73,23 +73,23 @@ public class Collectors {
             }
 
             if (place == Place.GRAVEYARD) {
-                numbers = randomCreator(battle.getPlayerField().getGraveYard().GetNumberOfCards(), number);
+                numbers = randomCreator(battle.getPlayerField().getGraveYard().getNumberOfCards(), number);
                 output = selectCards(numbers, battle.getPlayerField().returnField(Place.GRAVEYARD));
             }
             if (place == Place.HAND) {
-                numbers = randomCreator(battle.getPlayerField().getHand().GetNumberOfCards(), number);
+                numbers = randomCreator(battle.getPlayerField().getHand().getNumberOfCards(), number);
                 output = selectCards(numbers, battle.getPlayerField().returnField(Place.HAND));
             }
             if (place == Place.MONSTERFIELD) {
-                numbers = randomCreator(battle.getPlayerField().getMonsterField().GetNumberOfCards(), number);
+                numbers = randomCreator(battle.getPlayerField().getMonsterField().getNumberOfCards(), number);
                 output = selectCards(numbers, battle.getPlayerField().returnField(Place.MONSTERFIELD));
             }
             if (place == Place.SPELLFIELD) {
-                numbers = randomCreator(battle.getPlayerField().getSpellField().GetNumberOfCards(), number);
+                numbers = randomCreator(battle.getPlayerField().getSpellField().getNumberOfCards(), number);
                 output = selectCards(numbers, battle.getPlayerField().returnField(Place.SPELLFIELD));
             }*/
         } else {
-            numbers = randomCreator(battle.getRivalField().returnField(place).GetNumberOfCards(), number);
+            numbers = randomCreator(battle.getRivalField().returnField(place).getNumberOfCards(), number);
             output = selectCards(numbers, battle.getPlayerField().returnField(place));
 
             /*if (place == Place.DECK) {
@@ -98,19 +98,19 @@ public class Collectors {
             }
 
             if (place == Place.GRAVEYARD) {
-                numbers = randomCreator(battle.getRivalField().getGraveYard().GetNumberOfCards(), number);
+                numbers = randomCreator(battle.getRivalField().getGraveYard().getNumberOfCards(), number);
                 output = selectCards(numbers, battle.getRivalField().returnField(Place.GRAVEYARD));
             }
             if (place == Place.HAND) {
-                numbers = randomCreator(battle.getRivalField().getHand().GetNumberOfCards(), number);
+                numbers = randomCreator(battle.getRivalField().getHand().getNumberOfCards(), number);
                 output = selectCards(numbers, battle.getRivalField().returnField(Place.HAND));
             }
             if (place == Place.MONSTERFIELD) {
-                numbers = randomCreator(battle.getRivalField().getMonsterField().GetNumberOfCards(), number);
+                numbers = randomCreator(battle.getRivalField().getMonsterField().getNumberOfCards(), number);
                 output = selectCards(numbers, battle.getRivalField().returnField(Place.MONSTERFIELD));
             }
             if (place == Place.SPELLFIELD) {
-                numbers = randomCreator(battle.getRivalField().getSpellField().GetNumberOfCards(), number);
+                numbers = randomCreator(battle.getRivalField().getSpellField().getNumberOfCards(), number);
                 output = selectCards(numbers, battle.getRivalField().returnField(Place.SPELLFIELD));
             }*/
         }
