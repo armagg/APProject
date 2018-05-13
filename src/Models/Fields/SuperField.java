@@ -8,7 +8,7 @@ public class SuperField {
 
     ArrayList<Card> cards = new ArrayList<>(5);
 
-    public int GetNumberOfCards() {
+    public int getNumberOfCards() {
         return cards.size();
     }
 
@@ -28,6 +28,17 @@ public class SuperField {
 
         }
         return false;
+    }
+
+    @Override
+    public String toString() {
+        String informations = "";
+        for (int i = 0; i < getNumberOfCards(); i++) {
+            informations = informations.concat(getCards().get(i).toString() + "\n");
+        }
+
+
+        return informations;
     }
 
      /*int cardCounterGetter();
