@@ -120,4 +120,10 @@ public class Battle {
             return RivalField;
         return playerField;
     }
+
+    public Field getCurrentField(){
+        if(this.getTurn() == Turn.HUMAN)
+            return playerField;
+        return RivalField;
+    }
 }
