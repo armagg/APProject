@@ -31,6 +31,17 @@ public class Monster extends Card{
 
     }
 
+    public void setHP(int HP) {
+        this.HP = HP;
+    }
+
+    public void setAP(int AP) {
+        this.AP = AP;
+    }
+
+    public void setRace(Race race) {
+        this.race = race;
+    }
 
     public Race getRace() {
         return race;
