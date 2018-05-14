@@ -4,6 +4,7 @@ import Models.Thing;
 import Models.Fields.Place;
 
 public class Card extends Thing {
+
     private Race race;
 
     public Race getRace() {

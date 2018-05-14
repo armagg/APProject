@@ -2,6 +2,7 @@ package Control.Functions;
 
 import Models.Battle;
 import Models.Cards.Classes.Card;
+import Models.Cards.Classes.Monster;
 import Models.Cards.Classes.Race;
 import Models.Fields.Place;
 import Models.Fields.SuperField;
@@ -130,5 +131,25 @@ public class Collectors {
             return battle.getPlayerField().returnField(originPlace).getCards();
         else
             return battle.getRivalField().returnField(originPlace).getCards();
+    }
+
+    static public ArrayList<Card> enemyDefendersOfMonsterField(Battle battle, Turn turn){
+        ArrayList<Card> cards = new ArrayList<>();
+        Monster monster;
+        if(turn == Turn.HUMAN){
+            for (Card card:battle.getRivalField().getMonsterField().getCards()) {
+                monster = (Monster) card;
+                if(monster.isDefender())
+                    cards.add(monster);
+            }
+        }
+        else{
+            for (Card card:battle.getPlayerField().getMonsterField().getCards()) {
+                monster = (Monster) card;
+                if(monster.isDefender())
+                    cards.add(monster);
+            }
+        }
+        return cards;
     }
 }
