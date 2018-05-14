@@ -4,8 +4,18 @@ import Models.Thing;
 import Models.Fields.Place;
 
 public class Card extends Thing {
+    protected int MP;
 
     private Race race;
+
+
+    public int getMP() {
+        return MP;
+    }
+
+    public void setMP(int MP) {
+        this.MP = MP;
+    }
 
     public Race getRace() {
         return race;

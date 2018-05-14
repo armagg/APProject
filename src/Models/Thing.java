@@ -3,7 +3,7 @@ package Models;
 public abstract class Thing {
 
     protected int cost;
-    protected int MP;
+
     protected String name;
 
     private String detail;
@@ -21,13 +21,7 @@ public abstract class Thing {
         this.cost = cost;
     }
 
-    public int getMP() {
-        return MP;
-    }
 
-    public void setMP(int MP) {
-        this.MP = MP;
-    }
 
     public String getName() {
         return name;
