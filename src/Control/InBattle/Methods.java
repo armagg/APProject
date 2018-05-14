@@ -35,7 +35,7 @@ public class Methods {
     }
 
     public static boolean attackMonsters(Battle battle, Monster attacker, Monster goal) {
-        ArrayList<Card> cardArrayList = new ArrayList<>(5);
+        ArrayList<Card> cardArrayList;
         boolean haveDefender = false;
         Monster defender = null;
         if (attacker.isAwake() && attacker.isDefender()) {

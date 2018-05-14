@@ -114,4 +114,10 @@ public class Battle {
 
         return cards;
     }
+
+    public Field getOtherField(){
+        if(this.getTurn() == Turn.HUMAN)
+            return RivalField;
+        return playerField;
+    }
 }
