@@ -1,11 +1,24 @@
 package Models.Cards.Classes;
 
 public class Monster extends Card{
+
     private int HP;
+
     private int AP;
+
     Race race;
 
-    private boolean isRimble;
+    MonsterType monsterType;
+
+    public MonsterType getMonsterType() {
+        return monsterType;
+    }
+
+    public void setMonsterType(MonsterType monsterType) {
+        this.monsterType = monsterType;
+    }
+
+    private boolean isNimble;
     private boolean isAwake;
     private boolean isDefender;
 
@@ -54,12 +67,12 @@ public class Monster extends Card{
 
     }
 
-    public boolean isRimble() {
-        return isRimble;
+    public boolean isNimble() {
+        return isNimble;
     }
 
-    public void setRimble(boolean rimble) {
-        isRimble = rimble;
+    public void setNimble(boolean Nimble) {
+        isNimble = Nimble;
     }
 
     public boolean isAwake() {

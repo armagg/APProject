@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 public class Hero {
     private int HP;
+    /** Gil is defiend in the database **/
 
     private ArrayList<Amulet> amulets = new ArrayList<>(3);
 
