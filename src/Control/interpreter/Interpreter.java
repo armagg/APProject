@@ -3,7 +3,7 @@ package Control.interpreter;
 import Models.Cards.Classes.Monster;
 import Models.Cards.Classes.Normal;
 import Models.Cards.Classes.Race;
-
+import Models.Cards.Classes.SpellCasters;
 
 
 public class Interpreter {
@@ -17,6 +17,12 @@ public class Interpreter {
         int cost = normalCost * normal.getMP();
         normal.setCost(cost);
         return normal;
+    }
+
+    public SpellCasters creatSpellcaster(String details, String spell) {
+        SpellCasters spellCasters = new SpellCasters();
+
+        return spellCasters;
     }
 
 
