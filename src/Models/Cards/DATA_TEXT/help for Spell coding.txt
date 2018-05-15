@@ -1,0 +1,12 @@
+Spells:
+"*"in first of line for each spell.
+", "for split some of thing from each other.
+all off details should be lowercase.
+format:
+*name, type, notes
+de/in n(cards from) place(lowercase) collectionType (%)amount
+//
+move from to(lowercase) n(cards) (collectionType)
+
+
+
