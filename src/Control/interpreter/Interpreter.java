@@ -13,20 +13,23 @@ public class Interpreter {
     final int generalCost = 700;
 
     public Normal creatNormal(String details) {
-        Normal normal = (Normal) publicfields(details);
+        Normal normal = (Normal) publicattributes(details);
         int cost = normalCost * normal.getMP();
         normal.setCost(cost);
         return normal;
     }
 
     public SpellCasters creatSpellcaster(String details, String spell) {
-        SpellCasters spellCasters = new SpellCasters();
+        SpellCasters spellCaster = new SpellCasters();
 
-        return spellCasters;
+        Normal normal = (Normal) publicattributes(details);
+        spellCaster.setAP(normal.getAP());
+
+        return spellCaster;
     }
 
 
-    private static Monster publicfields(String details) {
+    private static Monster publicattributes(String details) {
         Normal normal = new Normal();
         String name = null;
         Race race = Race.Atlantians;

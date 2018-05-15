@@ -5,7 +5,6 @@ import Models.Store.Store;
 
 public class DataBase {
     private Store store;
-    static private int Gil;
     private Deck deck;
     private boolean isUsed = false;
 
@@ -16,19 +15,6 @@ public class DataBase {
 
     public void setStore(Store store) {
         this.store = store;
-    }
-
-    static public int getGil() {
-        return Gil;
-    }
-
-    static public void gilPrinter() {
-        System.out.println("Remaining Gil:" + getGil()) ;
-    }
-
-
-    public void setGil(int gil) {
-        Gil = gil;
     }
 
     public Deck getDeck() {

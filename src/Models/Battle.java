@@ -5,6 +5,7 @@ import Models.Fields.Field;
 import Models.Heroes.Hero;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Battle {
@@ -107,7 +108,7 @@ public class Battle {
         return RivalField;
     }
 
-    public ArrayList<Card> returnCardsInGame() {
+    public List<Card> returnCardsInGame() {
         ArrayList<Card> cards = new ArrayList<>(20);
         cards.addAll(playerField.getAllCards());
         cards.addAll(RivalField.getAllCards());
