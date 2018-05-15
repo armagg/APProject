@@ -7,8 +7,10 @@ import Models.Cards.Classes.Race;
 import Models.Fields.Place;
 import Models.Fields.SuperField;
 import Models.Turn;
+import Veiw.actionInGame.SelectFrom;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Collectors {
@@ -25,6 +27,24 @@ public class Collectors {
         }
         return cards;
 
+    }
+
+    public static ArrayList<Card> selectFrom(Battle battle, Place place, int number) {
+        SelectFrom select = new SelectFrom();
+        List<Card> list = null;
+        try {
+            list = battle.getCurrentField().returnField(place).getCards();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        select.showCards(list);
+        List<Integer> numbers = select.whichNumbers(number);
+        List<Card> cards = new ArrayList<>(number);
+        for (int i = 0; i < number; i++) {
+            cards.add(list.get(numbers.get(i)));//TODO: maybe is wrong.
+        }
+
+        return (ArrayList<Card>) cards;
     }
 
     static public ArrayList<Card> ToSpecialRace(Battle battle, Race race) {
@@ -63,8 +83,8 @@ public class Collectors {
     }
 
     static public ArrayList<Card> randomCards(Battle battle, int number, Place place) {
-        ArrayList<Integer> numbers = new ArrayList<>(10);
-        ArrayList<Card> output = new ArrayList<>(number);
+        ArrayList<Integer> numbers;
+        ArrayList<Card> output;
         if (battle.getTurn() == Turn.HUMAN) {
             numbers = randomCreator(battle.getPlayerField().returnField(place).getNumberOfCards(), number);
             output = selectCards(numbers, battle.getPlayerField().returnField(place));
@@ -133,7 +153,7 @@ public class Collectors {
             return battle.getRivalField().returnField(originPlace).getCards();
     }
 
-    static public ArrayList<Card> enemyDefendersOfMonsterField(Battle battle, Turn turn){
+    static public List<Card> enemyDefendersOfMonsterField(Battle battle, Turn turn) {
         ArrayList<Card> cards = new ArrayList<>();
         Monster monster;
         if(turn == Turn.HUMAN){

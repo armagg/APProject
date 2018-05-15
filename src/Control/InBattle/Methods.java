@@ -54,8 +54,6 @@ public class Methods {
                 }
             }
             try {
-
-
                 if (haveDefender) {
                     defender.reduceHP(attacker.getAP());
                     attacker.reduceHP(defender.getAP());

@@ -11,6 +11,7 @@ public class Spell {
 
     public Spell(String details) {
 
+
     }
 
     public Place getOrigin() {
