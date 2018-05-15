@@ -9,6 +9,16 @@ public class Hero {
     private int HP;
     /** Gil is defiend in the database **/
 
+    static private int Gil;
+
+    public static int getGil() {
+        return Gil;
+    }
+
+    public static void setGil(int gil) {
+        Gil = gil;
+    }
+
     private ArrayList<Amulet> amulets = new ArrayList<>(3);
 
     private ArrayList<Item> items = new ArrayList<>(3);
