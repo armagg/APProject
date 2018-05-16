@@ -1,8 +1,6 @@
 package Veiw.shopMenue;
 
-import Models.Cards.Classes.Card;
 import Models.Eqiupments.Amulet;
-import Models.Eqiupments.Item;
 import Veiw.MainMenu.Main;
 
 import java.util.ArrayList;

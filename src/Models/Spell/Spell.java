@@ -9,6 +9,10 @@ public class Spell {
     private int number;
     private Place origin;
 
+    public Spell(String details) {
+
+
+    }
 
     public Place getOrigin() {
         return origin;
