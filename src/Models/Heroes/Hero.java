@@ -7,7 +7,25 @@ import java.util.ArrayList;
 
 public class Hero {
     private int HP;
-    /** Gil is defiend in the database **/
+    private boolean isEquipped;
+    private Amulet equipAmulet;
+
+    public Amulet getEquipAmulet() {
+        return equipAmulet;
+    }
+
+    public void setEquipAmulet(Amulet equipAmulet) {
+        this.equipAmulet = equipAmulet;
+    }
+
+    public boolean isEquipped() {
+        return isEquipped;
+    }
+
+    public void setEquipped(boolean equipped) {
+        isEquipped = equipped;
+    }
+
 
     static private int Gil;
 

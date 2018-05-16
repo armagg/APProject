@@ -1,5 +1,7 @@
 package Veiw.MainMenu;
 
+import Models.Heroes.Hero;
+
 import java.util.Scanner;
 
 public class Main {
@@ -9,6 +11,10 @@ public class Main {
         System.out.println("1. Enter Shop : to inter shop and buy or sell Cards and Items \n " +
                 "2. Edit \n" +
                 "3. Next : To go to deck and amulet customization ");
+    }
+
+    static public void GilPrinter() {
+        System.out.println("Remaining Gil: " + Hero.getGil());
     }
 
     static int nextMenu() {

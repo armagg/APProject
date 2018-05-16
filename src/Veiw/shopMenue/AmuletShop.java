@@ -23,7 +23,7 @@ public class AmuletShop {
 
         System.out.println("   Card Inventory");
         for (Amulet amulet : inventoryList) {
-            System.out.println(counter + ". " + amulet.getName() /**num on deck **/);
+            System.out.println(counter + ". " + amulet.getName() /** TODO num on deck **/);
         }
     }
 
@@ -34,7 +34,7 @@ public class AmuletShop {
         System.out.println("3. Info \"Amulet name\": To get full info on an amulet ");
         System.out.println("4. Edit Amulets: To equip or remove your heroes amulet");
         System.out.println("5. Exit: TO exit to the shop menu");
-        /**TODO you shoul know that the telesm shouldn't be equiped on hero for selling**/
+        /**TODO you should know that the telesm shouldn't be equiped on hero for selling**/
     }
 
     public void successBuy(int number, String name){
