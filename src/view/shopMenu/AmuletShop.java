@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import static java.lang.System.out;
+import static java.lang.System.setOut;
 
 public class AmuletShop {
     public void listPrinter(ArrayList<Amulet> shopList, ArrayList<Amulet> inventoryList, HashMap<String, Integer> numbersOfAmulet,String Equiption) {
