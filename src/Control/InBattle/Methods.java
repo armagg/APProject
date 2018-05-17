@@ -1,12 +1,17 @@
 package Control.InBattle;
+import Control.Functions.AddOrReduce;
+import Control.Functions.Operators;
 
 import Models.Battle;
 import Models.Cards.Classes.Card;
 import Models.Cards.Classes.Monster;
+import Models.Heroes.Hero;
 import Models.Turn;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+
+import static Control.Functions.Collectors.enemyDefendersOfMonsterField;
 
 public class Methods {
     static void toHand(Battle battle) {
@@ -70,6 +75,17 @@ public class Methods {
 
         }
             return false;
+    }
+//TODO
+
+    public static boolean attackHero(Battle battle, Monster attacker, Hero hero){
+        if(enemyDefendersOfMonsterField(battle) == null){
+            Operators.HeroPowerChanger(hero,attacker.getAP(), AddOrReduce.REDUCE);
+            return true;
+        }
+        else{
+            return attackMonsters(battle,attacker,(Monster)enemyDefendersOfMonsterField(battle).get(0));
+        }
     }
 
 

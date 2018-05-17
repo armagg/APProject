@@ -153,10 +153,10 @@ public class Collectors {
             return battle.getRivalField().returnField(originPlace).getCards();
     }
 
-    static public List<Card> enemyDefendersOfMonsterField(Battle battle, Turn turn) {
+    public static List<Card> enemyDefendersOfMonsterField(Battle battle) {
         ArrayList<Card> cards = new ArrayList<>();
         Monster monster;
-        if(turn == Turn.HUMAN){
+        if(battle.getTurn() == Turn.HUMAN){
             for (Card card:battle.getRivalField().getMonsterField().getCards()) {
                 monster = (Monster) card;
                 if(monster.isDefender())
