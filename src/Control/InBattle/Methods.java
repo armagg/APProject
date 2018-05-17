@@ -98,7 +98,7 @@ public class Methods {
 
     public static boolean handOver(Battle battle){
         battle.nextTurn();
-
+        return true;
     }
 
 
