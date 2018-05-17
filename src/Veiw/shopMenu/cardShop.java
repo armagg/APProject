@@ -1,4 +1,4 @@
-package Veiw.shopMenue;
+package Veiw.shopMenu;
 
 import Models.Cards.Classes.Card;
 import Models.Cards.Classes.Monster;

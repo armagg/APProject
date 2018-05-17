@@ -1,4 +1,4 @@
-package Veiw.shopMenue;
+package Veiw.shopMenu;
 
 import Models.Eqiupments.Amulet;
 import Veiw.MainMenu.Main;

@@ -16,10 +16,12 @@ public class Operators {
                 for (Monster card : cards) {
                     card.addAP(amount*(addOrReduce.ordinal()*2-1));/*converting {0,1} to {-1,1}*/
                 }
+                break;
             case HP:
                 for (Monster card : cards) {
                     card.addHP(amount*(addOrReduce.ordinal()*2-1));/*converting {0,1} to {-1,1}*/
                 }
+                break;
         }
 
 

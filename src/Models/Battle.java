@@ -16,7 +16,7 @@ public class Battle {
     private Hero rivalHero;
 
 
-    private Turn player;
+    private Turn turn;
     private int MP = 0;
 
     public Battle(Field playerField, Field rivalField) {
@@ -25,12 +25,12 @@ public class Battle {
         Random random = new Random();
         int temp = random.nextInt(2);
         if (temp == 1) {
-            player = Turn.RIVAL;
+            turn = Turn.RIVAL;
             Card tempCard = playerField.getDeck().getRandomCard();
             playerField.getHand().addCard(tempCard);
 
         } else {
-            player = Turn.HUMAN;
+            turn = Turn.HUMAN;
             Card tempCard = this.rivalField.getDeck().getRandomCard();
             this.rivalField.getHand().addCard(tempCard);
         }
@@ -44,10 +44,10 @@ public class Battle {
     }
 
     public void nextTurn() {
-        if (Turn.HUMAN == player)
-            player = Turn.RIVAL;
+        if (Turn.HUMAN == turn)
+            turn = Turn.RIVAL;
         else
-            player = Turn.HUMAN;
+            turn = Turn.HUMAN;
     }
 
     public void initiateCardsDistribution(){
@@ -61,7 +61,7 @@ public class Battle {
     }
 
     public Turn getTurn() {
-        return player;
+        return turn;
     }
 
     public Field getPlayerField() {
@@ -125,5 +125,14 @@ public class Battle {
         if(this.getTurn() == Turn.HUMAN)
             return playerField;
         return rivalField;
+    }
+
+    public void randomInitialTurn(){
+        Random random = new Random();
+        if(random.nextBoolean()){
+            this.turn = Turn.HUMAN;
+        }
+        else
+            this.turn = Turn.RIVAL;
     }
 }

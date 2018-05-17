@@ -1,5 +1,5 @@
 package Models.Spell;
 
 public enum SpellCollectionType {
-    Select, All, Ramdom, SpecialRace
+    Select, OwnAll, Ramdom, SpecialRace, All
 }

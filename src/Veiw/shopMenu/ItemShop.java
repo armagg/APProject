@@ -1,6 +1,5 @@
-package Veiw.shopMenue;
+package Veiw.shopMenu;
 
-import Models.Cards.Classes.Card;
 import Models.Eqiupments.Item;
 import Veiw.MainMenu.Main;
 

@@ -1,7 +1,5 @@
 package Veiw.MainMenu;
 
-import Models.Heroes.Hero;
-
 import java.util.Scanner;
 
 public class Main {
@@ -13,9 +11,6 @@ public class Main {
                 "3. Next : To go to deck and amulet customization ");
     }
 
-    static public void GilPrinter() {
-        System.out.println("Remaining Gil: " + Hero.getGil());
-    }
 
     static int nextMenu() {
         String s = scanner.next();

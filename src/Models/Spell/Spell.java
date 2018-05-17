@@ -8,6 +8,14 @@ public class Spell {
     private SpellCollectionType spellCollectionType;
     private int number;
     private Place origin;
+    private Place destination;
+    private int amount;
+
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
 
     public Spell(String details) {
 
@@ -22,15 +30,13 @@ public class Spell {
         this.origin = origin;
     }
 
-    public Place getDesination() {
-        return desination;
+    public Place getDestination() {
+        return destination;
     }
 
-    public void setDesination(Place desination) {
-        this.desination = desination;
+    public void setDestination(Place destination) {
+        this.destination = destination;
     }
-
-    private Place desination;
 
 
     public Spellkind getSpellkind() {
@@ -63,5 +69,9 @@ public class Spell {
 
     public void setNumber(int number) {
         this.number = number;
+    }
+
+    public int getAmount() {
+        return amount;
     }
 }
