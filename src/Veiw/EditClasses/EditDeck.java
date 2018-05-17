@@ -1,12 +1,8 @@
 package Veiw.EditClasses;
 
-import Models.Cards.Classes.Card;
 import Models.Cards.Classes.Monster;
 import Models.Cards.Classes.SpellCards;
-import Veiw.MainMenu.Main;
-import Veiw.shopMenue.cardShop;
-
-import static java.lang.System.out;
+import Veiw.shopMenu.cardShop;
 
 public class EditDeck {
     public void help(){

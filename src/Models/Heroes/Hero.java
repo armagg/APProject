@@ -6,6 +6,9 @@ import Models.Eqiupments.Item;
 import java.util.ArrayList;
 
 public class Hero {
+
+
+    String name;
     private int HP;
     private boolean isEquipped;
     private Amulet equipAmulet;
@@ -87,5 +90,13 @@ public class Hero {
 
     public void reduceHP(int amount) {
         HP -= amount;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
