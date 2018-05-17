@@ -76,7 +76,7 @@ public class Methods {
         }
             return false;
     }
-//TODO
+    //TODO
 
     public static boolean attackHero(Battle battle, Monster attacker, Hero hero){
         if(enemyDefendersOfMonsterField(battle) == null){
@@ -86,6 +86,19 @@ public class Methods {
         else{
             return attackMonsters(battle,attacker,(Monster)enemyDefendersOfMonsterField(battle).get(0));
         }
+    }
+
+    public static ArrayList<Card> showPlayerGraveYard(Battle battle){
+        return battle.getPlayerField().getGraveYard().getCards();
+    }
+
+    public static ArrayList<Card> showRivalGraveYard(Battle battle){
+        return battle.getRivalField().getGraveYard().getCards();
+    }
+
+    public static boolean handOver(Battle battle){
+        battle.nextTurn();
+        return true;
     }
 
 

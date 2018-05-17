@@ -11,6 +11,7 @@ public class Main {
                 "3. Next : To go to deck and amulet customization ");
     }
 
+
     static int nextMenu() {
         String s = scanner.next();
         if (s.equals("help")) {
@@ -22,4 +23,7 @@ public class Main {
         }
     }
 
+    public static void GilPrinter() {
+
+    }
 }
