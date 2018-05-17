@@ -3,10 +3,7 @@ Spells:
 ", "for split some of thing from each other.
 all off details should be lowercase.
 format:
-*name, type, notes
+*name, cost, notes
 de/in n(cards from) place(lowercase) collectionType (%)amount
 //
 move from to(lowercase) n(cards) (collectionType)
-
-
-

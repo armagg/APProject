@@ -88,5 +88,18 @@ public class Methods {
         }
     }
 
+    public static ArrayList<Card> showPlayerGraveYard(Battle battle){
+        return battle.getPlayerField().getGraveYard().getCards();
+    }
+
+    public static ArrayList<Card> showRivalGraveYard(Battle battle){
+        return battle.getRivalField().getGraveYard().getCards();
+    }
+
+    public static boolean handOver(Battle battle){
+        battle.nextTurn();
+
+    }
+
 
 }

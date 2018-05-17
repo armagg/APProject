@@ -1,4 +1,5 @@
-"Throwing Knives" 3 "Deal 500 damage to a selected enemy monster card on the field or to enemy player"
+*Throwing Knives, 3, "Deal 500 damage to a selected enemy monster card on the field or to enemy player"
+de 1 monstercardfield select
 "First Aid Kit" 3 "Increase HP of a selected friendly monster card or player by 500"
 "Reaper's Scythe" 4 "Send an enemy monster or spell card from field to graveyard"
 "Strategic Retreat" 6 "Select and move a monster card from field to hand and draw one card from deck"
