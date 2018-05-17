@@ -76,7 +76,7 @@ public class Methods {
         }
             return false;
     }
-//TODO
+    //TODO
 
     public static boolean attackHero(Battle battle, Monster attacker, Hero hero){
         if(enemyDefendersOfMonsterField(battle) == null){
