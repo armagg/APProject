@@ -6,11 +6,12 @@ import Models.Cards.Classes.SpellCards;
 import Veiw.MainMenu.Main;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import static java.lang.System.*;
 
 public class cardShop{
-    public void listPrinter(ArrayList<Card> shopCards, ArrayList<Card> playerCards) {
+    public void listPrinter(ArrayList<Card> shopCards, ArrayList<Card> playerCards, HashMap<String, Integer> numbersOfCards) {
         Main.GilPrinter();
         out.println("   Shop list:");
         int counter = 1;
@@ -23,7 +24,7 @@ public class cardShop{
 
         out.println("   Card Inventory");
         for (Card card : playerCards) {
-            out.println(counter + ". " + card.getName() /**TODO num on deck **/);
+            out.println(counter + ". " + card.getName() + " / " + numbersOfCards.get(card.getName()));
         }
     }
 
@@ -60,9 +61,9 @@ public class cardShop{
         out.println(card.getName() + " Info");
         String general = "Name: " + card.getName() + "\n" + "HP: " + card.getHP() + "\n" + "AP: " + card.getAP() + "\n"
         + "MP cost: " + card.getMP() + "\n" + "Card Type: " + card.getMonsterType().name() + "\n" + "Card Tribe: " + card.getRace().name() + "\n"
-        + "Is Defensive: " + card.isDefender() + "\n" + "Is Nimble: " + card.isNimble() + "\n";
+        + "Is Defensive: " + card.isDefender() + "\n" + "Is Nimble: " + card.isNimble() + "\n" + card.toString();
 
-        /**TODO**/
+        /**TODO**/ /*فکر کنم یه تو استرینگ درستش کرده باشه*/
 
         System.out.println(general);
     }
@@ -73,12 +74,27 @@ public class cardShop{
         out.println("Name: " + card.getName());
         out.println("MP cost: " + card.getMP());
         out.println("Card Type: " + card.getSpellType().name());
-        /** TODO **/
+        System.out.println(card.toString());
     }
 
-    public void editDeck(){
+    public void editDeck(HashMap<String, Integer> numOnDeck, ArrayList<Card> cards){
 
-        /**TODO **/
+/*ببین اینجوری زدم که اسلاتای خالی بیفتن ته دک ... از پایان تعداد کارتا تا شماره ی 30 خالی بودن چاپ کنه*/
+        Main.GilPrinter();
+        System.out.println("Deck:");
+        int count = 1 ;
+        for(Card card: cards){
+            System.out.print("Slot" + count + ": " + card.getName());
+            count++;
+        }
+        int numbersOfEmpty = 30 - cards.size();
+        for(int i = 0 ; i < numbersOfEmpty ; i++){
+            System.out.print("Slot" + count + ": Empty");
+            count++;
+        }
+
+         /*آقا ناموسا نمیفهم منظورش از آدرکارت چیه */
+         /**TODO **/
 
     }
 

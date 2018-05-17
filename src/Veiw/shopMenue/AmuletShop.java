@@ -4,11 +4,13 @@ import Models.Eqiupments.Amulet;
 import Veiw.MainMenu.Main;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import static java.lang.System.out;
+import static java.lang.System.setOut;
 
 public class AmuletShop {
-    public void listPrinter(ArrayList<Amulet> shopList, ArrayList<Amulet> inventoryList) {
+    public void listPrinter(ArrayList<Amulet> shopList, ArrayList<Amulet> inventoryList, HashMap<String, Integer> numbersOfAmulet,String Equiption) {
         Main.GilPrinter();
         out.println("   Shop list:");
         int counter = 1;
@@ -17,11 +19,17 @@ public class AmuletShop {
             counter++;
         }
 
+        if(Equiption != null){
+            System.out.println();
+            System.out.println("Equipped Amulet: " + Equiption);
+            System.out.println( );
+        }
+
         counter = 1;
 
         System.out.println("   Card Inventory");
         for (Amulet amulet : inventoryList) {
-            System.out.println(counter + ". " + amulet.getName() /** TODO num on deck **/);
+            System.out.println(counter + ". " + numbersOfAmulet.get(amulet.getName()) + amulet.getName());
         }
     }
 
@@ -51,12 +59,26 @@ public class AmuletShop {
     }
 
     public void notEnoughCard(){
+        Main.GilPrinter();
         out.println("Not enough amulets!");
     }
 
     public void info(Amulet amulet){
+        Main.GilPrinter();
         System.out.println(amulet.getName() + ":");
         System.out.println(amulet.toString());
+    }
+
+    public void EditAmulets(ArrayList<Amulet> amulets, String nameOfEquiption){
+        Main.GilPrinter();
+        int count = 1;
+        for(Amulet amulet: amulets){
+            System.out.println(count + "." + amulet.getName());
+            count++;
+        }
+        if(nameOfEquiption != null){
+            System.out.println("Player is equipped with" + nameOfEquiption);
+        }
     }
 
 
