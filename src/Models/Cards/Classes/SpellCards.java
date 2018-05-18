@@ -1,11 +1,27 @@
 package Models.Cards.Classes;
 
+import Models.Battle;
 import Models.Spell.Spell;
 
-public class SpellCards extends Card {
-    Spell spell;
-
+public abstract class SpellCards extends Card {
+    public SpellCards(String name, int MP, SpellType spellType) {
+        this.name = name;
+        this.MP = MP;
+        this.spellType = spellType;
+        this.cost = 700 * MP;
+    }
     private SpellType spellType;
+    private String SpellDetails;
+
+    public abstract void doSpell(Battle battle);
+
+    public String getSpellDetails() {
+        return SpellDetails;
+    }
+
+    public void setSpellDetails(String spellDetails) {
+        SpellDetails = spellDetails;
+    }
 
     public SpellType getSpellType() {
         return spellType;
@@ -22,4 +38,6 @@ public class SpellCards extends Card {
     public void setSpell(Spell spell) {
         this.spell = spell;
     }
+
+    Spell spell;
 }
