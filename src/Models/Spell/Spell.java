@@ -1,5 +1,6 @@
 package Models.Spell;
 
+import Models.Cards.Classes.Race;
 import Models.Fields.Place;
 
 public class Spell {
@@ -10,6 +11,16 @@ public class Spell {
     private Place origin;
     private Place destination;
     private int amount;
+    private Race race;
+
+
+    public Race getRace() {
+        return race;
+    }
+
+    public void setRace(Race race) {
+        this.race = race;
+    }
 
 
     public void setAmount(int amount) {

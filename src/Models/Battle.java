@@ -37,6 +37,10 @@ public class Battle {
 
     }
 
+    public Battle() {
+
+    }
+
     public void nextRound() {
         MP++;
         nextTurn();

@@ -8,10 +8,23 @@ import java.util.ArrayList;
 public class Hero {
 
 
-    String name;
+    private String name;
     private int HP;
     private boolean isEquipped;
     private Amulet equipAmulet;
+    private int gil;
+
+    public int getGil() {
+        return gil;
+    }
+
+    public void setGil(int gil) {
+        this.gil = gil;
+    }
+
+    private ArrayList<Amulet> amulets = new ArrayList<>(3);
+
+    private ArrayList<Item> items = new ArrayList<>(3);
 
     public Amulet getEquipAmulet() {
         return equipAmulet;
@@ -28,21 +41,6 @@ public class Hero {
     public void setEquipped(boolean equipped) {
         isEquipped = equipped;
     }
-
-
-    static private int Gil;
-
-    public static int getGil() {
-        return Gil;
-    }
-
-    public static void setGil(int gil) {
-        Gil = gil;
-    }
-
-    private ArrayList<Amulet> amulets = new ArrayList<>(3);
-
-    private ArrayList<Item> items = new ArrayList<>(3);
 
     public void addItem(Item item) {
         items.add(item);

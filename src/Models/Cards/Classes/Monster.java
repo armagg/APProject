@@ -2,13 +2,16 @@ package Models.Cards.Classes;
 
 public class Monster extends Card{
 
-    private int HP;
+    protected int HP;
 
-    private int AP;
+    int AP;
 
     Race race;
+    boolean isNimble;
+    private boolean isAwake;
+    boolean isDefender;
+    private MonsterType monsterType;
 
-    MonsterType monsterType;
 
     public MonsterType getMonsterType() {
         return monsterType;
@@ -17,10 +20,6 @@ public class Monster extends Card{
     public void setMonsterType(MonsterType monsterType) {
         this.monsterType = monsterType;
     }
-
-    private boolean isNimble;
-    private boolean isAwake;
-    private boolean isDefender;
 
     public int getHP() {
         return HP;

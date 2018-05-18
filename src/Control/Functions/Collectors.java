@@ -6,6 +6,7 @@ import Models.Cards.Classes.Monster;
 import Models.Cards.Classes.Race;
 import Models.Fields.Place;
 import Models.Fields.SuperField;
+import Models.Spell.Player;
 import Models.Turn;
 import Veiw.actionInGame.SelectFrom;
 
@@ -47,14 +48,15 @@ public class Collectors {
         return (ArrayList<Card>) cards;
     }
 
-    static public ArrayList<Card> ToSpecialRace(Battle battle, Race race) {
+    static public ArrayList<Card> ToSpecialRace(Battle battle, Race race, Player player) {
         ArrayList<Card> cards = new ArrayList<>();
-        if (battle.getTurn() == Turn.HUMAN) {
+        ArrayList<Card> cards1 = new ArrayList<>();
+        if ((battle.getTurn() == Turn.HUMAN && player == Player.hasTurn) || (battle.getTurn() == Turn.RIVAL && player == Player.notHasTurn)) {
             for (Card card : battle.getPlayerField().getMonsterField().getCards()) {
                 if (card.getRace() == race)
                     cards.add(card);
             }
-        } else {
+        } else if ((battle.getTurn() == Turn.HUMAN && player == Player.notHasTurn) || (battle.getTurn() == Turn.RIVAL && player == Player.hasTurn)) {
             for (Card card : battle.getRivalField().getMonsterField().getCards()) {
                 if (card.getRace() == race)
                     cards.add(card);
