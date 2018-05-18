@@ -18,9 +18,9 @@ public abstract class Generals extends Monster {
         monsterType = MonsterType.GENERAL;
     }
 
-    public abstract boolean doBattleCry(Battle battle);
+    public abstract void doBattleCry(Battle battle);
 
-    public abstract boolean doWill(Battle battle);
+    public abstract void doWill(Battle battle);
 
 
     public String getWillDetails() {

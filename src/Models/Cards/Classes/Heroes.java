@@ -21,11 +21,11 @@ public abstract class Heroes extends Monster {
         monsterType = MonsterType.HERO;
     }
 
-    abstract public boolean doSpell(Battle battle);
+    abstract public void doSpell(Battle battle);
 
-    abstract public boolean doWill(Battle battle);
+    abstract public void doWill(Battle battle);
 
-    abstract public boolean doBattleCry(Battle battle);
+    abstract public void doBattleCry(Battle battle);
 
     @Override
     public String toString() {
