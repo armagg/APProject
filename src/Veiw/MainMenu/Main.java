@@ -1,10 +1,13 @@
 package Veiw.MainMenu;
 
+import Models.Battle;
+
 import java.util.Scanner;
 
 public class Main {
     static Scanner scanner = new Scanner(System.in);
 
+    private static Battle battle = new Battle();
     static void showMenu() {
         System.out.println("1. Enter Shop : to inter shop and buy or sell Cards and Items \n " +
                 "2. Edit \n" +
@@ -21,6 +24,10 @@ public class Main {
             int nextMenu = Integer.parseInt(s);
             return nextMenu;
         }
+    }
+
+    public static void GilPrinter() {
+        System.out.println(battle.getPlayerHero().getGil());
     }
 
 }
