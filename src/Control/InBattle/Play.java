@@ -11,4 +11,9 @@ public class Play {
         battle.randomInitialTurn();
         play = new Veiw.actionInGame.Play(battle);
     }
+    public void startGame(){
+        while (true){
+            play.nextMove();
+        }
+    }
 }
