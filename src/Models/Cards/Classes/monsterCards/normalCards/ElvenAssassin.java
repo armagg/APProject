@@ -5,6 +5,6 @@ import Models.Cards.Classes.Race;
 
 public final class ElvenAssassin extends Normal {
     public ElvenAssassin() {
-        super(800, 1200, 5, Race.Elves, true, false);
+        super("Elven Assassin", 800, 1200, 5, Race.Elves, true, false);
     }
 }
