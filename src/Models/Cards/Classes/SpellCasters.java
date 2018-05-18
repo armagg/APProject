@@ -1,11 +1,42 @@
 package Models.Cards.Classes;
 
+import Models.Battle;
 import Models.Spell.Spell;
 
-public class SpellCasters extends Monster {
+public abstract class SpellCasters extends Monster {
     private boolean isSpellUsed = false;
+    private String spellDetails;
 
-    Spell spell;
+
+    public SpellCasters(String name, int HP, int AP, int MP, Race race, boolean isNimble, boolean isDefender) {
+        this.name = name;
+        this.HP = HP;
+        this.MP = MP;
+        this.AP = AP;
+        this.race = race;
+        this.isNimble = isNimble;
+        this.isDefender = isDefender;
+        this.cost = MP * 500;
+        monsterType = MonsterType.SPELLCASTER;
+    }
+
+    public abstract void DoSpell(Battle battle);
+
+    @Override
+    public String toString() {
+        //TODO...
+        return super.toString();
+    }
+
+    private Spell spell;
+
+    public String getSpellDetails() {
+        return spellDetails;
+    }
+
+    public void setSpellDetails(String spellDetails) {
+        this.spellDetails = spellDetails;
+    }
 
     public Spell getSpell() {
         return spell;

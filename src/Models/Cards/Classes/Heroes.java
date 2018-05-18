@@ -1,13 +1,66 @@
 package Models.Cards.Classes;
 
+import Models.Battle;
 import Models.Spell.Spell;
 
-public class Heroes extends Monster {
+public abstract class Heroes extends Monster {
     private boolean isSpellUsed = false;
 
-    Spell spell;
-    Spell will;
-    Spell BattleCry;
+    public Heroes() {
+    }
+
+    public Heroes(String name, int HP, int AP, int MP, Race race, boolean isNimble, boolean isDefender) {
+        this.name = name;
+        this.HP = HP;
+        this.MP = MP;
+        this.AP = AP;
+        this.race = race;
+        this.isNimble = isNimble;
+        this.isDefender = isDefender;
+        this.cost = MP * 1000;
+        monsterType = MonsterType.HERO;
+    }
+
+    abstract public boolean doSpell(Battle battle);
+
+    abstract public boolean doWill(Battle battle);
+
+    abstract public boolean doBattleCry(Battle battle);
+
+    @Override
+    public String toString() {
+        //TODO...
+        return super.toString();
+    }
+
+    public String getSpellDetails() {
+        return spellDetails;
+    }
+
+    public void setSpellDetails(String spellDetails) {
+        this.spellDetails = spellDetails;
+    }
+
+    private Spell spell;
+    private Spell will;
+    private Spell BattleCry;
+    private String spellDetails, willDetails, battleCryDetails;
+
+    public String getWillDetails() {
+        return willDetails;
+    }
+
+    public void setWillDetails(String willDetails) {
+        this.willDetails = willDetails;
+    }
+
+    public String getBattleCryDetails() {
+        return battleCryDetails;
+    }
+
+    public void setBattleCryDetails(String battleCryDetails) {
+        this.battleCryDetails = battleCryDetails;
+    }
 
     public Spell getSpell() {
         return spell;

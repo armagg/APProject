@@ -3,10 +3,12 @@ package Models.Cards.Classes;
 import Models.Thing;
 import Models.Fields.Place;
 
-public class Card extends Thing {
-    protected int MP;
+public abstract class Card extends Thing {
+    int MP;
 
-    private Race race;
+    protected Race race;
+    protected Place place;
+
 
 
     public int getMP() {
@@ -20,8 +22,6 @@ public class Card extends Thing {
     public Race getRace() {
         return race;
     }
-
-    private Place place;
 
     public Place getPlace() {
         return place;

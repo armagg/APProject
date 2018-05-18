@@ -1,16 +1,12 @@
 package Control.interpreter;
 
-import Models.Cards.Classes.*;
-import Models.Spell.Spell;
-
-
 public class Interpreter {
     final int normalCost = 300;
     final int spellCasterCost = 500;
     final int heroCost = 1000;
     final int generalCost = 700;
 
-    public Normal creatNormal(String details) {
+  /*  public Normal creatNormal(String details) {
         Normal normal = (Normal) publicattributes(details);
         normal.setCost(normalCost * normal.getMP());
         return normal;
@@ -49,8 +45,8 @@ public class Interpreter {
 
         return general;
     }
-
-    private static Monster setMonster(Monster normal, MonsterType monsterType) {
+*/
+   /* private static Monster setMonster(Monster normal, MonsterType monsterType) {
         Monster monster;
         if (monsterType == MonsterType.SPELLCASTER) {
             monster = new SpellCasters();
@@ -67,8 +63,8 @@ public class Interpreter {
         monster.setNimble(normal.isNimble());
         monster.setMonsterType(monsterType);
         return (Monster) monster;
-    }
-    private static Monster publicattributes(String details) {
+    }*/
+   /* private static Monster publicattributes(String details) {
         Normal normal = new Normal();
         String name = null;
         Race race = Race.Atlantians;
@@ -119,6 +115,6 @@ public class Interpreter {
 
         return (Monster) normal;
     }
-
+*/
 }
 

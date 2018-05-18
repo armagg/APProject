@@ -5,12 +5,10 @@ public class Monster extends Card{
     protected int HP;
 
     int AP;
-
-    Race race;
     boolean isNimble;
     private boolean isAwake;
     boolean isDefender;
-    private MonsterType monsterType;
+    protected MonsterType monsterType;
 
 
     public MonsterType getMonsterType() {
