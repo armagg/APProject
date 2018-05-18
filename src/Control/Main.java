@@ -1,6 +1,6 @@
 package Control;
 
-import Models.Cards.Classes.Normal;
+import Models.Cards.Classes.monsterCards.normalCards.ElvenHunter;
 
 import java.util.Random;
 
@@ -8,7 +8,10 @@ public class Main {
     public static void main(String[] args) {
         Random random = new Random();
         System.out.println(random.nextInt(2));
-        Normal normal = new Normal();
+        ElvenHunter elvenHunter = new ElvenHunter();
+        System.out.println(elvenHunter.getAP());
+
+
 //        normal.setMP(23);
         //      normal.setAP(321);
         ////   SpellCasters spellCasters= (SpellCasters)(Monster) normal;
