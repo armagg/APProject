@@ -1,11 +1,10 @@
-package Veiw.EditClasses;
+package view.EditClasses;
 
 import Models.Cards.Classes.Card;
 import Models.Eqiupments.Amulet;
 import Models.Eqiupments.Item;
-import Veiw.MainMenu.Main;
+import view.MainMenu.Main;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 

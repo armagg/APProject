@@ -1,4 +1,4 @@
-package Veiw.EditClasses;
+package view.EditClasses;
 
 import Models.Eqiupments.Amulet;
 

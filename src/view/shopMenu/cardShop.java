@@ -1,9 +1,9 @@
-package Veiw.shopMenu;
+package view.shopMenu;
 
 import Models.Cards.Classes.Card;
 import Models.Cards.Classes.Monster;
 import Models.Cards.Classes.SpellCards;
-import Veiw.MainMenu.Main;
+import view.MainMenu.Main;
 
 import java.util.ArrayList;
 import java.util.HashMap;

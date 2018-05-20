@@ -1,8 +1,8 @@
-package Veiw.EditClasses;
+package view.EditClasses;
 
 import Models.Cards.Classes.Monster;
 import Models.Cards.Classes.SpellCards;
-import Veiw.shopMenu.cardShop;
+import view.shopMenu.cardShop;
 
 public class EditDeck {
     public void help(){

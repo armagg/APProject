@@ -12,6 +12,5 @@ public final class BlueDragon extends SpellCasters {
 
     @Override
     public void DoSpell(Battle battle) {
-
     }
 }

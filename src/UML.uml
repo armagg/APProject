@@ -32,7 +32,7 @@
     <node x="548.6875000000001" y="0.0">Models.Thing</node>
     <node x="455.0000000000001" y="240.0">Models.Cards.Classes.SpellCasters</node>
     <node x="654.6815476190477" y="160.0">Models.Cards.Classes.Monster</node>
-    <node x="631.0" y="635.0">Veiw.SayHello</node>
+    <node x="631.0" y="635.0">view.SayHello</node>
     <node x="379.0" y="405.0">Models.Fields.GraveYard</node>
     <node x="660.0" y="405.0">Models.Fields.Deck</node>
     <node x="630.0" y="480.0">Models.Cards.RaceOfArcadia</node>

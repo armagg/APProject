@@ -13,7 +13,6 @@ public final class DarkKnight extends Generals {
 
     @Override
     public void doBattleCry(Battle battle) {
-
     }
 
     @Override

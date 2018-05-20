@@ -1,7 +1,7 @@
-package Veiw.shopMenu;
+package view.shopMenu;
 
 import Models.Eqiupments.Item;
-import Veiw.MainMenu.Main;
+import view.MainMenu.Main;
 
 
 import java.util.ArrayList;

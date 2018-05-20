@@ -1,6 +1,6 @@
-package Veiw.shopMenu;
+package view.shopMenu;
 
-import Veiw.MainMenu.Main;
+import view.MainMenu.Main;
 
 
 public class ShopSelecion {

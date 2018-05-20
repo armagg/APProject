@@ -8,7 +8,7 @@ import Models.Fields.Place;
 import Models.Fields.SuperField;
 import Models.Spell.Player;
 import Models.Turn;
-import Veiw.actionInGame.SelectFrom;
+import view.actionInGame.SelectFrom;
 
 import java.util.ArrayList;
 import java.util.List;

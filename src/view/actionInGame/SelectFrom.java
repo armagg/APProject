@@ -1,4 +1,4 @@
-package Veiw.actionInGame;
+package view.actionInGame;
 
 import Models.Cards.Classes.Card;
 
