@@ -1,4 +1,4 @@
-package Models.Cards.Classes.monsterCards.generalCards;
+package Models.Cards.Classes.monsterCards.heroCards;
 
 import Models.Battle;
 import Models.Cards.Classes.Heroes;

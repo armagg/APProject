@@ -12,8 +12,8 @@ public class Play {
         play = new Veiw.actionInGame.Play(battle);
     }
     public void startGame(){
-        while (true){
+        do {
             play.nextMove();
-        }
+        } while (true);
     }
 }

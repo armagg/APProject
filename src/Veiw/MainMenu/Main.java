@@ -21,8 +21,7 @@ public class Main {
             showMenu();
             return 0;
         } else {
-            int nextMenu = Integer.parseInt(s);
-            return nextMenu;
+            return Integer.parseInt(s);
         }
     }
 
