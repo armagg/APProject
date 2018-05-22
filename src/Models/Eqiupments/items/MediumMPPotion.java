@@ -1,6 +1,7 @@
-package Models.Eqiupments;
+package Models.Eqiupments.items;
 
 import Models.Battle;
+import Models.Eqiupments.Item;
 
 public class MediumMPPotion extends Item {
     public MediumMPPotion() {
