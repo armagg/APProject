@@ -1,7 +1,9 @@
 package Models.Fields;
 
 
+import Control.inShop.StaticFunctiontoHandle;
 import Models.Cards.Classes.Card;
+import org.omg.CORBA.INTERNAL;
 
 import java.util.HashMap;
 import java.util.Random;
@@ -11,14 +13,18 @@ public class Deck extends SuperField {
     private final int maxLength = 30;
     private final int minLength = 25;
 
+    private HashMap<String, Integer> cardsOnDeck = new HashMap<>();
 
+    public HashMap<String, Integer> getCardsOnDeck() {
+        return cardsOnDeck;
+    }
 
     @Override
     public boolean addCard(Card card) {
+        StaticFunctiontoHandle.add(cardsOnDeck, card);
         if (cards.size() < maxLength) {
             cards.add(card);
-            addToMap(card);
-            return true;
+                return true;
         }
 
         return false;
@@ -26,11 +32,10 @@ public class Deck extends SuperField {
 
     @Override
     public boolean deleteCard(Card card) {
+        StaticFunctiontoHandle.remove(cardsOnDeck, card);
         if (cards.size() > minLength) {
             cards.remove(card);
-            cardsOnField.remove(card.getName());
             return true;
-
         }
         return false;
     }

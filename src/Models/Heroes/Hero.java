@@ -2,8 +2,10 @@ package Models.Heroes;
 
 import Models.Eqiupments.Amulet;
 import Models.Eqiupments.Item;
+import Models.Fields.Inventory;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Hero {
 
@@ -13,6 +15,20 @@ public class Hero {
     private boolean isEquipped;
     private Amulet equipAmulet;
     private int gil;
+    private Inventory inventory;
+
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
+    }
+
+    public Hero(Inventory inventory) {
+
+        this.inventory = inventory;
+    }
 
     public int getGil() {
         return gil;
@@ -25,6 +41,9 @@ public class Hero {
     private ArrayList<Amulet> amulets = new ArrayList<>(3);
 
     private ArrayList<Item> items = new ArrayList<>(3);
+
+    HashMap<String, Integer> numberOfHeroThings = new HashMap<>();
+
 
     public Amulet getEquipAmulet() {
         return equipAmulet;
@@ -44,9 +63,29 @@ public class Hero {
 
     public void addItem(Item item) {
         items.add(item);
+        if(numberOfHeroThings.containsKey(item.getName())){
+            int val = numberOfHeroThings.get(item.getName());
+            numberOfHeroThings.remove(item.getName());
+            val++;
+            numberOfHeroThings.put(item.getName(),val);
+        }
+        else {
+            numberOfHeroThings.put(item.getName(),1);
+        }
     }
 
     public boolean deleteItem(Item item) {
+        if(numberOfHeroThings.containsKey(item.getName())){
+            if(numberOfHeroThings.get(item.getName()) == 1){
+                numberOfHeroThings.remove(item.getName());
+            }else {
+                int val = numberOfHeroThings.get(item.getName());
+                val--;
+                numberOfHeroThings.remove(item.getName());
+                numberOfHeroThings.put(item.getName(), val);
+            }
+
+        }
         if (items.contains(item)) {
             items.remove(item);
             return true;

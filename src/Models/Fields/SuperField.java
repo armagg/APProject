@@ -4,7 +4,7 @@ import Models.Cards.Classes.Card;
 
 import java.util.ArrayList;
 
-public class SuperField {
+public abstract class SuperField {
 
     ArrayList<Card> cards = new ArrayList<>(5);
 

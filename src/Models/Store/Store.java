@@ -5,42 +5,42 @@ import Models.Thing;
 import java.util.ArrayList;
 
 public class Store {
-    private CardShop cardShop;
-    private AmuletShop amuletShop;
-    private ItemShop itemShop;
+    private CardShopM cardShop;
+    private AmuletShopM amuletShop;
+    private ItemShopM itemShop;
 
 
     public ArrayList<Thing> returnAllInSsshop() {
         ArrayList<Thing> things = new ArrayList<>(50);
-        things.addAll(cardShop.getObjects());
-        things.addAll(amuletShop.getObjects());
-        things.addAll(itemShop.getObjects());
+        things.addAll(cardShop.getCards());
+        things.addAll(amuletShop.getAmulets());
+        things.addAll(itemShop.getItems());
 
         return things;
 
     }
 
-    public CardShop getCardShop() {
+    public CardShopM getCardShop() {
         return cardShop;
     }
 
-    public void setCardShop(CardShop cardShop) {
+    public void setCardShop(CardShopM cardShop) {
         this.cardShop = cardShop;
     }
 
-    public AmuletShop getAmuletShop() {
+    public AmuletShopM getAmuletShop() {
         return amuletShop;
     }
 
-    public void setAmuletShop(AmuletShop amuletShop) {
+    public void setAmuletShop(AmuletShopM amuletShop) {
         this.amuletShop = amuletShop;
     }
 
-    public ItemShop getItemShop() {
+    public ItemShopM getItemShop() {
         return itemShop;
     }
 
-    public void setItemShop(ItemShop itemShop) {
+    public void setItemShop(ItemShopM itemShop) {
         this.itemShop = itemShop;
     }
 

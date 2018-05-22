@@ -7,13 +7,25 @@ import view.MainMenu.Main;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
 import static java.lang.System.*;
 
 public class cardShop{
-    public void listPrinter(ArrayList<Card> shopCards, ArrayList<Card> playerCards, HashMap<String, Integer> numbersOfCards) {
+    private ArrayList<Card> shopCards;
+    private ArrayList<Card> playerCards;
+    private HashMap<String, Integer> numbersOfCards;
+    private Scanner scanner = new Scanner(System.in);
+
+    public cardShop(ArrayList<Card> shopCards, ArrayList<Card> playerCards, HashMap<String, Integer> numbersOfCards) {
+        this.shopCards = shopCards;
+        this.playerCards = playerCards;
+        this.numbersOfCards = numbersOfCards;
+    }
+
+    public void listPrinter() {
         Main.GilPrinter();
-        out.println("   Shop list:");
+        System.out.println("   Shop list:");
         int counter = 1;
         for (Card card : shopCards) {
             out.println(counter + ". " + card.getName() + card.getCost());
@@ -24,17 +36,19 @@ public class cardShop{
 
         out.println("   Card Inventory");
         for (Card card : playerCards) {
-            out.println(counter + ". " + card.getName() + " / " + numbersOfCards.get(card.getName()));
+            System.out.println(counter + ". " + card.getName() + " / " + numbersOfCards.get(card.getName()));
         }
     }
 
-    public void help(){
+    public String help(){
         Main.GilPrinter();
-        out.println("1. Buy \"Card Name\" - #NumberToBuy: To buy a certain number of a card from shop");
-        out.println("2. Sell \"Card Name\" - #NumberToSell: To sell a certain number of a card from shop inventory");
-        out.println("3. Info \"Card Name\": To get more information about a card");
-        out.println("4. Edit Deck: To edit Deck and remove and add  cards to it");
-        out.println("5. Exit: To return to shop menu");
+        System.out.println("1. Buy \"Card Name\" - #NumberToBuy: To buy a certain number of a card from shop");
+        System.out.println("2. Sell \"Card Name\" - #NumberToSell: To sell a certain number of a card from shop inventory");
+        System.out.println("3. Info \"Card Name\": To get more information about a card");
+        System.out.println("4. Edit Deck: To edit Deck and remove and add  cards to it");
+        System.out.println("5. Exit: To return to shop menu");
+        String s = scanner.nextLine();
+        return s;
     }
 
     public void successBuy(int number, String name){
@@ -56,7 +70,7 @@ public class cardShop{
         out.println("Not enough cards!");
     }
 
-    static public void MonsterInfo(Monster card){
+    public void MonsterInfo(Monster card){
         Main.GilPrinter();
         out.println(card.getName() + " Info");
         String general = "Name: " + card.getName() + "\n" + "HP: " + card.getHP() + "\n" + "AP: " + card.getAP() + "\n"
@@ -68,7 +82,7 @@ public class cardShop{
         System.out.println(general);
     }
 
-    static public void spellInfo(SpellCards card){
+    public void spellInfo(SpellCards card){
         Main.GilPrinter();
         out.println(card.getName() + " Info");
         out.println("Name: " + card.getName());
