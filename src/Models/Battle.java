@@ -1,7 +1,6 @@
 package Models;
 
 import Models.Cards.Classes.Card;
-import Models.Cards.Classes.Monster;
 import Models.Fields.Field;
 import Models.Heroes.Hero;
 
@@ -17,7 +16,7 @@ public class Battle {
     private Hero rivalHero;
 
 
-    private Turn player;
+    private Turn turn;
     private int MP = 0;
 
     public Battle(Field playerField, Field rivalField) {
@@ -26,15 +25,19 @@ public class Battle {
         Random random = new Random();
         int temp = random.nextInt(2);
         if (temp == 1) {
-            player = Turn.RIVAL;
+            turn = Turn.RIVAL;
             Card tempCard = playerField.getDeck().getRandomCard();
             playerField.getHand().addCard(tempCard);
 
         } else {
-            player = Turn.HUMAN;
+            turn = Turn.HUMAN;
             Card tempCard = this.rivalField.getDeck().getRandomCard();
             this.rivalField.getHand().addCard(tempCard);
         }
+
+    }
+
+    public Battle() {
 
     }
 
@@ -45,14 +48,14 @@ public class Battle {
     }
 
     public void nextTurn() {
-        if (Turn.HUMAN == player)
-            player = Turn.RIVAL;
+        if (Turn.HUMAN == turn)
+            turn = Turn.RIVAL;
         else
-            player = Turn.HUMAN;
+            turn = Turn.HUMAN;
     }
 
     public void initiateCardsDistribution(){
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 5; i++) {
             Card tempCard = playerField.getDeck().getRandomCard();
             playerField.getHand().addCard(tempCard);
 
@@ -61,14 +64,8 @@ public class Battle {
         }
     }
 
-    public Field returnFieldFromTurn(Turn turn) {
-        if (turn == Turn.HUMAN)
-            return playerField;
-        return RivalField;
-    }
-
     public Turn getTurn() {
-        return player;
+        return turn;
     }
 
     public Field getPlayerField() {
@@ -81,13 +78,6 @@ public class Battle {
 
     public Field getRivalField() {
         return rivalField;
-    }
-
-    public ArrayList<Monster> returnCardsInGame() {
-        ArrayList<Monster> cards = new ArrayList<>(10);
-        cards.addAll(playerField.getMonsterField().getCards());
-        cards.addAll(RivalField.getMonsterField().getCards());
-        return cards;
     }
 
     public void setRivalField(Field computerField) {
@@ -139,5 +129,26 @@ public class Battle {
         if(this.getTurn() == Turn.HUMAN)
             return playerField;
         return rivalField;
+    }
+
+    public void randomInitialTurn(){
+        Random random = new Random();
+        if(random.nextBoolean()){
+            this.turn = Turn.HUMAN;
+        }
+        else
+            this.turn = Turn.RIVAL;
+    }
+
+    public Hero getOtherHero(){
+        if(this.getTurn() == Turn.HUMAN)
+            return rivalHero;
+        return playerHero;
+    }
+
+    public Hero getCurrentHero(){
+        if(this.getTurn() == Turn.HUMAN)
+            return playerHero;
+        return rivalHero;
     }
 }

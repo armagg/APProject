@@ -1,5 +1,6 @@
 package view.actionInGame;
 
+import Control.Functions.Operators;
 import Models.Battle;
 import Models.Cards.Classes.Card;
 import Models.Fields.MonsterField;
@@ -10,7 +11,10 @@ import java.util.Scanner;
 public class Play {
     Scanner scanner = new Scanner(System.in);
     Battle battle;
-    public Play(Battle battle){
+    String command;
+    Control.InBattle.Play play;
+    public Play(Battle battle, Control.InBattle.Play play){
+        this.play = play;
         this.battle = battle;
         System.out.println("Battle against" + battle.getRivalHero().getName() + "Started!");
         if(battle.getTurn() == Turn.HUMAN){
@@ -25,9 +29,58 @@ public class Play {
         }
         System.out.println("");
     }
-    public void nextMove(){
 
+    public void nextMove(){
+        while(true){
+            command = scanner.nextLine();
+            if(command.equals("help")){
+                help();
+                continue;
+            }
+
+            if(command.equals("view graveyard")){
+                viewGraveYard(battle);
+                continue;
+            }
+
+            if(command.equals("view hand")){
+                viewHand(battle);
+                continue;
+            }
+
+            if(command.equals("view spellfield")){
+                viewSpellField(battle);
+                continue;
+            }
+
+            if(command.equals("view monsterfield")){
+                viewMonsterField(battle);
+                continue;
+            }
+
+            if(command.startsWith("use")){
+
+            }
+
+            if(command.startsWith("set")){
+                int index = Integer.parseInt(command.split(" ")[1]);
+                play.set(index);
+            }
+
+            if(command.startsWith("info")){
+
+            }
+
+            if(command.equals("done")){
+
+            }
+
+            if(command.startsWith("exit")){
+
+            }
+        }
     }
+
     public void help(){
         System.out.println("1. Use #SlotNum: To use a specific card which is on the Monster Field");
         System.out.println("2. Set HandIndex to #SlotNum: To set a card which is on the hand, in the field");
