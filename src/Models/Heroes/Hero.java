@@ -30,6 +30,18 @@ public class Hero {
         this.inventory = inventory;
     }
 
+    int MP = 0;
+    int maxMP = 0;
+    int maxMaxMP = 10;
+
+    public int getMP() {
+        return MP;
+    }
+
+    public void setMP(int MP) {
+        this.MP = MP;
+    }
+
     public int getGil() {
         return gil;
     }
@@ -136,4 +148,19 @@ public class Hero {
     public void setName(String name) {
         this.name = name;
     }
+
+    public void addMP(int amount){
+        MP+=amount;
+    }
+
+    public void reduceMP(int amount){
+        MP-=amount;
+    }
+
+    public void resetMP(){
+        if(maxMP < maxMaxMP)
+            maxMP ++;
+        MP = maxMP;
+    }
+
 }
