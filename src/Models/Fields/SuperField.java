@@ -3,6 +3,7 @@ package Models.Fields;
 import Models.Cards.Classes.Card;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public abstract class SuperField {
 
@@ -28,6 +29,18 @@ public abstract class SuperField {
 
         }
         return false;
+    }
+
+    public Card getRandomCard() {
+        Random random = new Random();
+        try {
+
+
+            return cards.get(random.nextInt(getNumberOfCards()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     @Override
