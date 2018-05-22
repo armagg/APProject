@@ -12,6 +12,6 @@ public class MagicSeal extends SpellCards {
 
     @Override
     public void doSpell(Battle battle) {
-
+        //ToDo
     }
 }
