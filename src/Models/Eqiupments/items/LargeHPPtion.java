@@ -4,12 +4,12 @@ import Models.Battle;
 import Models.Eqiupments.Item;
 
 public final class LargeHPPtion extends Item {
-    LargeHPPtion() {
+    public LargeHPPtion() {
         super("Large HP potion", 4000);
     }
 
     @Override
-    protected void doSpell(Battle battle) {
+    public void doSpell(Battle battle) {
 
     }
 }

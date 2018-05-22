@@ -3,8 +3,8 @@ package Models.Eqiupments.amulets;
 import Models.Battle;
 import Models.Eqiupments.Amulet;
 
-public class ironRing extends Amulet {
-    public ironRing() {
+public class IronRing extends Amulet {
+    public IronRing() {
         super("Iron Ring", 2000);
         setDetails("Increase Player’s Max MP by 1");
     }

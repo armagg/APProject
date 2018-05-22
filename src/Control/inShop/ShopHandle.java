@@ -1,22 +1,13 @@
 package Control.inShop;
 import Models.Cards.Classes.Card;
-import Models.Eqiupments.Amulet;
-import Models.Eqiupments.Item;
 import Models.Fields.Deck;
-import Models.Fields.Inventory;
 import Models.Heroes.Hero;
-import Models.Store.AmuletShopM;
-import Models.Store.CardShopM;
-import Models.Store.ItemShopM;
 import Models.Store.Store;
 import view.MainMenu.Main;
 import view.shopMenu.AmuletShop;
 import view.shopMenu.ItemShop;
 import view.shopMenu.ShopSelecion;
 import view.shopMenu.cardShop;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 
 public class ShopHandle {
 
@@ -100,17 +91,19 @@ public class ShopHandle {
     private void inCardShop() {
         cardShop.listPrinter();
         command = cardShop.help();
-        String cardName;
+        String informationToBuy = null;
         if(command.contains(" ")){
-            cardName = command.substring(command.indexOf(" "), command.length());
+            informationToBuy = command.substring(command.indexOf(" "), command.length());
+            informationToBuy.trim();
             command = command.substring(0, command.indexOf(" "));
+            informationToBuy.trim();
         }
         switch (command){
             case "help":
                 inCardShop();
                 break;
             case "buy":
-                proccessBuying();
+                processBuyingInCardShop(informationToBuy);
                 break;
             case "sell":
                 break;
@@ -120,7 +113,27 @@ public class ShopHandle {
         }
     }
 
-    private void proccessBuying(){
+    private void processBuyingInCardShop(String buyInformation){
+
+        try{
+            String[] stringsOfBuy = buyInformation.split("-");
+            stringsOfBuy[0].trim();
+            stringsOfBuy[1].trim();
+            Card card = store.getCardShop().makeCardInShop(stringsOfBuy[0]);
+            if(hero.getGil() >= card.getCost()){
+                hero.getInventory().getCards().add(card);
+                int val = Integer.valueOf(stringsOfBuy[1]);
+                cardShop.successBuy(val, stringsOfBuy[0]);
+            }
+            else {
+                cardShop.notEnoughGil();
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+
 
     }
 
