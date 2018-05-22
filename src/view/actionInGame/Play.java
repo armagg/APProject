@@ -1,6 +1,8 @@
 package view.actionInGame;
 
 import Models.Battle;
+import Models.Cards.Classes.Card;
+import Models.Fields.MonsterField;
 import Models.Turn;
 
 import java.util.Scanner;
@@ -38,5 +40,44 @@ public class Play {
 
     }
 
+    public void viewGraveYard(Battle battle){
+        System.out.println("Your Graveyard");
+        for (Card card:battle.getCurrentField().getGraveYard().getCards()) {
+            System.out.println(card.getName());
+        }
+        System.out.println("Enemys Graveyard");
+        for (Card card:battle.getOtherField().getGraveYard().getCards()) {
+            System.out.println(card.getName());
+        }
+    }
+
+    public void viewHand(Battle battle){
+        System.out.println("Your Hand:");
+        for (Card card:battle.getCurrentField().getHand().getCards()) {
+            System.out.println(card.getName());
+        }
+    }
+
+    public void viewSpellField(Battle battle){
+        System.out.println("Your Spellfield");
+        for (Card card:battle.getCurrentField().getSpellField().getCards()) {
+            System.out.println(card.getName());
+        }
+        System.out.println("Enemys Spellfield");
+        for (Card card:battle.getOtherField().getSpellField().getCards()) {
+            System.out.println(card.getName());
+        }
+    }
+
+    public void viewMonsterField(Battle battle){
+        System.out.println("Your Monsterfield");
+        for (Card card:battle.getCurrentField().getMonsterField().getCards()) {
+            System.out.println(card.getName());
+        }
+        System.out.println("Enemys Monsterfield");
+        for (Card card:battle.getOtherField().getMonsterField().getCards()) {
+            System.out.println(card.getName());
+        }
+    }
 
 }
