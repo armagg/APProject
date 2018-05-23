@@ -1,8 +1,14 @@
 package Models.Cards.Classes.spellCards;
 
+import Control.Functions.Operators;
 import Models.Battle;
+import Models.Cards.Classes.Card;
 import Models.Cards.Classes.SpellCards;
 import Models.Cards.Classes.SpellType;
+import Models.Fields.Place;
+
+import java.util.ArrayList;
+import java.util.Random;
 
 public class ReapersScythe extends SpellCards {
     public ReapersScythe() {
@@ -12,6 +18,16 @@ public class ReapersScythe extends SpellCards {
 
     @Override
     public void doSpell(Battle battle) {
+        Random random = new Random();
+        ArrayList<Card> cards = new ArrayList<>();
+
+        if (random.nextBoolean()) {
+            cards.add(battle.getOtherField().getSpellField().getRandomCard());
+            Operators.replaceCards(battle.getOtherField(), cards, Place.SPELLFIELD, Place.GRAVEYARD);
+        } else {
+            cards.add(battle.getOtherField().getMonsterField().getRandomCard());
+            Operators.replaceCards(battle.getOtherField(), cards, Place.MONSTERFIELD, Place.GRAVEYARD);
+        }
 
     }
 }

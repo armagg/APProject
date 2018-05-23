@@ -30,4 +30,6 @@ public abstract class Card extends Thing {
     public void setPlace(Place place) {
         this.place = place;
     }
+
+
 }
