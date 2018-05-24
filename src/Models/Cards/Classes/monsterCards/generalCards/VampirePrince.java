@@ -1,8 +1,15 @@
 package Models.Cards.Classes.monsterCards.generalCards;
 
+import Control.Functions.Operators;
 import Models.Battle;
+import Models.Cards.Classes.Card;
 import Models.Cards.Classes.Generals;
+import Models.Cards.Classes.Monster;
 import Models.Cards.Classes.Race;
+import Models.Fields.Place;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public final class VampirePrince extends Generals {
     public VampirePrince() {
@@ -14,11 +21,27 @@ public final class VampirePrince extends Generals {
 
     @Override
     public void doBattleCry(Battle battle) {
-
+        ArrayList<Card> cards = new ArrayList<>();
+        cards.add(battle.getOtherField().getMonsterField().getRandomCard());
+        cards.add(battle.getOtherField().getMonsterField().getRandomCard());
+        Operators.replaceCards(battle.getOtherField(), cards, Place.MONSTERFIELD, Place.HAND);
     }
 
     @Override
     public void doWill(Battle battle) {
+        List<Monster> enemyMonster = battle.getOtherField().getMonsterField().returnMonsters();
+        List<Monster> monsters = battle.getCurrentField().getMonsterField().returnMonsters();
+        if (!monsters.isEmpty()) {
+            for (Monster monster : monsters) {
+                monster.addAP(200);
+            }
+        }
+        if (!enemyMonster.isEmpty()) {
+            for (Monster monster : enemyMonster) {
+                monster.reduceAP(200);
+            }
+        }
 
     }
+
 }

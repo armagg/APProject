@@ -1,8 +1,12 @@
 package Models.Cards.Classes.monsterCards.generalCards;
 
+import Control.Functions.AddOrReduce;
+import Control.Functions.Operators;
 import Models.Battle;
-import Models.Cards.Classes.Generals;
-import Models.Cards.Classes.Race;
+import Models.Cards.Classes.*;
+import Models.Fields.Place;
+
+import java.util.ArrayList;
 
 public final class Kraken extends Generals {
     public Kraken() {
@@ -15,9 +19,21 @@ public final class Kraken extends Generals {
 
     @Override
     public void doBattleCry(Battle battle) {
+        ArrayList<Card> cards = new ArrayList<>();
+        cards.add(battle.getOtherField().getMonsterField().getRandomCard());
+        Operators.replaceCards(battle.getOtherField(), cards, Place.MONSTERFIELD, Place.HAND);
+        ArrayList<Monster> monsters = new ArrayList<>();
+        cards.addAll(battle.getOtherField().getMonsterField().returnMonsters());
+        if (!monsters.isEmpty()) {
+            for (Monster monster : monsters) {
+                monster.reduceAP(200);
+            }
+        }
     }
 
     @Override
     public void doWill(Battle battle) {
+        Operators.CardsPowerChanger((ArrayList<Monster>) battle.getOtherField().getMonsterField().returnMonsters(),
+                400, FunctionTargetKind.HP, AddOrReduce.REDUCE);
     }
 }

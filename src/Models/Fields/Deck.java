@@ -3,7 +3,6 @@ package Models.Fields;
 
 import Control.inShop.StaticFunctiontoHandle;
 import Models.Cards.Classes.Card;
-import org.omg.CORBA.INTERNAL;
 
 import java.util.HashMap;
 import java.util.Random;
@@ -49,7 +48,7 @@ public class Deck extends SuperField {
         rand.setSeed(System.nanoTime());
         int index = rand.nextInt(cards.size());
         Card tempCard = cards.get(index);
-        //ards.remove(tempCard);
+        cards.remove(tempCard);
         return tempCard;
     }
 }

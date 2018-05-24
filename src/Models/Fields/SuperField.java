@@ -34,8 +34,6 @@ public abstract class SuperField {
     public Card getRandomCard() {
         Random random = new Random();
         try {
-
-
             return cards.get(random.nextInt(getNumberOfCards()));
         } catch (Exception e) {
             e.printStackTrace();

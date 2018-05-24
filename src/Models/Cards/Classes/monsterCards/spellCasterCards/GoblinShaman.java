@@ -1,8 +1,11 @@
 package Models.Cards.Classes.monsterCards.spellCasterCards;
 
 import Models.Battle;
+import Models.Cards.Classes.Monster;
 import Models.Cards.Classes.Race;
 import Models.Cards.Classes.SpellCasters;
+
+import java.util.Random;
 
 public class GoblinShaman extends SpellCasters {
     public GoblinShaman() {
@@ -12,6 +15,13 @@ public class GoblinShaman extends SpellCasters {
 
     @Override
     public void DoSpell(Battle battle) {
-
+        Random random = new Random();
+        if (random.nextBoolean()) {
+            battle.getCurrentHero().addHP(400);
+        } else {
+            Monster monster = (Monster) battle.getCurrentField().getMonsterField().getRandomCard();
+            monster.addHP(400);
+        }
     }
 }
+

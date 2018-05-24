@@ -2,7 +2,11 @@ package Models.Cards.Classes.monsterCards.generalCards;
 
 import Models.Battle;
 import Models.Cards.Classes.Generals;
+import Models.Cards.Classes.Monster;
 import Models.Cards.Classes.Race;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public final class OgreWarchief extends Generals {
     public OgreWarchief() {
@@ -13,11 +17,22 @@ public final class OgreWarchief extends Generals {
 
     @Override
     public void doBattleCry(Battle battle) {
-
+        ArrayList<Monster> monsters = (ArrayList<Monster>) battle.getOtherField().getMonsterField().returnMonsters();
+        if (!monsters.isEmpty()) {
+            for (Monster monster : monsters) {
+                monster.reduceHP(400);
+            }
+        }
+        battle.getOtherHero().reduceHP(400);
     }
 
     @Override
     public void doWill(Battle battle) {
-
+        List<Monster> monsters = battle.getCurrentField().getMonsterField().returnMonsters();
+        if (!monsters.isEmpty()) {
+            for (Monster monster : monsters) {
+                monster.addAP(300);
+            }
+        }
     }
 }
