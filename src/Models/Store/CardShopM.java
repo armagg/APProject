@@ -162,6 +162,7 @@ public class CardShopM extends Shop {
                 return new Cerberus();
 
         }
+        System.out.println("not found");
         return null;
     }
 

@@ -2,7 +2,7 @@ package view.EditClasses;
 
 import Models.Cards.Classes.Monster;
 import Models.Cards.Classes.SpellCards;
-import view.shopMenu.cardShop;
+import view.shopMenu.CardShop;
 
 public class EditDeck {
     public void help(){
@@ -21,11 +21,11 @@ public class EditDeck {
     }
 
     public void MonsterInfo(Monster card){
-        cardShop.MonsterInfo(card);
+        CardShop.MonsterInfo(card);
     }
 
     public void spellInfo(SpellCards card){
-        cardShop.spellInfo(card);
+        CardShop.spellInfo(card);
     }
 
 }
