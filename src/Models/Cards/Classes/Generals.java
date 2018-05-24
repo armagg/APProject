@@ -20,17 +20,25 @@ public abstract class Generals extends Monster {
 
     public abstract void doBattleCry(Battle battle);
 
-    public abstract void doWill(Battle battle);
-
-
-    public String getWillDetails() {
-        return willDetails;
-    }
-
     @Override
     public String toString() {
         //TODO...
         return "";
+    }
+
+    public abstract void doWill(Battle battle);
+
+
+    public void setWillDetails(String willDetails) {
+        this.willDetails = willDetails;
+    }
+
+    public void setBattleCryDetails(String battleCryDetails) {
+        this.battleCryDetails = battleCryDetails;
+    }
+
+    public String getWillDetails() {
+        return willDetails;
     }
 
     public Spell getWill() {
@@ -39,18 +47,10 @@ public abstract class Generals extends Monster {
 
     private Spell battleCry;
 
-    public void setWillDetails(String willDetails) {
-        this.willDetails = willDetails;
-    }
-
     private Spell will;
 
     public String getBattleCryDetails() {
         return battleCryDetails;
-    }
-
-    public void setBattleCryDetails(String battleCryDetails) {
-        this.battleCryDetails = battleCryDetails;
     }
 
     public void setWill(Spell will) {

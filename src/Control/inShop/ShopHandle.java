@@ -7,12 +7,12 @@ import view.MainMenu.Main;
 import view.shopMenu.AmuletShop;
 import view.shopMenu.ItemShop;
 import view.shopMenu.ShopSelecion;
-import view.shopMenu.cardShop;
+import view.shopMenu.CardShop;
 
 public class ShopHandle {
 
     private AmuletShop amuletShop;
-    private cardShop cardShop;
+    private CardShop cardShop;
     private ItemShop itemShop;
     private Store store;
     private Deck deck;
@@ -69,7 +69,7 @@ public class ShopHandle {
         command = shopSelecion.menu();
         switch (command){
             case "card shop":
-                cardShop = new cardShop(store.getCardShop().getCards(), hero.getInventory().getCards(), deck.getCardsOnDeck());
+                cardShop = new CardShop(store.getCardShop().getCards(), hero.getInventory().getCards(), deck.getCardsOnDeck());
                 inCardShop();
                 break;
             case "item shop":

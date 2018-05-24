@@ -11,13 +11,13 @@ import java.util.Scanner;
 
 import static java.lang.System.*;
 
-public class cardShop{
+public class CardShop {
     private ArrayList<Card> shopCards;
     private ArrayList<Card> playerCards;
     private HashMap<String, Integer> numbersOfCards;
     private Scanner scanner = new Scanner(System.in);
 
-    public cardShop(ArrayList<Card> shopCards, ArrayList<Card> playerCards, HashMap<String, Integer> numbersOfCards) {
+    public CardShop(ArrayList<Card> shopCards, ArrayList<Card> playerCards, HashMap<String, Integer> numbersOfCards) {
         this.shopCards = shopCards;
         this.playerCards = playerCards;
         this.numbersOfCards = numbersOfCards;
@@ -88,7 +88,7 @@ public class cardShop{
         out.println("Name: " + card.getName());
         out.println("MP cost: " + card.getMP());
         out.println("Card Type: " + card.getSpellType().name());
-        System.out.println(card.toString());
+        System.out.println(card);
     }
 
     public void editDeck(HashMap<String, Integer> numOnDeck, ArrayList<Card> cards){
