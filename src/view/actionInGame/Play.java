@@ -2,8 +2,9 @@ package view.actionInGame;
 
 import Control.Functions.Operators;
 import Models.Battle;
-import Models.Cards.Classes.Card;
+import Models.Cards.Classes.*;
 import Models.Fields.MonsterField;
+import Models.Heroes.Hero;
 import Models.Turn;
 
 import java.util.Scanner;
@@ -130,6 +131,41 @@ public class Play {
         System.out.println("Enemys Monsterfield");
         for (Card card:battle.getOtherField().getMonsterField().getCards()) {
             System.out.println(card.getName());
+        }
+    }
+
+        public void use(int index){
+        Monster card = (Monster)battle.getCurrentField().getMonsterField().getCards().get(index);
+        String command;
+        System.out.println("using" + card.getName());
+        System.out.printf("HP: %d AP: %d \n",card.getHP(),card.getAP());
+        System.out.println("is sleeping: " + !card.isAwake());
+        System.out.println("can attack: " + card.isAwake());
+        if(card instanceof Generals || card instanceof Normal){
+
+        }
+        else{
+            if (card instanceof Heroes){
+                card = (Heroes)card;
+                System.out.println("can cast: " + !((Heroes) card).isSpellUsed());}
+            else {
+                card = (SpellCasters)card;
+                System.out.println("can cast: " + !((SpellCasters) card).isSpellUsed());}
+        }
+        while (true){
+            command = scanner.nextLine();
+            if(command.equals("info")){
+                System.out.println("using" + card.getName());
+                System.out.printf("HP: %d AP: %d \n",card.getHP(),card.getAP());
+                System.out.println("is sleeping: " + !card.isAwake());
+                System.out.println("can attack: " + card.isAwake());
+                continue;
+            }
+            if(command.equals("exit")){
+                return;
+            }
+
+
         }
     }
 

@@ -24,16 +24,21 @@ public class Play {
         } while (true);
     }
 
-    public void set(int index){
+    public void set(int index) {
         Place place;
         Card card = battle.getCurrentField().getHand().getCards().get(index);
-        if(battle.getCurrentHero().getMP() >= card.getMP())
-        if(card instanceof Monster)
-            place = Place.MONSTERFIELD;
+        if (battle.getCurrentHero().getMP() >= card.getMP()) {
+            if (card instanceof Monster)
+                place = Place.MONSTERFIELD;
+            else
+                place = Place.SPELLFIELD;
+            ArrayList<Card> cards = new ArrayList<>();
+            cards.add(battle.getCurrentField().getHand().getCards().get(index));
+            Operators.replaceCards(battle.getCurrentField(), cards, Place.HAND, place);
+            battle.getCurrentHero().reduceMP(card.getMP());
+            System.out.println(card.getName()+ "was set in playfield");
+        }
         else
-            place = Place.SPELLFIELD;
-        ArrayList<Card> cards = new ArrayList<>();
-        cards.add(battle.getCurrentField().getHand().getCards().get(index));
-        Operators.replaceCards(battle.getCurrentField(),cards, Place.HAND,place);
+            System.out.println("MP not enough");
     }
 }

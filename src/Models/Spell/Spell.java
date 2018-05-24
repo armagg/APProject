@@ -16,7 +16,6 @@ public class Spell {
         this.amount = amount;
     }
 
-
     public Spell(String details) {
 
 
@@ -37,7 +36,6 @@ public class Spell {
     public void setDestination(Place destination) {
         this.destination = destination;
     }
-
 
     public Spellkind getSpellkind() {
         return spellkind;
