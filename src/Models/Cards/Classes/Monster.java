@@ -10,6 +10,12 @@ public class Monster extends Card{
     boolean isDefender;
     protected MonsterType monsterType;
 
+    @Override
+    public String toString() {
+        return name + ", AP:" + Integer.toString(getAP()) + ", HP: " + Integer.toString(getHP())
+                + ", MP: " + Integer.toString(getMP()) + "\n" + "race: " + getRace() + "\n" +
+                "type: " + getMonsterType();
+    }
 
     public MonsterType getMonsterType() {
         return monsterType;

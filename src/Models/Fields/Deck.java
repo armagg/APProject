@@ -48,7 +48,7 @@ public class Deck extends SuperField {
         rand.setSeed(System.nanoTime());
         int index = rand.nextInt(cards.size());
         Card tempCard = cards.get(index);
-        cards.remove(tempCard);
+//        cards.remove(tempCard);
         return tempCard;
     }
 }
