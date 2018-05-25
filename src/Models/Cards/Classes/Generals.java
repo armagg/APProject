@@ -16,6 +16,9 @@ public abstract class Generals extends Monster {
         this.isDefender = isDefender;
         this.cost = MP * 700;
         monsterType = MonsterType.GENERAL;
+        if (isNimble) {
+            setAwake(true);
+        }
     }
 
     public abstract void doBattleCry(Battle battle);

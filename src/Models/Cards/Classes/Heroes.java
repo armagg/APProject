@@ -19,6 +19,9 @@ public abstract class Heroes extends Monster {
         this.isDefender = isDefender;
         this.cost = MP * 1000;
         monsterType = MonsterType.HERO;
+        if (isNimble) {
+            setAwake(true);
+        }
     }
 
     abstract public void doSpell(Battle battle);

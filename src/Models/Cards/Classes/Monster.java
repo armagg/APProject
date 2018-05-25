@@ -9,7 +9,7 @@ public class Monster extends Card{
     boolean hasAttacked = false;
     int AP;
     boolean isNimble;
-    private boolean isAwake;
+    private boolean isAwake = false;
     boolean isDefender;
     protected MonsterType monsterType;
 

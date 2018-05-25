@@ -2,6 +2,9 @@ package Models.Heroes;
 
 import Control.inShop.StaticFunctiontoHandle;
 import Models.Battle;
+import Models.Cards.Classes.Card;
+import Models.Cards.Classes.Monster;
+import Models.Cards.Classes.SpellCards;
 import Models.Eqiupments.Amulet;
 import Models.Eqiupments.Item;
 import Models.Fields.Inventory;
@@ -24,6 +27,26 @@ public class Hero {
     private int maxMaxMP = 10;
 
     public void doRound(Battle battle) {
+        ArrayList<Card> cardsTofield = new ArrayList<>();
+        int mp = maxMP;
+        for (int j = 1; j <= mp; j++) {
+            for (Card card : battle.getCurrentField().getDeck().getCards()) {
+                if (card.getMP() == j) {
+                    cardsTofield.add(card);
+                    mp -= j;
+                }
+            }
+        }
+        for (Card card : cardsTofield) {
+            if (card instanceof SpellCards) {
+                battle.getCurrentField().getHand().getCards().remove(card);
+                battle.getCurrentField().getSpellField().addCard(card);
+            } else if (card instanceof Monster) {
+                battle.getCurrentField().getHand().getCards().remove(card);
+                battle.getCurrentField().getMonsterField().addCard(card);
+            }
+        }
+
 
     }
 
