@@ -23,6 +23,9 @@ public class AmuletShop {
         Equiption = equiption;
     }
 
+    public AmuletShop() {
+    }
+
     public void listPrinter() {
         Main.GilPrinter();
         out.println("   Shop list:");

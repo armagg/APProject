@@ -13,7 +13,7 @@ public class EditDeckM {
     private ArrayList<Card> cards;
     private CardShop cardShop;
 
-    public EditDeckM(HashMap<String, Integer> cardSOnDeck, ArrayList<Card> cards, view.shopMenu.CardShop cardShop) {
+    public EditDeckM(HashMap<String, Integer> cardSOnDeck, ArrayList<Card> cards/*, view.shopMenu.CardShop cardShop*/) {
         this.cardSOnDeck = cardSOnDeck;
         this.cards = cards;
         this.cardShop = cardShop;
