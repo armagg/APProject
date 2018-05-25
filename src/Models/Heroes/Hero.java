@@ -1,6 +1,7 @@
 package Models.Heroes;
 
 import Control.inShop.StaticFunctiontoHandle;
+import Models.Battle;
 import Models.Eqiupments.Amulet;
 import Models.Eqiupments.Item;
 import Models.Fields.Inventory;
@@ -159,6 +160,10 @@ public class Hero {
         if(maxMP < maxMaxMP)
             maxMP ++;
         MP = maxMP;
+    }
+
+    public void doRound(Battle battle){
+
     }
 
 }

@@ -6,6 +6,7 @@ import Models.Battle;
 import Models.Cards.Classes.*;
 import Models.Fields.MonsterField;
 import Models.Heroes.Hero;
+import Models.Store.CardShopM;
 import Models.Turn;
 
 import java.util.Scanner;
@@ -34,6 +35,11 @@ public class Play {
 
     public void nextMove(){
         while(true){
+            for (Card card:battle.getOtherField().getMonsterField().getCards()) {
+                if(((Monster)card).getHP() <= 0)
+                    Methods
+
+            }
             command = scanner.nextLine();
             if(command.equals("help")){
                 help();
@@ -71,11 +77,21 @@ public class Play {
             }
 
             if(command.startsWith("info")){
-
+                CardShopM cardShopM = new CardShopM();
+                Card cardTemp = cardShopM.makeCardInShop(command.substring(5));
+                if(cardTemp instanceof Monster) {
+                    System.out.println(cardTemp.toString());
+                }
             }
 
             if(command.equals("done")){
+                battle.nextTurn();
+                return;
+            }
 
+            if(command.equals("exit")){
+                play.finish();
+                return;
             }
 
         }

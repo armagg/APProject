@@ -41,12 +41,6 @@ public class Battle {
 
     }
 
-    public void nextRound() {
-        MP++;
-        nextTurn();
-
-    }
-
     public void nextTurn() {
         if (Turn.HUMAN == turn)
             turn = Turn.RIVAL;

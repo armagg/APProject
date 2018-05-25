@@ -10,6 +10,7 @@ import Models.Cards.Classes.monsterCards.heroCards.Neptune;
 import Models.Cards.Classes.monsterCards.normalCards.*;
 import Models.Cards.Classes.monsterCards.spellCasterCards.*;
 import Models.Cards.Classes.spellCards.*;
+import view.shopMenu.CardShop;
 
 import java.util.ArrayList;
 
@@ -19,6 +20,7 @@ public class CardShopM extends Shop {
     public CardShopM(ArrayList<Card> cards) {
         this.cards = cards;
     }
+    public CardShopM(){}
 
     public void setCards(ArrayList<Card> cards) {
         this.cards = cards;

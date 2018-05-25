@@ -3,7 +3,7 @@ package Models.Store.EditClasees;
 import Models.Cards.Classes.Card;
 import Models.Cards.Classes.Monster;
 import Models.Cards.Classes.SpellCards;
-import view.shopMenu.cardShop;
+import view.shopMenu.CardShop;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,9 +11,9 @@ import java.util.HashMap;
 public class EditDeckM {
     private HashMap<String, Integer> cardSOnDeck;
     private ArrayList<Card> cards;
-    private cardShop cardShop;
+    private CardShop cardShop;
 
-    public EditDeckM(HashMap<String, Integer> cardSOnDeck, ArrayList<Card> cards, view.shopMenu.cardShop cardShop) {
+    public EditDeckM(HashMap<String, Integer> cardSOnDeck, ArrayList<Card> cards, view.shopMenu.CardShop cardShop) {
         this.cardSOnDeck = cardSOnDeck;
         this.cards = cards;
         this.cardShop = cardShop;
