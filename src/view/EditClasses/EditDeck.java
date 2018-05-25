@@ -5,15 +5,16 @@ import Models.Cards.Classes.Monster;
 import Models.Cards.Classes.SpellCards;
 import Models.Fields.Deck;
 import Models.Store.CardShopM;
-import view.shopMenu.cardShop;
+import view.shopMenu.CardShop;
+import view.shopMenu.CardShop;
 
 import java.util.Scanner;
 
 public class EditDeck {
-    private cardShop cardShop;
+    private CardShop cardShop;
     private Scanner sc = new Scanner (System.in);
 
-    public EditDeck(cardShop cardShop) {
+    public EditDeck(CardShop cardShop) {
         this.cardShop = cardShop;
     }
 
