@@ -12,6 +12,6 @@ public class DiamondRing extends Amulet {
 
     @Override
     protected void doSpell(Battle battle) {
-
+        battle.getCurrentHero().addMaxMP(3);
     }
 }

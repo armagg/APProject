@@ -11,6 +11,6 @@ public final class IronPendant extends Amulet {
 
     @Override
     public void doSpell(Battle battle) {
-
+        battle.getCurrentHero().addHP(500);
     }
 }

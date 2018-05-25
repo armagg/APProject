@@ -11,6 +11,6 @@ public final class GoldPendant extends Amulet {
 
     @Override
     protected void doSpell(Battle battle) {
-
+        battle.getCurrentHero().addHP(1000);
     }
 }

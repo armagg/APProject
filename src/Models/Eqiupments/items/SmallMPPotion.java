@@ -11,6 +11,6 @@ public class SmallMPPotion extends Item {
 
     @Override
     public void doSpell(Battle battle) {
-
+        battle.getCurrentHero().addMaxMP(2);
     }
 }

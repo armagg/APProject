@@ -11,6 +11,6 @@ public class DiamondPendant extends Amulet {
 
     @Override
     protected void doSpell(Battle battle) {
-
+        battle.getCurrentHero().addHP(2000);
     }
 }
