@@ -81,7 +81,6 @@ public class Main {
         cards.add(new ThrowingKnives());
         cards.add(new Tsunami());
         cards.add(new WarDrum());
-
         return cards;
     }
     public static ArrayList<Item> returnItems(){
