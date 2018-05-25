@@ -15,6 +15,11 @@ import Models.Eqiupments.Item;
 import Models.Eqiupments.amulets.IronRing;
 import Models.Eqiupments.items.SmallHPPotion;
 import Models.Fields.Deck;
+import Models.Heroes.Hero;
+import Models.Heroes.demonHero.DarkCity;
+import Models.Heroes.demonHero.MountainsideVillage;
+import Models.Heroes.demonHero.TowerOfInferno;
+import Models.Heroes.demonHero.TownInThePlains;
 import Models.Store.AmuletShopM;
 import Models.Store.CardShopM;
 import Models.Store.ItemShopM;
@@ -35,6 +40,10 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
+        Hero townInThePlains = new TownInThePlains(inventoryOfTownInThePlains());
+        Hero darkcity = new DarkCity(inventoryOfDarkCity());
+        Hero towerOfInferno = new TowerOfInferno(inventoryOfTowerOfInferno());
+        Hero mountainsideVillage = new MountainsideVillage(inventoryOfMountainsideVillage())
        Store store;
        Deck deck;
        CardShopM cardShopM;
@@ -50,6 +59,7 @@ public class Main {
        amuletShopM = new AmuletShopM(amuletsInAmulet);
        itemShopM = new ItemShopM(itemsInItemShop);
        store = new Store(cardShopM, amuletShopM, itemShopM);
+
 
 
     }
