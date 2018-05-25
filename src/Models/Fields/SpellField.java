@@ -10,7 +10,6 @@ public class SpellField extends SuperField{
     public boolean addCard(Card card) {
         if (cards.size() < maxLength) {
             cards.add(card);
-            addToMap(card);
             return true;
         }
         return false;

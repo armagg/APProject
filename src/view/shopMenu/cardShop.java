@@ -53,7 +53,8 @@ public class cardShop{
 
     public void successBuy(int number, String name){
         Main.GilPrinter();
-        out.println("Successfully bought" + number + "of" + name);
+
+        out.println("Successfully bought " + number + " of " + name);
     }
 
     public void notEnoughGil(){
@@ -63,7 +64,7 @@ public class cardShop{
 
     public void successSell(int number, String name){
         Main.GilPrinter();
-        out.println("Successfully bought" + number + "of" + name);
+        out.println("Successfully bought  " + number + " of " + name);
     }
 
     public void notEnoughCard(){
@@ -91,19 +92,26 @@ public class cardShop{
         System.out.println(card.toString());
     }
 
-    public void editDeck(HashMap<String, Integer> numOnDeck, ArrayList<Card> cards){
+    public void editDeck(HashMap<String, Integer> numOnDeck, ArrayList<Card> cardsOnDeck, ArrayList<Card> allOfCards, HashMap<String, Integer> numberOfAllCards){
 
 /*ببین اینجوری زدم که اسلاتای خالی بیفتن ته دک ... از پایان تعداد کارتا تا شماره ی 30 خالی بودن چاپ کنه*/
         Main.GilPrinter();
         System.out.println("Deck:");
         int count = 1 ;
-        for(Card card: cards){
+        for(Card card: cardsOnDeck){
             System.out.print("Slot" + count + ": " + card.getName());
             count++;
         }
-        int numbersOfEmpty = 30 - cards.size();
+        int numbersOfEmpty = 30 - cardsOnDeck.size();
         for(int i = 0 ; i < numbersOfEmpty ; i++){
             System.out.print("Slot" + count + ": Empty");
+            count++;
+        }
+
+        System.out.println("  Other Cards: ");
+        count = 1;
+        for(Card card: allOfCards){
+            System.out.println(count + ". " + numberOfAllCards.get(card.getName()) + " / " + numOnDeck.get(card.getName()) );
             count++;
         }
 

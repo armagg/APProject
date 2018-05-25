@@ -17,7 +17,7 @@ public class Main {
 
     static public String showMenu() {
         System.out.println("1. Enter Shop : to enter shop and buy or sell Cards and Items \n " +
-                "2. Edit \n" +
+                "2. Edit Inventory\n" +
                 "3. Next : To go to deck and amulet customization ");
         String s = scanner.nextLine();
         return s;

@@ -1,31 +1,45 @@
 package view.EditClasses;
 
+import Models.Cards.Classes.Card;
 import Models.Cards.Classes.Monster;
 import Models.Cards.Classes.SpellCards;
+import Models.Fields.Deck;
+import Models.Store.CardShopM;
 import view.shopMenu.cardShop;
 
+import java.util.Scanner;
+
 public class EditDeck {
-    public void help(){
+    private cardShop cardShop;
+    private Scanner sc = new Scanner (System.in);
+
+    public EditDeck(cardShop cardShop) {
+        this.cardShop = cardShop;
+    }
+
+    public String help(){
         System.out.println("1. Add \"Card name\" #CardSlotNum: To add cards to your deck");
         System.out.println("2. Remove \"Card name\" #CardSlotNum: To move cards from your deck");
         System.out.println("4. Info \"Card name\" To get more information about a specific card");
         System.out.println("4. Exit: To return to the previous section");
+        return sc.nextLine();
+    }
+    public void added(String name){
+        System.out.println(name + " was added");
     }
 
-    public void added(String name, int number){
-        System.out.println(name + " was added to slot" + number);
+    public void removed(String name){
+        System.out.println(name + " was removed");
     }
 
-    public void removed(String name, int number){
-        System.out.println(name + " was removed from slot" + number);
-    }
+    public void info(Card card){
+        if(card instanceof SpellCards){
+            cardShop.spellInfo((SpellCards)card);
+        }
+        else if(card instanceof Monster){
+            cardShop.MonsterInfo((Monster) card);
+        }
 
-    public void MonsterInfo(Monster card){
-        cardShop.MonsterInfo(card);
-    }
-
-    public void spellInfo(SpellCards card){
-        cardShop.spellInfo(card);
     }
 
 }

@@ -1,5 +1,6 @@
 package Models.Heroes;
 
+import Control.inShop.StaticFunctiontoHandle;
 import Models.Eqiupments.Amulet;
 import Models.Eqiupments.Item;
 import Models.Fields.Inventory;
@@ -30,9 +31,9 @@ public class Hero {
         this.inventory = inventory;
     }
 
-    int MP = 0;
-    int maxMP = 0;
-    int maxMaxMP = 10;
+    private int MP = 0;
+    private int maxMP = 0;
+    private int maxMaxMP = 10;
 
     public int getMP() {
         return MP;
@@ -54,7 +55,15 @@ public class Hero {
 
     private ArrayList<Item> items = new ArrayList<>(3);
 
-    HashMap<String, Integer> numberOfHeroThings = new HashMap<>();
+    private HashMap<String, Integer> numberOfHeroThings = new HashMap<>();
+
+    public HashMap<String, Integer> getNumberOfHeroThings() {
+        return numberOfHeroThings;
+    }
+
+    public void setNumberOfHeroThings(HashMap<String, Integer> numberOfHeroThings) {
+        this.numberOfHeroThings = numberOfHeroThings;
+    }
 
 
     public Amulet getEquipAmulet() {
@@ -73,31 +82,16 @@ public class Hero {
         isEquipped = equipped;
     }
 
-    public void addItem(Item item) {
+    public void addItem(Item item,int i) {
         items.add(item);
-        if(numberOfHeroThings.containsKey(item.getName())){
-            int val = numberOfHeroThings.get(item.getName());
-            numberOfHeroThings.remove(item.getName());
-            val++;
-            numberOfHeroThings.put(item.getName(),val);
-        }
-        else {
-            numberOfHeroThings.put(item.getName(),1);
-        }
+        for(int j = 0 ; j < i ; j++)
+            StaticFunctiontoHandle.add(numberOfHeroThings, item);
     }
 
-    public boolean deleteItem(Item item) {
-        if(numberOfHeroThings.containsKey(item.getName())){
-            if(numberOfHeroThings.get(item.getName()) == 1){
-                numberOfHeroThings.remove(item.getName());
-            }else {
-                int val = numberOfHeroThings.get(item.getName());
-                val--;
-                numberOfHeroThings.remove(item.getName());
-                numberOfHeroThings.put(item.getName(), val);
-            }
+    public boolean deleteItem(Item item, int i) {
+        for(int j = 0 ; j < i ; j++)
+            StaticFunctiontoHandle.remove(numberOfHeroThings, item);
 
-        }
         if (items.contains(item)) {
             items.remove(item);
             return true;
@@ -105,11 +99,15 @@ public class Hero {
         return false;
     }
 
-    public void addAmulet(Amulet amulet) {
+    public void addAmulet(Amulet amulet, int i) {
         amulets.add(amulet);
+        for(int j = 0 ; j < i ; j++)
+            StaticFunctiontoHandle.add(numberOfHeroThings, amulet);
     }
 
-    public boolean deleteAmulet(Amulet amulet) {
+    public boolean deleteAmulet(Amulet amulet, int i) {
+        for(int j = 0 ; j < i ; j++)
+            StaticFunctiontoHandle.remove(numberOfHeroThings, amulet);
         if (amulets.contains(amulet)) {
             amulets.remove(amulet);
             return true;
