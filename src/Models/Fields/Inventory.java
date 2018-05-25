@@ -7,7 +7,6 @@ import java.util.HashMap;
 
 public class Inventory extends SuperField{
     private HashMap<String , Integer> numbersOfCards = new HashMap<>();
-
     public HashMap<String, Integer> getNumbersOfCards() {
         return numbersOfCards;
     }

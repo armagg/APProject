@@ -1,5 +1,6 @@
 package Control;
 
+import Control.inShop.ShopHandle;
 import Models.Cards.Classes.Card;
 import Models.Cards.Classes.monsterCards.generalCards.*;
 import Models.Cards.Classes.monsterCards.heroCards.Cerberus;
@@ -8,7 +9,6 @@ import Models.Cards.Classes.monsterCards.heroCards.Neptune;
 import Models.Cards.Classes.monsterCards.normalCards.*;
 import Models.Cards.Classes.monsterCards.spellCasterCards.*;
 import Models.Cards.Classes.spellCards.*;
-import Models.Cards.Classes.Card;
 import Models.Cards.Classes.monsterCards.generalCards.NobleElf;
 import Models.Eqiupments.Amulet;
 import Models.Eqiupments.Item;
@@ -20,86 +20,115 @@ import Models.Heroes.demonHero.DarkCity;
 import Models.Heroes.demonHero.MountainsideVillage;
 import Models.Heroes.demonHero.TowerOfInferno;
 import Models.Heroes.demonHero.TownInThePlains;
+import Models.Heroes.Hero;
 import Models.Store.AmuletShopM;
 import Models.Store.CardShopM;
+import Models.Store.EditClasees.EditAmuletM;
+import Models.Store.EditClasees.EditDeckM;
+import Models.Store.EditClasees.EditInventoryM;
 import Models.Store.ItemShopM;
 import Models.Store.Store;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-import Models.Cards.Classes.Normal;
-import Models.Eqiupments.Amulet;
-import Models.Eqiupments.Item;
 import Models.Eqiupments.amulets.*;
 import Models.Eqiupments.items.*;
 import Models.Fields.Inventory;
+import view.EditClasses.EditDeck;
+import view.EditClasses.EditInventory;
+import view.shopMenu.AmuletShop;
 
-import java.util.ArrayList;
-import java.util.Random;
+import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
+
+
+        Store store;
+        Deck deck;
+        Inventory inventory;
+        CardShopM cardShopM;
+        AmuletShopM amuletShopM;
+        ItemShopM itemShopM;
+        Hero hero;
+        EditDeckM editDeckM;
+        EditInventoryM editInventoryM;
+        EditAmuletM editAmuletM;
+
         Hero townInThePlains = new TownInThePlains(inventoryOfTownInThePlains());
         Hero darkcity = new DarkCity(inventoryOfDarkCity());
         Hero towerOfInferno = new TowerOfInferno(inventoryOfTowerOfInferno());
-        Hero mountainsideVillage = new MountainsideVillage(inventoryOfMountainsideVillage())
-       Store store;
-       Deck deck;
-       CardShopM cardShopM;
-       AmuletShopM amuletShopM;
-       ItemShopM itemShopM;
+        Hero mountainsideVillage = new MountainsideVillage(inventoryOfMountainsideVillage());
 
-       ArrayList<Item> itemsInItemShop= returnItems();
-       ArrayList<Amulet> amuletsInAmulet = returnAmulets();
-       ArrayList<Card> cardsInCardShop = new ArrayList<>();
+        ArrayList<Item> itemsInItemShop= returnItems();
+        ArrayList<Amulet> amuletsInAmulet = returnAmulets();
+        ArrayList<Card> cardsInCardShop = new ArrayList<>();
 
-       deck = returnDeck();
-       cardShopM = new CardShopM(cardsInCardShop);
-       amuletShopM = new AmuletShopM(amuletsInAmulet);
-       itemShopM = new ItemShopM(itemsInItemShop);
-       store = new Store(cardShopM, amuletShopM, itemShopM);
+        deck = returnDeck();
+        inventory = returnInventory();
 
+
+        hero = new Hero(inventory);
+        cardShopM = new CardShopM(cardsInCardShop);
+        amuletShopM = new AmuletShopM(amuletsInAmulet);
+        itemShopM = new ItemShopM(itemsInItemShop);
+        store = new Store(cardShopM, amuletShopM, itemShopM);
+        editDeckM = new EditDeckM(deck.getCardsOnDeck(), deck.getCards());
+        editAmuletM = new EditAmuletM(hero,new AmuletShop());
+
+        ShopHandle shopHandle = new ShopHandle(store,deck,hero,editDeckM, editAmuletM);
 
 
     }
-    static Deck returnDeck(){
-        Deck deck = new Deck();
+    static Inventory returnInventory(){
+        Inventory inventory = new Inventory();
         ElvenRanger elvenRanger1 = new ElvenRanger();
-        deck.addCard(elvenRanger1);
+        inventory.addCard(elvenRanger1);
         ElvenRanger elvenRanger2 = new ElvenRanger();
-        deck.addCard(elvenRanger2);
+        inventory.addCard(elvenRanger2);
         ElvenHunter elvenHunter1 = new ElvenHunter();
         ElvenHunter elvenHunter2 = new ElvenHunter();
-        deck.addCard(elvenHunter1);
-        deck.addCard(elvenHunter2);
+        inventory.addCard(elvenHunter1);
+        inventory.addCard(elvenHunter2);
         ElvenGuardsMan elvenGuardsMan1 = new ElvenGuardsMan();
-        deck.addCard(elvenGuardsMan1);
-        ElvenAssassin elvenAssassin; = new ElvenAssassin();
-        deck.addCard(elvenAssassin);
-        deck.addCard(new ElvenDruid());
-        deck.addCard(new LesserWhelp());
-        deck.addCard(new LesserWhelp());
-        deck.addCard(new Dragonlling());
-        deck.addCard(new Dragonlling());
-        deck.addCard(new ArmoredDragon());
-        deck.addCard(new YellowDrake());
-        deck.addCard(new BlueDragon());
-        deck.addCard(new MurlocCrawler());
-        deck.addCard(new MurlocCrawler());
-        deck.addCard(new MurlocWarrior());
-        deck.addCard(new MurlocWarrior());
-        deck.addCard(new SharkMan());
-        deck.addCard(new GiantCrab());
-        deck.addCard(new NagaSiren());
+        inventory.addCard(elvenGuardsMan1);
+        ElvenAssassin elvenAssassin = new ElvenAssassin();
+        inventory.addCard(elvenAssassin);
+        inventory.addCard(new ElvenDruid());
+        inventory.addCard(new LesserWhelp());
+        inventory.addCard(new LesserWhelp());
+        inventory.addCard(new Dragonlling());
+        inventory.addCard(new Dragonlling());
+        inventory.addCard(new ArmoredDragon());
+        inventory.addCard(new YellowDrake());
+        inventory.addCard(new BlueDragon());
+        inventory.addCard(new MurlocCrawler());
+        inventory.addCard(new MurlocCrawler());
+        inventory.addCard(new MurlocWarrior());
+        inventory.addCard(new MurlocWarrior());
+        inventory.addCard(new SharkMan());
+        inventory.addCard(new GiantCrab());
+        inventory.addCard(new NagaSiren());
         for(int i = 0 ; i < 3 ; i++)
-            deck.addCard(new FirstAidKit());
+            inventory.addCard(new FirstAidKit());
         for(int i = 0 ; i < 3 ; i++)
-            deck.addCard(new ThrowingKnives());
-        deck.addCard(new PoisonousCauldron());
-        deck.addCard(new HealingWard());
-        deck.addCard(new WarDrum());
+            inventory.addCard(new ThrowingKnives());
+        inventory.addCard(new PoisonousCauldron());
+        inventory.addCard(new HealingWard());
+        inventory.addCard(new WarDrum());
 
+
+        return inventory;
+
+    }
+
+    static Deck returnDeck(){
+        Inventory inventory = returnInventory();
+        ArrayList<Card> cards = inventory.getCards();
+        Deck deck = new Deck();
+        for(Card card:cards){
+            deck.addCard(card);
+        }
         return deck;
 
     }
@@ -199,12 +228,12 @@ public class Main {
 
     public static Inventory inventoryOfTownInThePlains(){
         Inventory inventory = new Inventory();
-        inventory.addCard(new OgreWarrior,6);
+        inventory.addCard(new OgreWarrior(),6);
         inventory.addCard(new OgreFrontliner(),4);
         inventory.addCard(new OgreMagi() , 2);
         inventory.addCard(new OgreWarchief(),1);
         inventory.addCard(new ThrowingKnives(),3);
-        inventory.addCard(new FirstAidKit,3);
+        inventory.addCard(new FirstAidKit(),3);
         inventory.addCard(new PoisonousCauldron(),1);
         return inventory;
     }

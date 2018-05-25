@@ -51,7 +51,7 @@ public class ShopHandle {
         this.store = store;
     }
 
-    public ShopHandle(Store store, Deck deck, Hero hero, EditDeckM editDeckM, EditInventoryM editInventoryM,
+    public ShopHandle(Store store, Deck deck, Hero hero, EditDeckM editDeckM,
                       EditAmuletM editAmuletM) {
         this.hero = hero;
         this.store = store;
