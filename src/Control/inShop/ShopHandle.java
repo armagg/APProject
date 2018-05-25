@@ -18,7 +18,6 @@ import view.shopMenu.AmuletShop;
 import view.shopMenu.CardShop;
 import view.shopMenu.ItemShop;
 import view.shopMenu.ShopSelecion;
-import view.shopMenu.CardShop;
 
 import java.util.Scanner;
 
@@ -52,7 +51,8 @@ public class ShopHandle {
         this.store = store;
     }
 
-    public ShopHandle(Store store, Deck deck, Hero hero, EditDeckM editDeckM, EditInventoryM editInventoryM, EditAmuletM editAmuletM) {
+    public ShopHandle(Store store, Deck deck, Hero hero, EditDeckM editDeckM, EditInventoryM editInventoryM,
+                      EditAmuletM editAmuletM) {
         this.hero = hero;
         this.store = store;
         this.deck = deck;
