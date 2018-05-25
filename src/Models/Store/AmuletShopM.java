@@ -34,7 +34,7 @@ public class AmuletShopM extends Shop {
         }
     }
 
-    public Amulet makeAmuletInS(String name){
+    public static Amulet makeAmuletInS(String name){
         switch (name){
             case "iron pendant":
                 return new IronPendant();

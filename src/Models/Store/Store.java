@@ -9,6 +9,11 @@ public class Store {
     private AmuletShopM amuletShop;
     private ItemShopM itemShop;
 
+    public Store(CardShopM cardShop, AmuletShopM amuletShop, ItemShopM itemShop) {
+        this.cardShop = cardShop;
+        this.amuletShop = amuletShop;
+        this.itemShop = itemShop;
+    }
 
     public ArrayList<Thing> returnAllInSsshop() {
         ArrayList<Thing> things = new ArrayList<>(50);

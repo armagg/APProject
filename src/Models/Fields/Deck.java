@@ -18,6 +18,12 @@ public class Deck extends SuperField {
         return cardsOnDeck;
     }
 
+    public void fillingMap(){
+        for(Card card : cards){
+            addCard(card);
+        }
+    }
+
     @Override
     public boolean addCard(Card card) {
         StaticFunctiontoHandle.add(cardsOnDeck, card);

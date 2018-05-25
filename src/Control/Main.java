@@ -8,6 +8,22 @@ import Models.Cards.Classes.monsterCards.heroCards.Neptune;
 import Models.Cards.Classes.monsterCards.normalCards.*;
 import Models.Cards.Classes.monsterCards.spellCasterCards.*;
 import Models.Cards.Classes.spellCards.*;
+import Models.Cards.Classes.Card;
+import Models.Cards.Classes.monsterCards.generalCards.NobleElf;
+import Models.Eqiupments.Amulet;
+import Models.Eqiupments.Item;
+import Models.Eqiupments.amulets.IronRing;
+import Models.Eqiupments.items.SmallHPPotion;
+import Models.Fields.Deck;
+import Models.Store.AmuletShopM;
+import Models.Store.CardShopM;
+import Models.Store.ItemShopM;
+import Models.Store.Store;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
+import Models.Cards.Classes.Normal;
 import Models.Eqiupments.Amulet;
 import Models.Eqiupments.Item;
 import Models.Eqiupments.amulets.*;
@@ -15,13 +31,68 @@ import Models.Eqiupments.items.*;
 import Models.Fields.Inventory;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Main {
-
     public static void main(String[] args) {
+       Store store;
+       Deck deck;
+       CardShopM cardShopM;
+       AmuletShopM amuletShopM;
+       ItemShopM itemShopM;
+
+       ArrayList<Item> itemsInItemShop= returnItems();
+       ArrayList<Amulet> amuletsInAmulet = returnAmulets();
+       ArrayList<Card> cardsInCardShop = new ArrayList<>();
+
+       deck = returnDeck();
+       cardShopM = new CardShopM(cardsInCardShop);
+       amuletShopM = new AmuletShopM(amuletsInAmulet);
+       itemShopM = new ItemShopM(itemsInItemShop);
+       store = new Store(cardShopM, amuletShopM, itemShopM);
+
 
     }
+    static Deck returnDeck(){
+        Deck deck = new Deck();
+        ElvenRanger elvenRanger1 = new ElvenRanger();
+        deck.addCard(elvenRanger1);
+        ElvenRanger elvenRanger2 = new ElvenRanger();
+        deck.addCard(elvenRanger2);
+        ElvenHunter elvenHunter1 = new ElvenHunter();
+        ElvenHunter elvenHunter2 = new ElvenHunter();
+        deck.addCard(elvenHunter1);
+        deck.addCard(elvenHunter2);
+        ElvenGuardsMan elvenGuardsMan1 = new ElvenGuardsMan();
+        deck.addCard(elvenGuardsMan1);
+        ElvenAssassin elvenAssassin; = new ElvenAssassin();
+        deck.addCard(elvenAssassin);
+        deck.addCard(new ElvenDruid());
+        deck.addCard(new LesserWhelp());
+        deck.addCard(new LesserWhelp());
+        deck.addCard(new Dragonlling());
+        deck.addCard(new Dragonlling());
+        deck.addCard(new ArmoredDragon());
+        deck.addCard(new YellowDrake());
+        deck.addCard(new BlueDragon());
+        deck.addCard(new MurlocCrawler());
+        deck.addCard(new MurlocCrawler());
+        deck.addCard(new MurlocWarrior());
+        deck.addCard(new MurlocWarrior());
+        deck.addCard(new SharkMan());
+        deck.addCard(new GiantCrab());
+        deck.addCard(new NagaSiren());
+        for(int i = 0 ; i < 3 ; i++)
+            deck.addCard(new FirstAidKit());
+        for(int i = 0 ; i < 3 ; i++)
+            deck.addCard(new ThrowingKnives());
+        deck.addCard(new PoisonousCauldron());
+        deck.addCard(new HealingWard());
+        deck.addCard(new WarDrum());
 
+        return deck;
+
+    }
     static ArrayList<Card> cards() {
         ArrayList<Card> cards = new ArrayList<>();
         cards.add(new ArmoredDragon());

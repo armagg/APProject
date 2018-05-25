@@ -26,7 +26,7 @@ public class ItemShopM extends Shop {
         items.add(item);
     }
 
-    public Item makeItemInShop(String name){
+    public static Item makeItemInShop(String name){
         switch (name){
             case "small hp potion":
                 return new SmallHPPotion();
