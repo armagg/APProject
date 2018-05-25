@@ -20,6 +20,7 @@ public class WarDrum extends SpellCards {
                 monster.reduceAP(300);
             }
         }
+        setNegativeSpellUse(true);
     }
 
     @Override
@@ -28,5 +29,6 @@ public class WarDrum extends SpellCards {
             monster.addAP(300);
             monster.setWhichAura(WhichAura.WARDRUM);
         }
+        setNegativeSpellUse(false);
     }
 }

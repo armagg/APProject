@@ -21,6 +21,7 @@ public class TakeAllYouCan extends SpellCards {
                 monster.setWhichAura(null);
             }
         }
+        setNegativeSpellUse(true);
 
     }
 
@@ -34,6 +35,7 @@ public class TakeAllYouCan extends SpellCards {
                 monster.setWhichAura(WhichAura.TAKEALLYOUCAN);
             }
         }
+        setNegativeSpellUse(false);
     }
 
 

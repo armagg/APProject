@@ -13,6 +13,15 @@ public abstract class SpellCards extends Card {
     private SpellType spellType;
     private String SpellDetails;
 
+    public boolean isNegativeSpellUse() {
+        return isNegativeSpellUse;
+    }
+
+    public void setNegativeSpellUse(boolean negativeSpellUse) {
+        isNegativeSpellUse = negativeSpellUse;
+    }
+
+    private boolean isNegativeSpellUse = true;
     public abstract void negativeSpell(Battle battle);
 
     public abstract void doSpell(Battle battle);

@@ -19,8 +19,10 @@ public class LunarBlessing extends SpellCards {
                 monster.setWhichAura(null);
                 monster.reduceHP(300);
                 monster.reduceAP(300);
+
             }
         }
+        setNegativeSpellUse(true);
     }
 
     @Override
@@ -34,6 +36,7 @@ public class LunarBlessing extends SpellCards {
                 monster.setWhichAura(WhichAura.LUNARBLESSING);
             }
         }
+        setNegativeSpellUse(false);
     }
 
 

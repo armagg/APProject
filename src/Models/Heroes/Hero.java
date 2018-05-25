@@ -23,6 +23,10 @@ public class Hero {
     private int maxMP = 0;
     private int maxMaxMP = 10;
 
+    public void doRound(Battle battle) {
+
+    }
+
     public void addMaxMP(int amount) {
         this.maxMP += amount;
     }
@@ -189,10 +193,6 @@ public class Hero {
         if(maxMP < maxMaxMP)
             maxMP ++;
         MP = maxMP;
-    }
-
-    public void doRound(Battle battle){
-
     }
 
 }
