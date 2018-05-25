@@ -1,6 +1,7 @@
 package view.actionInGame;
 
 import Control.Functions.Operators;
+import Control.InBattle.Methods;
 import Models.Battle;
 import Models.Cards.Classes.*;
 import Models.Fields.MonsterField;
@@ -60,7 +61,8 @@ public class Play {
             }
 
             if(command.startsWith("use")){
-
+                int index = Integer.parseInt(command.split(" ")[1]);
+                use(index);
             }
 
             if(command.startsWith("set")){
@@ -76,9 +78,6 @@ public class Play {
 
             }
 
-            if(command.startsWith("exit")){
-
-            }
         }
     }
 
@@ -134,7 +133,7 @@ public class Play {
         }
     }
 
-        public void use(int index){
+    public void use(int index){
         Monster card = (Monster)battle.getCurrentField().getMonsterField().getCards().get(index);
         String command;
         System.out.println("using" + card.getName());
@@ -162,10 +161,54 @@ public class Play {
                 continue;
             }
             if(command.equals("exit")){
+                System.out.println("such a waste...");
                 return;
             }
+            if(command.equals("cast")){
+                cast(card);
+            }
+            if(command.equals("help")){
 
+                System.out.println("Attack #EnemyMonsterSlot / Player: To attack the card on that slot of enemy MonsterField");
+                System.out.println("Info: To get full information on card");
+                System.out.println("Exit: To go back to Play Menu");
+            }
+            if (command.equals("attack")){
+                attack(card);
 
+            }
+
+        }
+    }
+
+    public void cast(Card card){
+        if(card instanceof Generals || card instanceof Normal){
+            System.out.println("can't cast");
+            return;
+        }
+        if((card instanceof SpellCasters && ((SpellCasters) card).isSpellUsed()) || (card instanceof Heroes && ((Heroes) card).isSpellUsed())){
+            System.out.println("can't cast");
+            return;
+        }
+        if(card instanceof SpellCasters){
+            ((SpellCasters) card).DoSpell(battle);
+        }
+        else
+            ((Heroes) card).doSpell(battle);
+    }
+
+    public void attack(Card card){
+        System.out.printf("1 : attack to hero\n2 : attack to monsters");
+        if(scanner.nextInt() == 1){
+            Methods.attackHero(battle,(Monster)card,battle.getOtherHero());
+            return;}
+            else{
+            System.out.println("which one???");
+            for(int i = 0; i < battle.getOtherField().getMonsterField().getCards().size();i++){
+                System.out.println(i + battle.getOtherField().getMonsterField().getCards().get(i).getName());
+            }
+            int i = scanner.nextInt();
+            Methods.attackMonsters(battle,(Monster) card,(Monster) battle.getOtherField().getMonsterField().getCards().get(i));
         }
     }
 

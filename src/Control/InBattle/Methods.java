@@ -43,7 +43,7 @@ public class Methods {
         ArrayList<Card> cardArrayList;
         boolean haveDefender = false;
         Monster defender = null;
-        if (attacker.isAwake() && attacker.isDefender()) {
+        if (attacker.isAwake()) {
             if (battle.getTurn() == Turn.HUMAN) {
                 cardArrayList = battle.getPlayerField().getMonsterField().getCards();
             } else {

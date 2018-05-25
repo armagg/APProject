@@ -16,6 +16,7 @@ public class Play {
         battle.initiateCardsDistribution();
         battle.randomInitialTurn();
         play = new view.actionInGame.Play(battle,this);
+        startGame();
     }
 
     public void startGame(){
