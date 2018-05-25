@@ -14,6 +14,9 @@ public class Normal extends Monster {
         cost = MP * 300;
         this.name = name;
         setMonsterType(MonsterType.NORMAL);
+        if (isNimble) {
+            setAwake(true);
+        }
     }
 
     @Override

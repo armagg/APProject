@@ -18,6 +18,9 @@ public abstract class SpellCasters extends Monster {
         this.isDefender = isDefender;
         this.cost = MP * 500;
         monsterType = MonsterType.SPELLCASTER;
+        if (isNimble) {
+            setAwake(true);
+        }
     }
 
     public abstract void DoSpell(Battle battle);
