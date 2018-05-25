@@ -4,6 +4,8 @@ import Control.Functions.Operators;
 
 import Models.Battle;
 import Models.Cards.Classes.Card;
+import Models.Cards.Classes.Generals;
+import Models.Cards.Classes.Heroes;
 import Models.Cards.Classes.Monster;
 import Models.Heroes.Hero;
 import Models.Turn;
@@ -27,6 +29,11 @@ public class Methods {
                 Monster monster;
                 monster = (Monster) card;
                 if (monster.getHP() <= 0) {
+                    if(monster instanceof Generals)
+                        ((Generals) monster).doWill(battle);
+                    if(monster instanceof Generals)
+                        ((Heroes) monster).doWill(battle);
+
                     if (battle.getRivalField().getMonsterField().getCards().contains(card)) {
                         battle.getRivalField().getMonsterField().getCards().remove(card);
                         battle.getRivalField().getGraveYard().getCards().add(card);
@@ -40,6 +47,7 @@ public class Methods {
     }
 
     public static boolean attackMonsters(Battle battle, Monster attacker, Monster goal) {
+        attacker.setHasAttacked(true);
         ArrayList<Card> cardArrayList;
         boolean haveDefender = false;
         Monster defender = null;
@@ -79,6 +87,7 @@ public class Methods {
     //TODO
 
     public static boolean attackHero(Battle battle, Monster attacker, Hero hero){
+        attacker.setHasAttacked(true);
         if(enemyDefendersOfMonsterField(battle) == null){
             Operators.HeroPowerChanger(hero,attacker.getAP(), AddOrReduce.REDUCE);
             return true;

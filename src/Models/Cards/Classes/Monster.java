@@ -4,6 +4,9 @@ public class Monster extends Card{
 
     protected int HP;
 
+
+
+    boolean hasAttacked = false;
     int AP;
     boolean isNimble;
     private boolean isAwake;
@@ -103,4 +106,16 @@ public class Monster extends Card{
     public void setDefender(boolean defender) {
         isDefender = defender;
     }
+
+    public boolean isHasAttacked() {
+        return hasAttacked;
+    }
+
+    public void setHasAttacked(boolean hasAttacked) {
+        this.hasAttacked = hasAttacked;
+    }
+
+
+
+
 }

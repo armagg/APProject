@@ -2,10 +2,7 @@ package Control.InBattle;
 import Control.Functions.Operators;
 
 import Models.Battle;
-import Models.Cards.Classes.Card;
-import Models.Cards.Classes.Generals;
-import Models.Cards.Classes.Heroes;
-import Models.Cards.Classes.Monster;
+import Models.Cards.Classes.*;
 import Models.Fields.Place;
 
 import java.util.ArrayList;
@@ -24,6 +21,16 @@ public class Play {
 
     public void startGame(){
         do {
+            hasAttackCards(battle);
+            awakeCards(battle);
+            battle.takeCardFromDeckToHand(battle);
+            for (Card card:battle.returnCardsInGame()) {
+                if(card instanceof SpellCards){
+                    if(((SpellCards) card).getSpellType() == SpellType.CONTINOUS)
+                        ((SpellCards) card).doSpell(battle);
+                }
+            }
+            battle.getCurrentHero().resetMP();
             play.nextMove();
         } while (!isGameFinished);
     }
@@ -54,5 +61,17 @@ public class Play {
 
     public void finish(){
         isGameFinished = true;
+    }
+
+    public void awakeCards(Battle battle){
+        for (Monster card:battle.getCurrentField().getMonsterField().returnMonsters()) {
+            card.setAwake(true);
+        }
+
+    }
+
+    public void hasAttackCards(Battle battle){
+        for (Monster monster:battle.getCurrentField().getMonsterField().returnMonsters())
+            monster.setHasAttacked(false);
     }
 }

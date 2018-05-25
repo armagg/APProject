@@ -1,5 +1,6 @@
 package view.actionInGame;
 
+import Control.Functions.Collectors;
 import Control.Functions.Operators;
 import Control.InBattle.Methods;
 import Models.Battle;
@@ -35,11 +36,9 @@ public class Play {
 
     public void nextMove(){
         while(true){
-            for (Card card:battle.getOtherField().getMonsterField().getCards()) {
-                if(((Monster)card).getHP() <= 0)
-                    Methods
-
-            }
+            Methods.terminatedToGraveYard(battle);
+            if(battle.getOtherHero().getHP() <= 0 || battle.getCurrentHero().getHP() <= 0)
+                play.finish();
             command = scanner.nextLine();
             if(command.equals("help")){
                 help();
@@ -190,8 +189,14 @@ public class Play {
                 System.out.println("Exit: To go back to Play Menu");
             }
             if (command.equals("attack")){
-                attack(card);
-
+                if(card.isAwake()){
+                    if(!((Monster)card).isHasAttacked())
+                        attack(card);
+                    else
+                        System.out.println("can't attack again");
+                }
+                else
+                    System.out.println("card is asleep!!!");
             }
 
         }

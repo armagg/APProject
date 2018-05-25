@@ -3,6 +3,7 @@ package Models;
 import Models.Cards.Classes.Card;
 import Models.Fields.Field;
 import Models.Heroes.Hero;
+import Models.Store.CardShopM;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -144,5 +145,12 @@ public class Battle {
         if(this.getTurn() == Turn.HUMAN)
             return playerHero;
         return rivalHero;
+    }
+
+    public void takeCardFromDeckToHand(Battle battle){
+        Card tempCard = battle.getCurrentField().getDeck().getRandomCard();
+        CardShopM cardShopM = new CardShopM();
+        Card tempCard2 = cardShopM.makeCardInShop(tempCard.getName().toLowerCase());
+        battle.getCurrentField().getHand().addCard(tempCard2);
     }
 }
