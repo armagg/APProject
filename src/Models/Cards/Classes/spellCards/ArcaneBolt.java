@@ -29,4 +29,8 @@ public class ArcaneBolt extends SpellCards {
         cards.add(card);
         Operators.replaceCards(battle.getOtherField(), cards, Place.SPELLFIELD, Place.GRAVEYARD);
     }
+
+    @Override
+    public void negativeSpell(Battle battle) {
+    }
 }

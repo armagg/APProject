@@ -19,6 +19,39 @@ public class Hero {
     private int gil;
     private Inventory inventory;
 
+    private int MP = 0;
+    private int maxMP = 0;
+    private int maxMaxMP = 10;
+
+    public void addMaxMP(int amount) {
+        this.maxMP += amount;
+    }
+
+    public int getMaxMP() {
+        return maxMP;
+    }
+
+
+    public void setMaxMP(int maxMP) {
+        this.maxMP = maxMP;
+    }
+
+    public int getMaxMaxMP() {
+        return maxMaxMP;
+    }
+
+    public void setMaxMaxMP(int maxMaxMP) {
+        this.maxMaxMP = maxMaxMP;
+    }
+
+    public void setAmulets(ArrayList<Amulet> amulets) {
+        this.amulets = amulets;
+    }
+
+    public void setItems(ArrayList<Item> items) {
+        this.items = items;
+    }
+
     public Inventory getInventory() {
         return inventory;
     }
@@ -31,10 +64,6 @@ public class Hero {
 
         this.inventory = inventory;
     }
-
-    private int MP = 0;
-    private int maxMP = 0;
-    private int maxMaxMP = 10;
 
     public int getMP() {
         return MP;

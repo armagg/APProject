@@ -11,6 +11,7 @@ public class LesserRestorative extends Item {
 
     @Override
     public void doSpell(Battle battle) {
-
+        battle.getCurrentHero().addMaxMP(2);
+        battle.getCurrentHero().addHP(500);
     }
 }

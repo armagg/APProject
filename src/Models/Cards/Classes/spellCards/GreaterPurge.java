@@ -11,6 +11,11 @@ public class GreaterPurge extends SpellCards {
     }
 
     @Override
+    public void negativeSpell(Battle battle) {
+
+    }
+
+    @Override
     public void doSpell(Battle battle) {
         //ToDo:should call the methods of cards to go to graveyard
     }

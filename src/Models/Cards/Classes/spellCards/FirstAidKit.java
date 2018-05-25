@@ -16,6 +16,11 @@ public class FirstAidKit extends SpellCards {
     }
 
     @Override
+    public void negativeSpell(Battle battle) {
+
+    }
+
+    @Override
     public void doSpell(Battle battle) {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();

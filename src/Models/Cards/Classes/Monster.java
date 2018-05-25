@@ -10,12 +10,22 @@ public class Monster extends Card{
     boolean isDefender;
     protected MonsterType monsterType;
 
+    WhichAura whichAura;
+
+    public WhichAura getWhichAura() {
+        return whichAura;
+    }
+
+    public void setWhichAura(WhichAura whichAura) {
+        this.whichAura = whichAura;
+    }
     @Override
     public String toString() {
         return name + ", AP:" + Integer.toString(getAP()) + ", HP: " + Integer.toString(getHP())
                 + ", MP: " + Integer.toString(getMP()) + "\n" + "race: " + getRace() + "\n" +
                 "type: " + getMonsterType();
     }
+
 
     public MonsterType getMonsterType() {
         return monsterType;

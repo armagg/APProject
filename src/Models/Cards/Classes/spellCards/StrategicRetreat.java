@@ -16,6 +16,11 @@ public class StrategicRetreat extends SpellCards {
 
 
     @Override
+    public void negativeSpell(Battle battle) {
+
+    }
+
+    @Override
     public void doSpell(Battle battle) {
         Card card = battle.getCurrentField().getDeck().getRandomCard();
         battle.getCurrentField().getDeck().deleteCard(card);

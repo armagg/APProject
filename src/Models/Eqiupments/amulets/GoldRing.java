@@ -11,6 +11,6 @@ public final class GoldRing extends Amulet {
 
     @Override
     protected void doSpell(Battle battle) {
-
+        battle.getCurrentHero().addMaxMP(2);
     }
 }
