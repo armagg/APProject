@@ -1,5 +1,6 @@
 package Models.Heroes;
 
+import Control.InBattle.Methods;
 import Control.inShop.StaticFunctiontoHandle;
 import Models.Battle;
 import Models.Cards.Classes.Card;
@@ -46,9 +47,34 @@ public class Hero {
                 battle.getCurrentField().getMonsterField().addCard(card);
             }
         }
+        ArrayList<Monster> monsters = new ArrayList<>();
+        monsters = (ArrayList<Monster>) battle.getCurrentField().getMonsterField().returnMonsters();
+        if (!monsters.isEmpty()) {
+            for (Monster monster : monsters) {
+                if (monster.isAwake() && monster.isHasAttacked()) {
+                    for (Monster monster1 : battle.getOtherField().getMonsterField().returnMonsters()) {
+                        if (monster.getAP() > 500) {
+                            Methods.attackHero(battle, monster, battle.getOtherHero());
+                            monster.setHasAttacked(true);
+                        } else if (monster1.getHP() > 0) {
+                            Methods.attackMonsters(battle, monster, monster1);
+                            monster.setHasAttacked(true);
 
+                        }
+                    }
 
+                }
+            }
+        }
+        ArrayList<Card> spellCards = new ArrayList<>();
+        spellCards = battle.getCurrentField().getSpellField().getCards();
+
+        for (Card spellCard1 : spellCards) {
+            SpellCards spellCards1 = (SpellCards) spellCard1;
+            spellCards1.doSpell(battle);
+        }
     }
+
 
     public void addMaxMP(int amount) {
         this.maxMP += amount;
@@ -139,14 +165,14 @@ public class Hero {
         isEquipped = equipped;
     }
 
-    public void addItem(Item item,int i) {
+    public void addItem(Item item, int i) {
         items.add(item);
-        for(int j = 0 ; j < i ; j++)
+        for (int j = 0; j < i; j++)
             StaticFunctiontoHandle.add(numberOfHeroThings, item);
     }
 
     public boolean deleteItem(Item item, int i) {
-        for(int j = 0 ; j < i ; j++)
+        for (int j = 0; j < i; j++)
             StaticFunctiontoHandle.remove(numberOfHeroThings, item);
 
         if (items.contains(item)) {
@@ -158,12 +184,12 @@ public class Hero {
 
     public void addAmulet(Amulet amulet, int i) {
         amulets.add(amulet);
-        for(int j = 0 ; j < i ; j++)
+        for (int j = 0; j < i; j++)
             StaticFunctiontoHandle.add(numberOfHeroThings, amulet);
     }
 
     public boolean deleteAmulet(Amulet amulet, int i) {
-        for(int j = 0 ; j < i ; j++)
+        for (int j = 0; j < i; j++)
             StaticFunctiontoHandle.remove(numberOfHeroThings, amulet);
         if (amulets.contains(amulet)) {
             amulets.remove(amulet);
@@ -189,7 +215,7 @@ public class Hero {
     }
 
     public void addHP(int amount) {
-        HP+=amount;
+        HP += amount;
     }
 
     public void reduceHP(int amount) {
@@ -204,17 +230,17 @@ public class Hero {
         this.name = name;
     }
 
-    public void addMP(int amount){
-        MP+=amount;
+    public void addMP(int amount) {
+        MP += amount;
     }
 
-    public void reduceMP(int amount){
-        MP-=amount;
+    public void reduceMP(int amount) {
+        MP -= amount;
     }
 
-    public void resetMP(){
-        if(maxMP < maxMaxMP)
-            maxMP ++;
+    public void resetMP() {
+        if (maxMP < maxMaxMP)
+            maxMP++;
         MP = maxMP;
     }
 
