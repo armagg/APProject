@@ -18,6 +18,11 @@ public class ThrowingKnives extends SpellCards {
     }
 
     @Override
+    public void negativeSpell(Battle battle) {
+
+    }
+
+    @Override
     public void doSpell(Battle battle) {
         Random random = new Random();
         if (battle.getTurn() == Turn.HUMAN) {

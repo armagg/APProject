@@ -15,6 +15,11 @@ public class HealingWard extends SpellCards {
     }
 
     @Override
+    public void negativeSpell(Battle battle) {
+
+    }
+
+    @Override
     public void doSpell(Battle battle) {
         List<Monster> monsters = new ArrayList<>();
         monsters = battle.getCurrentField().getMonsterField().returnMonsters();

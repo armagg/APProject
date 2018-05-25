@@ -11,6 +11,11 @@ public class BloodFeast extends SpellCards {
     }
 
     @Override
+    public void negativeSpell(Battle battle) {
+
+    }
+
+    @Override
     public void doSpell(Battle battle) {
         battle.getCurrentHero().addHP(500);
         battle.getOtherHero().reduceHP(500);

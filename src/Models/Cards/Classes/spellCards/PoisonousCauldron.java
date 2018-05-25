@@ -14,6 +14,11 @@ public class PoisonousCauldron extends SpellCards {
     }
 
     @Override
+    public void negativeSpell(Battle battle) {
+
+    }
+
+    @Override
     public void doSpell(Battle battle) {
         ArrayList<Monster> monsters = new ArrayList<>();
         monsters.addAll(battle.getOtherField().getMonsterField().returnMonsters());

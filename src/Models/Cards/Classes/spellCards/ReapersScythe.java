@@ -17,6 +17,11 @@ public class ReapersScythe extends SpellCards {
     }
 
     @Override
+    public void negativeSpell(Battle battle) {
+
+    }
+
+    @Override
     public void doSpell(Battle battle) {
         Random random = new Random();
         ArrayList<Card> cards = new ArrayList<>();

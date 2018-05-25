@@ -13,6 +13,8 @@ public abstract class SpellCards extends Card {
     private SpellType spellType;
     private String SpellDetails;
 
+    public abstract void negativeSpell(Battle battle);
+
     public abstract void doSpell(Battle battle);
 
     public String getSpellDetails() {

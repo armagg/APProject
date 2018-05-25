@@ -15,6 +15,11 @@ public class MeteorShower extends SpellCards {
     }
 
     @Override
+    public void negativeSpell(Battle battle) {
+
+    }
+
+    @Override
     public void doSpell(Battle battle) {
         Card card = new Monster();
         Random random = new Random();
