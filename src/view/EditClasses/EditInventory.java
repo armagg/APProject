@@ -29,7 +29,7 @@ public class EditInventory {
         System.out.println("Card Inventory:");
         int count = 1;
         for(Card card : cards){
-            System.out.println(count + ". " + allWeHave.get(card.getName()) + "/" + onDeck.get(card.getName()) + " on deck");
+            System.out.println(count + ". " + (allWeHave.containsKey(card.getName())?allWeHave.get(card.getName()):"0") + "/" + (onDeck.containsKey(card.getName()) ? onDeck.get(card.getName()) : "0") + " on deck");
             count++;
         }
 

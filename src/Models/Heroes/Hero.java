@@ -148,7 +148,6 @@ public class Hero {
         this.numberOfHeroThings = numberOfHeroThings;
     }
 
-
     public Amulet getEquipAmulet() {
         return equipAmulet;
     }

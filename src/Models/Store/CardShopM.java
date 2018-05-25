@@ -20,6 +20,7 @@ public class CardShopM extends Shop {
     public CardShopM(ArrayList<Card> cards) {
         this.cards = cards;
     }
+
     public CardShopM(){}
 
     public void setCards(ArrayList<Card> cards) {
@@ -42,7 +43,7 @@ public class CardShopM extends Shop {
             cards.remove(card);
     }
 
-    public Card makeCardInShop(String name){
+    public static Card makeCardInShop(String name){
         switch (name){
             case "throwing knives":
                 return new ThrowingKnives();

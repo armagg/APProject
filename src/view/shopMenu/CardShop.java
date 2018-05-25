@@ -36,7 +36,11 @@ public class CardShop {
 
         out.println("   Card Inventory");
         for (Card card : playerCards) {
-            System.out.println(counter + ". " + card.getName() + " / " + numbersOfCards.get(card.getName()));
+            if(numbersOfCards.containsKey(card.getName()))
+                System.out.println(counter + ". " + card.getName() + " / " + numbersOfCards.get(card.getName()));
+            else {
+                System.out.println(counter + ". " + card.getName() + " / " + "0");
+            }
         }
     }
 
@@ -111,7 +115,7 @@ public class CardShop {
         System.out.println("  Other Cards: ");
         count = 1;
         for(Card card: allOfCards){
-            System.out.println(count + ". " + numberOfAllCards.get(card.getName()) + " / " + numOnDeck.get(card.getName()) );
+            System.out.println(count + ". " + (numberOfAllCards.containsKey(card.getName()) ? numberOfAllCards.get(card.getName()) : "0") + " / " + (numOnDeck.containsKey(card.getName())?numOnDeck.get(card.getName()): "0") );
             count++;
         }
 
