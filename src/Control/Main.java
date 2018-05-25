@@ -12,6 +12,7 @@ import Models.Eqiupments.Amulet;
 import Models.Eqiupments.Item;
 import Models.Eqiupments.amulets.*;
 import Models.Eqiupments.items.*;
+import Models.Fields.Inventory;
 
 import java.util.ArrayList;
 
@@ -107,5 +108,61 @@ public class Main {
 
     }
 
+    public static Inventory inventoryOfMountainsideVillage(){
+        Inventory inventory = new Inventory();
+        inventory.addCard(new GoblinSmuggler(),10);
+        inventory.addCard(new ThrowingKnives(),5);
+        inventory.addCard(new GoblinShaman(),5);
+        return inventory;
+    }
+
+    public static Inventory inventoryOfTownInThePlains(){
+        Inventory inventory = new Inventory();
+        inventory.addCard(new OgreWarrior,6);
+        inventory.addCard(new OgreFrontliner(),4);
+        inventory.addCard(new OgreMagi() , 2);
+        inventory.addCard(new OgreWarchief(),1);
+        inventory.addCard(new ThrowingKnives(),3);
+        inventory.addCard(new FirstAidKit,3);
+        inventory.addCard(new PoisonousCauldron(),1);
+        return inventory;
+    }
+
+    public static Inventory inventoryOfDarkCity(){
+        Inventory inventory = new Inventory();
+        inventory.addCard(new Undead(),4);
+        inventory.addCard(new GiantBat(),3);
+        inventory.addCard(new StoutUndead(),3);
+        inventory.addCard(new UndeadMage() , 2);
+        inventory.addCard(new VampireAcolyte(),1);
+        inventory.addCard(new VampirePrince(),1);
+        inventory.addCard(new BloodFeast() , 3);
+        inventory.addCard(new FirstAidKit(),2);
+        inventory.addCard(new WarDrum(),1);
+        inventory.addCard(new PoisonousCauldron(),1);
+        inventory.addCard(new HealingWard(),1);
+        inventory.addCard(new GreaterPurge(),1);
+        return inventory;
+    }
+
+    public static Inventory inventoryOfTowerOfInferno(){
+        Inventory inventory = new Inventory();
+        inventory.addCard(new Imp(),4);
+        inventory.addCard(new Shade(), 3);
+        inventory.addCard(new LivingArmor(),3);
+        inventory.addCard(new Hellhound(),2);
+        inventory.addCard(new EvilEye(),2);
+        inventory.addCard(new Necromancer(),2);
+        inventory.addCard(new DarkKnight(),1);
+        inventory.addCard(new Cerberus(),1);
+        inventory.addCard(new ReapersScythe(),3);
+        inventory.addCard(new FirstAidKit(),3);
+        inventory.addCard(new StrategicRetreat(),1);
+        inventory.addCard(new HealingWard(),2);
+        inventory.addCard(new WarDrum(),1);
+        inventory.addCard(new MeteorShower(),1);
+        inventory.addCard(new MagicSeal(),1);
+        return inventory;
+    }
 
 }
