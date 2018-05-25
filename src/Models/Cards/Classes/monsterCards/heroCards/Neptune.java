@@ -58,6 +58,7 @@ public class Neptune extends Heroes {
 
             }
         }
+        setSpellUsed(true);
     }
 
     @Override

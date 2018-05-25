@@ -16,5 +16,6 @@ public final class UndeadMage extends SpellCasters {
         Monster monster = (Monster) battle.getOtherField().getMonsterField().getRandomCard();
         if (monster != null)
             monster.reduceHP(500);
+        setSpellUsed(true);
     }
 }

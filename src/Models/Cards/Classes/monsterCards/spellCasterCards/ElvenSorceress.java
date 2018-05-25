@@ -26,5 +26,6 @@ public final class ElvenSorceress extends SpellCasters {
         ArrayList<Card> cards = new ArrayList<>();
         cards.add(card);
         Operators.replaceCards(battle.getOtherField(), cards, Place.SPELLFIELD, Place.GRAVEYARD);
+        setSpellUsed(true);
     }
 }

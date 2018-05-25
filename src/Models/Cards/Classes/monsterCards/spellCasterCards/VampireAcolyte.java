@@ -27,6 +27,6 @@ public final class VampireAcolyte extends SpellCasters {
             for (Monster monster : thisMonsters) {
                 monster.addHP(300);
             }
-
+        setSpellUsed(true);
     }
 }

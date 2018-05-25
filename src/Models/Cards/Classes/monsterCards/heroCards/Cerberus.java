@@ -39,6 +39,7 @@ public class Cerberus extends Heroes {
                 monster.reduceHP(300);
             }
         }
+        setSpellUsed(true);
 
     }
 

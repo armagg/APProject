@@ -17,5 +17,6 @@ public final class EvilEye extends SpellCasters {
         for (Monster monster : battle.getOtherField().getMonsterField().returnMonsters()) {
             monster.reduceHP(800);
         }
+        setSpellUsed(true);
     }
 }

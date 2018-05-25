@@ -17,5 +17,6 @@ public final class Necromancer extends SpellCasters {
     public void DoSpell(Battle battle) {
         Random random = new Random();
         //TODO : tabe' ali ro inja bayad estefede bokoni.
+        setSpellUsed(true);
     }
 }

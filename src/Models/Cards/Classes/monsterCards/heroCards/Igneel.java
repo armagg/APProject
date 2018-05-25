@@ -25,6 +25,7 @@ public class Igneel extends Heroes {
                 monster.reduceHP(600);
             }
         }
+        setSpellUsed(true);
     }
 
     @Override

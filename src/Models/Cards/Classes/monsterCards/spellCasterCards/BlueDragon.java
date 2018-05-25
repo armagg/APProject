@@ -25,5 +25,6 @@ public final class BlueDragon extends SpellCasters {
         Monster monster = battle.getOtherField().getMonsterField().returnMonsters().get(random.nextInt(temp));
         cards.add(monster);
         Operators.replaceCards(battle.getOtherField(), cards, Place.MONSTERFIELD, Place.GRAVEYARD);
+        setSpellUsed(true);
     }
 }

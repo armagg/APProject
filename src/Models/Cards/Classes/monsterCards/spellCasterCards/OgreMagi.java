@@ -18,5 +18,6 @@ public final class OgreMagi extends SpellCasters {
 
         int index = random.nextInt(battle.getCurrentField().getMonsterField().getNumberOfCards());
         battle.getCurrentField().getMonsterField().returnMonsters().get(index).addHP(400);
+        setSpellUsed(true);
     }
 }

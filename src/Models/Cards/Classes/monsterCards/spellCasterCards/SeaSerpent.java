@@ -24,6 +24,7 @@ public final class SeaSerpent extends SpellCasters {
                 monster.reduceHP(1000);
             }
         }
+        setSpellUsed(true);
 
     }
 }

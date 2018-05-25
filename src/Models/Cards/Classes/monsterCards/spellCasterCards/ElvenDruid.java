@@ -32,5 +32,6 @@ public class ElvenDruid extends SpellCasters {
             battle.getCurrentField().getMonsterField().returnMonsters().get(i).addHP(500);
 
         }
+        setSpellUsed(true);
     }
 }

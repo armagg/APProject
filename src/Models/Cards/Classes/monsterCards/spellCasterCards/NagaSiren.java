@@ -17,5 +17,6 @@ public final class NagaSiren extends SpellCasters {
             monster.addHP(300);
             monster.addAP(200);
         }
+        setSpellUsed(true);
     }
 }

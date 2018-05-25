@@ -22,6 +22,7 @@ public class GoblinShaman extends SpellCasters {
             Monster monster = (Monster) battle.getCurrentField().getMonsterField().getRandomCard();
             monster.addHP(400);
         }
+        setSpellUsed(true);
     }
 }
 

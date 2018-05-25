@@ -18,5 +18,6 @@ public final class VolcanicDragaon extends SpellCasters {
             monster.reduceHP(500);
             monster.reduceAP(500);
         }
+        setSpellUsed(true);
     }
 }

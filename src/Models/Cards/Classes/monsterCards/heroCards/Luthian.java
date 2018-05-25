@@ -38,6 +38,7 @@ public final class Luthian extends Heroes {
                 monster.addAP(200);
             }
         }
+        setSpellUsed(true);
     }
 
     @Override
