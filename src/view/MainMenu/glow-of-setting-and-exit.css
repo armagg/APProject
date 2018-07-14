@@ -1,0 +1,8 @@
+.button:hover{
+    -fx-background-color: linear-gradient(#ff5400, #efaa22);
+    -fx-background-radius: 30;
+    -fx-background-insets: 0;
+    -fx-effect: dropshadow(three-pass-box, rgba(255,223,90,2), 50, 0.5, 0, 0);
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}

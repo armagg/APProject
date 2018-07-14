@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="0.0" y="405.0">Models.Fields.SpellField</node>
+    <node x="483.0" y="635.0">Models.Fields.PlayField</node>
+    <node x="276.0" y="405.0">Models.Fields.Hand</node>
+    <node x="829.0000000000001" y="240.0">Models.Cards.Classes.Generals</node>
+    <node x="128.0" y="710.0">Models.Heroes.Hero</node>
+    <node x="176.0" y="635.0">Models.Cards.Classes.SpellType</node>
+    <node x="334.0" y="315.0">Models.Fields.Cards</node>
+    <node x="163.9315476190477" y="160.0">Models.Cards.Classes.SpellCards</node>
+    <node x="657.6875000000001" y="80.0">Models.Eqiupments.Item</node>
+    <node x="127.0" y="405.0">Models.Fields.MonsterField</node>
+    <node x="514.0" y="405.0">Models.Fields.DeckInGame</node>
+    <node x="715.0000000000001" y="240.0">Models.Cards.Classes.Heroes</node>
+    <node x="128.0" y="560.0">Models.Store.AmuletShop</node>
+    <node x="135.0000000000001" y="240.0">Models.Cards.Classes.ContinuousSpells</node>
+    <node x="0.0" y="710.0">Models.Store.Store</node>
+    <node x="273.0" y="560.0">Models.Store.CardShop</node>
+    <node x="544.6875000000001" y="80.0">Models.Eqiupments.Amulet</node>
+    <node x="601.0000000000001" y="240.0">Models.Cards.Classes.Normal</node>
+    <node x="-0.357475651510498" y="242.14485390906296">Models.Cards.Classes.AuraSpells</node>
+    <node x="253.0" y="710.0">Control.Main</node>
+    <node x="313.0000000000001" y="240.0">Models.Cards.Classes.InstantSpell</node>
+    <node x="377.0" y="710.0">Models.Cards.Classes.Race</node>
+    <node x="501.0" y="710.0">Models.Fields.Field</node>
+    <node x="445.6875000000001" y="80.0">Models.Cards.Classes.Card</node>
+    <node x="442.1875000000001" y="160.0">Models.Cards.Spells</node>
+    <node x="0.0" y="560.0">Models.Store.ItemShop</node>
+    <node x="548.6875000000001" y="0.0">Models.Thing</node>
+    <node x="455.0000000000001" y="240.0">Models.Cards.Classes.SpellCasters</node>
+    <node x="654.6815476190477" y="160.0">Models.Cards.Classes.Monster</node>
+    <node x="631.0" y="635.0">view.SayHello</node>
+    <node x="379.0" y="405.0">Models.Fields.GraveYard</node>
+    <node x="660.0" y="405.0">Models.Fields.Deck</node>
+    <node x="630.0" y="480.0">Models.Cards.RaceOfArcadia</node>
+    <node x="330.0" y="635.0">Models.DataBase</node>
+    <node x="779.0" y="635.0">Models.Fields.Gamer</node>
+    <node x="149.5" y="480.0">Models.Store.Shop</node>
+    <node x="429.0" y="480.0">Models.Cards.RaceOfDemonata</node>
+    <node x="0.0" y="635.0">Models.Cards.Classes.MonsterType</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Models.Cards.Classes.Heroes" target="Models.Cards.Classes.Monster">
+      <point x="0.0" y="-15.0" />
+      <point x="762.0000000000001" y="220.0" />
+      <point x="717.8065476190477" y="220.0" />
+      <point x="12.625" y="15.0" />
+    </edge>
+    <edge source="Models.Fields.GraveYard" target="Models.Fields.Cards">
+      <point x="0.0" y="-15.0" />
+      <point x="436.5" y="385.0" />
+      <point x="384.1666666666667" y="385.0" />
+      <point x="7.166666666666686" y="15.0" />
+    </edge>
+    <edge source="Models.Fields.DeckInGame" target="Models.Fields.Cards">
+      <point x="0.0" y="-15.0" />
+      <point x="577.0" y="375.0" />
+      <point x="398.5" y="375.0" />
+      <point x="21.5" y="15.0" />
+    </edge>
+    <edge source="Models.Store.ItemShop" target="Models.Store.Shop">
+      <point x="0.0" y="-15.0" />
+      <point x="54.0" y="535.0" />
+      <point x="163.16666666666666" y="535.0" />
+      <point x="-27.333333333333343" y="15.0" />
+    </edge>
+    <edge source="Models.Store.AmuletShop" target="Models.Store.Shop">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="Models.Cards.Classes.SpellCards" target="Models.Cards.Classes.Card">
+      <point x="0.0" y="-15.0" />
+      <point x="221.4315476190477" y="135.0" />
+      <point x="458.85416666666674" y="135.0" />
+      <point x="-26.33333333333337" y="15.0" />
+    </edge>
+    <edge source="Models.Cards.Classes.Monster" target="Models.Cards.Classes.Card">
+      <point x="0.0" y="-15.0" />
+      <point x="705.1815476190477" y="135.0" />
+      <point x="511.5208333333335" y="135.0" />
+      <point x="26.33333333333337" y="15.0" />
+    </edge>
+    <edge source="Models.Eqiupments.Item" target="Models.Thing">
+      <point x="0.0" y="-15.0" />
+      <point x="695.6875000000001" y="55.0" />
+      <point x="619.5208333333335" y="55.0" />
+      <point x="28.33333333333337" y="15.0" />
+    </edge>
+    <edge source="Models.Fields.MonsterField" target="Models.Fields.Cards">
+      <point x="0.0" y="-15.0" />
+      <point x="191.5" y="375.0" />
+      <point x="355.5" y="375.0" />
+      <point x="-21.5" y="15.0" />
+    </edge>
+    <edge source="Models.Eqiupments.Amulet" target="Models.Thing">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="Models.Cards.Classes.AuraSpells" target="Models.Cards.Classes.SpellCards">
+      <point x="0.0" y="-15.0" />
+      <point x="57.5" y="220.0" />
+      <point x="183.09821428571433" y="220.0" />
+      <point x="-38.33333333333337" y="15.0" />
+    </edge>
+    <edge source="Models.Fields.Deck" target="Models.Fields.Cards">
+      <point x="0.0" y="-15.0" />
+      <point x="700.0" y="365.0" />
+      <point x="412.83333333333337" y="365.0" />
+      <point x="35.83333333333337" y="15.0" />
+    </edge>
+    <edge source="Models.Fields.Hand" target="Models.Fields.Cards">
+      <point x="0.0" y="-15.0" />
+      <point x="317.5" y="385.0" />
+      <point x="369.8333333333333" y="385.0" />
+      <point x="-7.166666666666686" y="15.0" />
+    </edge>
+    <edge source="Models.Cards.Classes.Generals" target="Models.Cards.Classes.Monster">
+      <point x="0.0" y="-15.0" />
+      <point x="881.0000000000001" y="210.0" />
+      <point x="743.0565476190477" y="210.0" />
+      <point x="37.875" y="15.0" />
+    </edge>
+    <edge source="Models.Cards.Classes.ContinuousSpells" target="Models.Cards.Classes.SpellCards">
+      <point x="0.0" y="-15.0" />
+      <point x="214.0000000000001" y="220.0" />
+      <point x="221.4315476190477" y="220.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="Models.Cards.Classes.SpellCasters" target="Models.Cards.Classes.Monster">
+      <point x="0.0" y="-15.0" />
+      <point x="518.0000000000001" y="210.0" />
+      <point x="667.3065476190477" y="210.0" />
+      <point x="-37.875" y="15.0" />
+    </edge>
+    <edge source="Models.Fields.SpellField" target="Models.Fields.Cards">
+      <point x="0.0" y="-15.0" />
+      <point x="53.5" y="365.0" />
+      <point x="341.1666666666667" y="365.0" />
+      <point x="-35.833333333333314" y="15.0" />
+    </edge>
+    <edge source="Models.Cards.Classes.InstantSpell" target="Models.Cards.Classes.SpellCards">
+      <point x="0.0" y="-15.0" />
+      <point x="374.0000000000001" y="220.0" />
+      <point x="259.7648809523811" y="220.0" />
+      <point x="38.33333333333337" y="15.0" />
+    </edge>
+    <edge source="Models.Cards.Spells" target="Models.Cards.Classes.Card">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="Models.Store.CardShop" target="Models.Store.Shop">
+      <point x="0.0" y="-15.0" />
+      <point x="328.5" y="535.0" />
+      <point x="217.83333333333331" y="535.0" />
+      <point x="27.333333333333314" y="15.0" />
+    </edge>
+    <edge source="Models.Cards.Classes.Card" target="Models.Thing">
+      <point x="0.0" y="-15.0" />
+      <point x="485.1875000000001" y="55.0" />
+      <point x="562.8541666666667" y="55.0" />
+      <point x="-28.33333333333337" y="15.0" />
+    </edge>
+    <edge source="Models.Cards.Classes.Normal" target="Models.Cards.Classes.Monster">
+      <point x="0.0" y="-15.0" />
+      <point x="648.0000000000001" y="220.0" />
+      <point x="692.5565476190477" y="220.0" />
+      <point x="-12.625" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.6763081389733988" x="394.22992713834856" y="293.63657067861254" />
+  <SelectedNodes>
+    <node>Models.Thing</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

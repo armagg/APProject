@@ -1,0 +1,7 @@
+"Iron Pendant" 2000 "Increase Player’s Max HP by 500"
+"Gold Pendant" 4000 "Increase Player’s Max HP by 1000"
+"Diamond Pendant" 8000 "Increase Player’s Max HP by 2000"
+"Iron Ring" 2000 "Increase Player’s Max MP by 1"
+"Gold Ring" 4000 "Increase Player’s Max MP by 2"
+"Diamond Ring" 8000 "Increase Player’s Max MP by 3"
+"Demon King's Crown" 0 "Decrease All Incoming Damages by 20%"

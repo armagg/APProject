@@ -1,0 +1,4 @@
+"Poisonous Cauldron" 4 "deal 100 damage to all enemy monster cards and enemy player"
+"Meteor Shower" 8 "Deal 800 damage to a random enemy monster card on field or player"
+"Healing Ward" 5 "Increase all friendly monster cards’ HP by 200 "
+"Magic Seal" 9 "Remove all enemy spell cards from field and move them to graveyard "
